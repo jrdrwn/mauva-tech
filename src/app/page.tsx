@@ -2,6 +2,7 @@
 import Hero from '@/components/layout/home/hero'
 import Projects from '@/components/layout/home/projects'
 import Services from '@/components/layout/home/services'
+import Testimonials from '@/components/layout/home/tesminonials'
 import Header from '@/components/layout/shared/header'
 
 export default function Home() {
@@ -11,6 +12,7 @@ export default function Home() {
       <Hero />
       <Services />
       <Projects />
+      <Testimonials />
     </>
   )
 }
