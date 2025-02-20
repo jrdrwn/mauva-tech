@@ -1,0 +1,189 @@
+"use client";
+import { AnimatedTooltip } from "@/components/ui/animated-tooltip";
+import { Button } from "@/components/ui/button";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { WobbleCard } from "@/components/ui/wobble-card";
+import { MoveUpRight } from "lucide-react";
+import Image from "next/image";
+import { useId } from "react";
+
+export default function AboutUs() {
+  return (
+    <section className="container mx-auto min-h-[calc(100dvh-65px)] flex items-center justify-center flex-col py-16">
+      <h1 className="text-center text-4xl font-medium mb-2">Who We Are</h1>
+      <p className="text-center text-lg mb-6 text-foreground/80">
+        Discover how our passion for technology drives us to create solutions
+        that make a difference.
+      </p>
+      <WobbleCardDemo />
+    </section>
+  );
+}
+
+export function WobbleCardDemo() {
+  const people = [
+    {
+      id: 1,
+      name: "John Doe",
+      designation: "Software Engineer",
+      image:
+        "https://images.unsplash.com/photo-1599566150163-29194dcaad36?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3387&q=80",
+    },
+    {
+      id: 2,
+      name: "Robert Johnson",
+      designation: "Product Manager",
+      image:
+        "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YXZhdGFyfGVufDB8fDB8fHww&auto=format&fit=crop&w=800&q=60",
+    },
+    {
+      id: 3,
+      name: "Jane Smith",
+      designation: "Data Scientist",
+      image:
+        "https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8YXZhdGFyfGVufDB8fDB8fHww&auto=format&fit=crop&w=800&q=60",
+    },
+    {
+      id: 4,
+      name: "Emily Davis",
+      designation: "UX Designer",
+      image:
+        "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGF2YXRhcnxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=800&q=60",
+    },
+    {
+      id: 5,
+      name: "Tyler Durden",
+      designation: "Soap Developer",
+      image:
+        "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3540&q=80",
+    },
+  ];
+  return (
+    <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 max-w-7xl mx-auto w-full">
+      <WobbleCard
+        containerClassName="col-span-1 lg:col-span-2 h-full  min-h-[500px] lg:min-h-[300px]"
+        className=""
+      >
+        <div className="max-w-lg">
+          <h2 className="text-left text-balance text-base md:text-xl lg:text-3xl font-semibold tracking-[-0.015em] text-white">
+            About us
+          </h2>
+          <p className="mt-4 text-left  text-base/6 text-neutral-200">
+            MauvaTech is a leading software house specializing in web and mobile
+            app development. With a team of passionate developers and designers,
+            we help businesses transform their ideas into digital solutions that
+            drive results.
+          </p>
+        </div>
+        <Image
+          src="https://images.unsplash.com/photo-1499750310107-5fef28a66643?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&dl=andrew-neel-cckf4TsHAuw-unsplash.jpg&w=640"
+          width={500}
+          height={500}
+          alt="linear demo image"
+          className="absolute -right-4 lg:-right-[40%] grayscale filter -bottom-10 object-contain rounded-2xl"
+        />
+      </WobbleCard>
+      <Card className="col-span-1 min-h-[300px] rounded-2xl flex flex-col relative ">
+        <CardHeader>
+          <CardTitle>Our Team</CardTitle>
+          <CardDescription>
+            Meet the people who make it all happen.
+          </CardDescription>
+        </CardHeader>
+        <CardContent className="flex-1 flex flex-col items-center justify-center">
+          <Grid size={20} />
+          <div className="flex flex-row items-center w-full">
+            <AnimatedTooltip items={people} />
+          </div>
+        </CardContent>
+        <CardFooter className=" items-end ">
+          <Button variant={"ghost"} className="group/button">
+            Learn More About Us
+            <span>
+              <MoveUpRight className="w-4 group-hover/button:rotate-45 group-hover/button:size-5 transition-all duration-300" />
+            </span>
+          </Button>
+        </CardFooter>
+      </Card>
+    </div>
+  );
+}
+
+export const Grid = ({
+  pattern,
+  size,
+}: {
+  pattern?: number[][];
+  size?: number;
+}) => {
+  const p = pattern ?? [
+    [Math.floor(Math.random() * 4) + 7, Math.floor(Math.random() * 6) + 1],
+    [Math.floor(Math.random() * 4) + 7, Math.floor(Math.random() * 6) + 1],
+    [Math.floor(Math.random() * 4) + 7, Math.floor(Math.random() * 6) + 1],
+    [Math.floor(Math.random() * 4) + 7, Math.floor(Math.random() * 6) + 1],
+    [Math.floor(Math.random() * 4) + 7, Math.floor(Math.random() * 6) + 1],
+  ];
+  return (
+    <div className="pointer-events-none absolute  top-0   h-full w-full [mask-image:linear-gradient(white,transparent)]">
+      <div className="absolute inset-0 bg-gradient-to-r  [mask-image:radial-gradient(farthest-side_at_top,white,transparent)] dark:from-zinc-900/30 from-zinc-100/30 to-zinc-300/30 dark:to-zinc-900/30 opacity-100">
+        <GridPattern
+          width={size ?? 20}
+          height={size ?? 20}
+          x="-12"
+          y="4"
+          squares={p}
+          className="absolute inset-0 h-full w-full  mix-blend-overlay dark:fill-white/10 dark:stroke-white/10 stroke-black/10 fill-black/10"
+        />
+      </div>
+    </div>
+  );
+};
+
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export function GridPattern({ width, height, x, y, squares, ...props }: any) {
+  const patternId = useId();
+
+  return (
+    <svg aria-hidden="true" {...props}>
+      <defs>
+        <pattern
+          id={patternId}
+          width={width}
+          height={height}
+          patternUnits="userSpaceOnUse"
+          x={x}
+          y={y}
+        >
+          <path d={`M.5 ${height}V.5H${width}`} fill="none" />
+        </pattern>
+      </defs>
+      <rect
+        width="100%"
+        height="100%"
+        strokeWidth={0}
+        fill={`url(#${patternId})`}
+      />
+      {squares && (
+        <svg x={x} y={y} className="overflow-visible">
+          {squares.map(([x, y]: [number, number]) => (
+            <rect
+              strokeWidth="0"
+              key={`${x}-${y}`}
+              width={width + 1}
+              height={height + 1}
+              x={x * width}
+              y={y * height}
+            />
+          ))}
+        </svg>
+      )}
+    </svg>
+  );
+}
