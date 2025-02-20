@@ -36,7 +36,7 @@ export default function Testimonials() {
     },
   ]
   return (
-    <section className="container mx-auto min-h-[calc(100dvh-65px)] flex items-center justify-center flex-col">
+    <section className="container mx-auto min-h-[calc(100dvh-65px)] flex items-center justify-center flex-col py-16">
       <h1 className="text-center text-4xl font-medium mb-2">Our Clients&apos; Stories</h1>
       <p className="text-center text-lg mb-6 text-foreground/80">Our clients&apos; success is our greatest achievement. Here&apos;s what they have to say.</p>
       <AnimatedTestimonials testimonials={testimonials} autoplay={true} />
