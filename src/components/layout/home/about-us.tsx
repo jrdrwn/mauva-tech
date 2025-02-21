@@ -134,6 +134,7 @@ export const Grid = ({
         [Math.floor(Math.random() * 4) + 7, Math.floor(Math.random() * 6) + 1],
       ]
     );
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
