@@ -7,8 +7,8 @@ import { Button } from '@/components/ui/button'
 import { DropdownMenu, DropdownMenuContent, DropdownMenuTrigger } from '@/components/ui/dropdown-menu'
 import { Input } from '@/components/ui/input'
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet'
+import { ModeToggle } from '@/components/ui/theme-toggle'
 import Link from 'next/link'
-import { ModeToggle } from './ui/ModeToggle'
 
 export default function Header() {
   return (
