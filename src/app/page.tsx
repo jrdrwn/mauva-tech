@@ -1,6 +1,7 @@
 "use client";
 import AboutUs from "@/components/layout/home/about-us";
 import Blogs from "@/components/layout/home/blogs";
+import EndCTA from "@/components/layout/home/end-cta";
 import Hero from "@/components/layout/home/hero";
 import Projects from "@/components/layout/home/projects";
 import Services from "@/components/layout/home/services";
@@ -17,6 +18,7 @@ export default function Home() {
       <Testimonials />
       <AboutUs />
       <Blogs />
+      <EndCTA />
     </>
   );
 }
