@@ -1,86 +1,128 @@
-'use client'
-import { Badge } from '@/components/ui/badge'
-import { Button } from '@/components/ui/button'
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card'
-import { GlowingEffect } from '@/components/ui/glowing-effect'
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
-import { MoveUpRight } from 'lucide-react'
-import Image from 'next/image'
+'use client';
+
+import { Badge } from '@/components/ui/badge';
+import { Button } from '@/components/ui/button';
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from '@/components/ui/card';
+import { GlowingEffect } from '@/components/ui/glowing-effect';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
+import { MoveUpRight } from 'lucide-react';
+import Image from 'next/image';
 
 interface ProjectCardProps {
-  title: string
-  description: string
-  image: string
-  category: string
+  title: string;
+  description: string;
+  image: string;
+  category: string;
 }
 
-function ProjectCard({ title, description, image, category }: ProjectCardProps) {
+function ProjectCard({
+  title,
+  description,
+  image,
+  category,
+}: ProjectCardProps) {
   return (
-    <Card className="max-w-96 w-full relative flex flex-col">
-      <GlowingEffect spread={40} glow={true} disabled={false} proximity={64} inactiveZone={0.01} />
+    <Card className="relative flex w-full max-w-96 flex-col">
+      <GlowingEffect
+        spread={40}
+        glow={true}
+        disabled={false}
+        proximity={64}
+        inactiveZone={0.01}
+      />
       <CardHeader className="flex-1">
         <CardTitle>{title}</CardTitle>
         <CardDescription>{description}</CardDescription>
       </CardHeader>
       <CardContent>
-        <Image className="rounded-lg w-full aspect-video object-cover object-center" src={image} alt="Hero" width={300} height={200} />
+        <Image
+          className="aspect-video w-full rounded-lg object-cover object-center"
+          src={image}
+          alt="Hero"
+          width={300}
+          height={200}
+        />
       </CardContent>
-      <CardFooter className="flex justify-between items-center">
+      <CardFooter className="flex items-center justify-between">
         <Badge variant={'outline'}>{category}</Badge>
         <Button variant={'ghost'} className="group/button">
           Read more
           <span>
-            <MoveUpRight className="w-4 group-hover/button:rotate-45 group-hover/button:size-5 transition-all duration-300" />
+            <MoveUpRight className="w-4 transition-all duration-300 group-hover/button:size-5 group-hover/button:rotate-45" />
           </span>
         </Button>
       </CardFooter>
     </Card>
-  )
+  );
 }
 
 export default function Projects() {
   const projects = [
     {
       title: 'E-commerce Platform for Fashionista',
-      description: 'A fully customized e-commerce solution designed to boost sales and enhance user experience.',
-      image: 'https://images.unsplash.com/photo-1595675024853-0f3ec9098ac7?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&dl=niclas-illg-FJ5e_2f96h4-unsplash.jpg&w=640',
+      description:
+        'A fully customized e-commerce solution designed to boost sales and enhance user experience.',
+      image:
+        'https://images.unsplash.com/photo-1595675024853-0f3ec9098ac7?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&dl=niclas-illg-FJ5e_2f96h4-unsplash.jpg&w=640',
       category: 'Website',
     },
     {
       title: 'E-commerce Platform for Fashionista',
-      description: 'A fully customized e-commerce solution designed to boost sales and enhance user experience.',
-      image: 'https://images.unsplash.com/photo-1595675024853-0f3ec9098ac7?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&dl=niclas-illg-FJ5e_2f96h4-unsplash.jpg&w=640',
+      description:
+        'A fully customized e-commerce solution designed to boost sales and enhance user experience.',
+      image:
+        'https://images.unsplash.com/photo-1595675024853-0f3ec9098ac7?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&dl=niclas-illg-FJ5e_2f96h4-unsplash.jpg&w=640',
       category: 'Website',
     },
     {
       title: 'HealthTrack Mobile App',
-      description: 'A health monitoring app that empowers users to take control of their wellness journey.',
-      image: 'https://images.unsplash.com/photo-1595675024853-0f3ec9098ac7?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&dl=niclas-illg-FJ5e_2f96h4-unsplash.jpg&w=640',
+      description:
+        'A health monitoring app that empowers users to take control of their wellness journey.',
+      image:
+        'https://images.unsplash.com/photo-1595675024853-0f3ec9098ac7?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&dl=niclas-illg-FJ5e_2f96h4-unsplash.jpg&w=640',
       category: 'Mobile',
     },
     {
       title: 'HealthTrack Mobile App',
-      description: 'A health monitoring app that empowers users to take control of their wellness journey.',
-      image: 'https://images.unsplash.com/photo-1595675024853-0f3ec9098ac7?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&dl=niclas-illg-FJ5e_2f96h4-unsplash.jpg&w=640',
+      description:
+        'A health monitoring app that empowers users to take control of their wellness journey.',
+      image:
+        'https://images.unsplash.com/photo-1595675024853-0f3ec9098ac7?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&dl=niclas-illg-FJ5e_2f96h4-unsplash.jpg&w=640',
       category: 'Mobile',
     },
     {
       title: 'Corporate Website for GreenTech Solutions',
-      description: 'A modern and informative website that reflects the company’s commitment to sustainability.',
-      image: 'https://images.unsplash.com/photo-1595675024853-0f3ec9098ac7?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&dl=niclas-illg-FJ5e_2f96h4-unsplash.jpg&w=640',
+      description:
+        'A modern and informative website that reflects the company’s commitment to sustainability.',
+      image:
+        'https://images.unsplash.com/photo-1595675024853-0f3ec9098ac7?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&dl=niclas-illg-FJ5e_2f96h4-unsplash.jpg&w=640',
       category: 'UI/UX',
     },
     {
       title: 'Corporate Website for GreenTech Solutions',
-      description: 'A modern and informative website that reflects the company’s commitment to sustainability.',
-      image: 'https://images.unsplash.com/photo-1595675024853-0f3ec9098ac7?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&dl=niclas-illg-FJ5e_2f96h4-unsplash.jpg&w=640',
+      description:
+        'A modern and informative website that reflects the company’s commitment to sustainability.',
+      image:
+        'https://images.unsplash.com/photo-1595675024853-0f3ec9098ac7?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&dl=niclas-illg-FJ5e_2f96h4-unsplash.jpg&w=640',
       category: 'UI/UX',
     },
-  ]
+  ];
   return (
     <section className="container mx-auto min-h-[calc(100dvh-65px)]">
-      <h1 className="text-center text-4xl font-medium mb-2">Our Latest Creations</h1>
-      <p className="text-center text-lg mb-6 text-foreground/80">Explore some of our recent projects and see how we&apos;ve helped businesses achieve their goals.</p>
+      <h1 className="mb-2 text-center text-4xl font-medium">
+        Our Latest Creations
+      </h1>
+      <p className="mb-6 text-center text-lg text-foreground/80">
+        Explore some of our recent projects and see how we&apos;ve helped
+        businesses achieve their goals.
+      </p>
       <Tabs defaultValue="all" className="flex flex-col items-center">
         <TabsList className="mb-8">
           <TabsTrigger value="all">All</TabsTrigger>
@@ -88,26 +130,38 @@ export default function Projects() {
           <TabsTrigger value="mobile">Mobile</TabsTrigger>
           <TabsTrigger value="ui/ux">UI/UX</TabsTrigger>
         </TabsList>
-        <TabsContent value="all" className="flex flex-wrap justify-center gap-4 mt-0">
+        <TabsContent
+          value="all"
+          className="mt-0 flex flex-wrap justify-center gap-4"
+        >
           {projects.map((project, index) => (
             <ProjectCard key={index} {...project} />
           ))}
         </TabsContent>
-        <TabsContent value="website" className="flex flex-wrap justify-center gap-4 mt-0">
+        <TabsContent
+          value="website"
+          className="mt-0 flex flex-wrap justify-center gap-4"
+        >
           {projects
             .filter((project) => project.category === 'Website')
             .map((project, index) => (
               <ProjectCard key={index} {...project} />
             ))}
         </TabsContent>
-        <TabsContent value="mobile" className="flex flex-wrap justify-center gap-4 mt-0">
+        <TabsContent
+          value="mobile"
+          className="mt-0 flex flex-wrap justify-center gap-4"
+        >
           {projects
             .filter((project) => project.category === 'Mobile')
             .map((project, index) => (
               <ProjectCard key={index} {...project} />
             ))}
         </TabsContent>
-        <TabsContent value="ui/ux" className="flex flex-wrap justify-center gap-4 mt-0">
+        <TabsContent
+          value="ui/ux"
+          className="mt-0 flex flex-wrap justify-center gap-4"
+        >
           {projects
             .filter((project) => project.category === 'UI/UX')
             .map((project, index) => (
@@ -116,5 +170,5 @@ export default function Projects() {
         </TabsContent>
       </Tabs>
     </section>
-  )
+  );
 }

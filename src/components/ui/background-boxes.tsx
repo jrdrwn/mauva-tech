@@ -1,7 +1,8 @@
-"use client";
-import { cn } from "@/lib/utils";
-import { motion } from "framer-motion";
-import React from "react";
+'use client';
+
+import { cn } from '@/lib/utils';
+import { motion } from 'framer-motion';
+import React from 'react';
 
 export const BoxesCore = ({ className, ...rest }: { className?: string }) => {
   const rows = new Array(150).fill(1);
@@ -12,15 +13,15 @@ export const BoxesCore = ({ className, ...rest }: { className?: string }) => {
         transform: `translate(-40%,-60%) skewX(-48deg) skewY(14deg) scale(0.675) rotate(0deg) translateZ(0)`,
       }}
       className={cn(
-        "absolute left-1/4 -mt-10 -top-1/4 flex  -translate-x-1/2 -translate-y-1/2 w-full h-full ",
-        className
+        'absolute left-1/4 -mt-10 -top-1/4 flex  -translate-x-1/2 -translate-y-1/2 w-full h-full ',
+        className,
       )}
       {...rest}
     >
       {rows.map((_, i) => (
         <motion.div
           key={`row` + i}
-          className="w-16 h-8  border-l  border-secondary-foreground/15 relative"
+          className="relative h-8  w-16  border-l border-secondary-foreground/15"
         >
           {cols.map((_, j) => (
             <motion.div
@@ -32,7 +33,7 @@ export const BoxesCore = ({ className, ...rest }: { className?: string }) => {
                 transition: { duration: 2 },
               }}
               key={`col` + j}
-              className="w-16 h-8  border-r border-t border-secondary-foreground/15 relative"
+              className="relative h-8  w-16 border-r border-t border-secondary-foreground/15"
             >
               {j % 2 === 0 && i % 2 === 0 ? (
                 <svg
@@ -41,7 +42,7 @@ export const BoxesCore = ({ className, ...rest }: { className?: string }) => {
                   viewBox="0 0 24 24"
                   strokeWidth="1.5"
                   stroke="currentColor"
-                  className="absolute h-6 w-10 -top-[14px] -left-[22px] text-secondary-foreground/15 stroke-[1px] pointer-events-none"
+                  className="pointer-events-none absolute left-[-22px] top-[-14px] h-6 w-10 stroke-[1px] text-secondary-foreground/15"
                 >
                   <path
                     strokeLinecap="round"

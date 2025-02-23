@@ -1,6 +1,7 @@
-"use client";
-import { AnimatedTooltip } from "@/components/ui/animated-tooltip";
-import { Button } from "@/components/ui/button";
+'use client';
+
+import { AnimatedTooltip } from '@/components/ui/animated-tooltip';
+import { Button } from '@/components/ui/button';
 import {
   Card,
   CardContent,
@@ -8,17 +9,17 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from "@/components/ui/card";
-import { WobbleCard } from "@/components/ui/wobble-card";
-import { MoveUpRight } from "lucide-react";
-import Image from "next/image";
-import { useEffect, useId, useState } from "react";
+} from '@/components/ui/card';
+import { WobbleCard } from '@/components/ui/wobble-card';
+import { MoveUpRight } from 'lucide-react';
+import Image from 'next/image';
+import { useEffect, useId, useState } from 'react';
 
 export default function AboutUs() {
   return (
-    <section className="container mx-auto min-h-[calc(100dvh-65px)] flex items-center justify-center flex-col py-16">
-      <h1 className="text-center text-4xl font-medium mb-2">Who We Are</h1>
-      <p className="text-center text-lg mb-6 text-foreground/80">
+    <section className="container mx-auto flex min-h-[calc(100dvh-65px)] flex-col items-center justify-center py-16">
+      <h1 className="mb-2 text-center text-4xl font-medium">Who We Are</h1>
+      <p className="mb-6 text-center text-lg text-foreground/80">
         Discover how our passion for technology drives us to create solutions
         that make a difference.
       </p>
@@ -31,48 +32,48 @@ export function WobbleCardDemo() {
   const people = [
     {
       id: 1,
-      name: "John Doe",
-      designation: "Software Engineer",
+      name: 'John Doe',
+      designation: 'Software Engineer',
       image:
-        "https://images.unsplash.com/photo-1599566150163-29194dcaad36?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3387&q=80",
+        'https://images.unsplash.com/photo-1599566150163-29194dcaad36?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3387&q=80',
     },
     {
       id: 2,
-      name: "Robert Johnson",
-      designation: "Product Manager",
+      name: 'Robert Johnson',
+      designation: 'Product Manager',
       image:
-        "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YXZhdGFyfGVufDB8fDB8fHww&auto=format&fit=crop&w=800&q=60",
+        'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YXZhdGFyfGVufDB8fDB8fHww&auto=format&fit=crop&w=800&q=60',
     },
     {
       id: 3,
-      name: "Jane Smith",
-      designation: "Data Scientist",
+      name: 'Jane Smith',
+      designation: 'Data Scientist',
       image:
-        "https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8YXZhdGFyfGVufDB8fDB8fHww&auto=format&fit=crop&w=800&q=60",
+        'https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8YXZhdGFyfGVufDB8fDB8fHww&auto=format&fit=crop&w=800&q=60',
     },
     {
       id: 4,
-      name: "Emily Davis",
-      designation: "UX Designer",
+      name: 'Emily Davis',
+      designation: 'UX Designer',
       image:
-        "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGF2YXRhcnxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=800&q=60",
+        'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGF2YXRhcnxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=800&q=60',
     },
     {
       id: 5,
-      name: "Tyler Durden",
-      designation: "Soap Developer",
+      name: 'Tyler Durden',
+      designation: 'Soap Developer',
       image:
-        "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3540&q=80",
+        'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3540&q=80',
     },
   ];
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 max-w-7xl mx-auto w-full">
+    <div className="mx-auto grid w-full max-w-7xl grid-cols-1 gap-4 lg:grid-cols-3">
       <WobbleCard
         containerClassName="col-span-1 lg:col-span-2 h-full  min-h-[500px] lg:min-h-[300px]"
         className=""
       >
         <div className="max-w-lg">
-          <h2 className="text-left text-balance text-base md:text-xl lg:text-3xl font-semibold tracking-[-0.015em] text-white">
+          <h2 className="text-balance text-left text-base font-semibold tracking-[-0.015em] text-white md:text-xl lg:text-3xl">
             About us
           </h2>
           <p className="mt-4 text-left  text-base/6 text-neutral-200">
@@ -87,27 +88,27 @@ export function WobbleCardDemo() {
           width={500}
           height={500}
           alt="linear demo image"
-          className="absolute -right-4 lg:-right-[40%] grayscale filter -bottom-10 object-contain rounded-2xl"
+          className="absolute -bottom-10 -right-4 rounded-2xl object-contain grayscale lg:right-[-40%]"
         />
       </WobbleCard>
-      <Card className="col-span-1 min-h-[300px] rounded-2xl flex flex-col relative ">
+      <Card className="relative col-span-1 flex min-h-[300px] flex-col rounded-2xl ">
         <CardHeader>
           <CardTitle>Our Team</CardTitle>
           <CardDescription>
             Meet the people who make it all happen.
           </CardDescription>
         </CardHeader>
-        <CardContent className="flex-1 flex flex-col items-center justify-center">
+        <CardContent className="flex flex-1 flex-col items-center justify-center">
           <Grid size={20} />
-          <div className="flex flex-row items-center w-full">
+          <div className="flex w-full flex-row items-center">
             <AnimatedTooltip items={people} />
           </div>
         </CardContent>
         <CardFooter className=" items-end ">
-          <Button variant={"ghost"} className="group/button">
+          <Button variant={'ghost'} className="group/button">
             Learn More About Us
             <span>
-              <MoveUpRight className="w-4 group-hover/button:rotate-45 group-hover/button:size-5 transition-all duration-300" />
+              <MoveUpRight className="w-4 transition-all duration-300 group-hover/button:size-5 group-hover/button:rotate-45" />
             </span>
           </Button>
         </CardFooter>
@@ -132,21 +133,21 @@ export const Grid = ({
         [Math.floor(Math.random() * 4) + 7, Math.floor(Math.random() * 6) + 1],
         [Math.floor(Math.random() * 4) + 7, Math.floor(Math.random() * 6) + 1],
         [Math.floor(Math.random() * 4) + 7, Math.floor(Math.random() * 6) + 1],
-      ]
+      ],
     );
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
-    <div className="pointer-events-none absolute  top-0   h-full w-full [mask-image:linear-gradient(white,transparent)]">
-      <div className="absolute inset-0 bg-gradient-to-r  [mask-image:radial-gradient(farthest-side_at_top,white,transparent)] dark:from-zinc-900/30 from-zinc-100/30 to-zinc-300/30 dark:to-zinc-900/30 opacity-100">
+    <div className="pointer-events-none absolute  top-0   size-full [mask-image:linear-gradient(white,transparent)]">
+      <div className="absolute inset-0 bg-gradient-to-r  from-zinc-100/30 to-zinc-300/30 opacity-100 [mask-image:radial-gradient(farthest-side_at_top,white,transparent)] dark:from-zinc-900/30 dark:to-zinc-900/30">
         <GridPattern
           width={size ?? 20}
           height={size ?? 20}
           x="-12"
           y="4"
           squares={p}
-          className="absolute inset-0 h-full w-full  mix-blend-overlay dark:fill-white/10 dark:stroke-white/10 stroke-black/10 fill-black/10"
+          className="absolute inset-0 size-full fill-black/10  stroke-black/10 mix-blend-overlay dark:fill-white/10 dark:stroke-white/10"
         />
       </div>
     </div>
