@@ -10,13 +10,18 @@ import {
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
 import { Input } from '@/components/ui/input';
-import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
+import {
+  Sheet,
+  SheetContent,
+  SheetTitle,
+  SheetTrigger,
+} from '@/components/ui/sheet';
 import { ModeToggle } from '@/components/ui/theme-toggle';
 import Link from 'next/link';
 
 export default function Header() {
   return (
-    <header className="sticky top-0 z-[9999] w-full border-b border-border bg-background">
+    <header className="sticky top-0 z-50 w-full border-b border-border bg-background">
       <div className="container mx-auto flex h-16 max-w-6xl items-center justify-between px-4 md:px-6">
         <Link href="#" className="flex items-center gap-2" prefetch={false}>
           <MountainIcon className="size-6" />
@@ -90,6 +95,7 @@ export default function Header() {
               </Button>
             </SheetTrigger>
             <SheetContent side="left" className="md:hidden">
+              <SheetTitle>Menu</SheetTitle>
               <div className="grid gap-4 p-4">
                 <Link
                   href="#"
