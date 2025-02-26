@@ -42,11 +42,11 @@ export default function Blogs() {
     },
   ];
   return (
-    <section className="container mx-auto flex min-h-[calc(100dvh-65px)] flex-col items-center justify-center py-16">
-      <h1 className="mb-2 text-center text-4xl font-medium">
+    <section className="container mx-auto flex h-full flex-col items-center justify-center py-16">
+      <h1 className="mb-2 px-2 text-center text-2xl font-medium md:text-4xl">
         Insights & Updates
       </h1>
-      <p className="mb-6 text-center text-lg text-foreground/80">
+      <p className="mb-6 px-2 text-center text-foreground/70 md:text-lg">
         Stay ahead of the curve with our latest insights on technology, design,
         and business growth.
       </p>
@@ -102,7 +102,7 @@ function BlogCard(props: BlogCardProps) {
           inactiveZone={0.01}
         />
         <CardHeader>
-          <CardTitle className="line-clamp-2 text-ellipsis">
+          <CardTitle className="line-clamp-2 text-ellipsis text-xl md:text-2xl">
             {props.title}
           </CardTitle>
           <CardDescription className="line-clamp-2 text-ellipsis">

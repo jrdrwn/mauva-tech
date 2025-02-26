@@ -41,11 +41,11 @@ export default function Testimonials() {
     },
   ];
   return (
-    <section className="container mx-auto flex min-h-[calc(100dvh-65px)] flex-col items-center justify-center py-16">
-      <h1 className="mb-2 text-center text-4xl font-medium">
+    <section className="container mx-auto flex h-full flex-col items-center justify-center py-16">
+      <h1 className="mb-2 px-2 text-center text-2xl font-medium md:text-4xl">
         Our Clients&apos; Stories
       </h1>
-      <p className="mb-6 text-center text-lg text-foreground/80">
+      <p className="mb-6 px-2 text-center text-foreground/70 md:text-lg">
         Our clients&apos; success is our greatest achievement. Here&apos;s what
         they have to say.
       </p>

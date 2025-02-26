@@ -38,7 +38,7 @@ function ProjectCard({
         inactiveZone={0.01}
       />
       <CardHeader className="flex-1">
-        <CardTitle>{title}</CardTitle>
+        <CardTitle className="text-xl md:text-2xl">{title}</CardTitle>
         <CardDescription>{description}</CardDescription>
       </CardHeader>
       <CardContent>
@@ -115,11 +115,11 @@ export default function Projects() {
     },
   ];
   return (
-    <section className="container mx-auto min-h-[calc(100dvh-65px)]">
-      <h1 className="mb-2 text-center text-4xl font-medium">
+    <section className="container mx-auto flex h-full flex-col  justify-center py-10">
+      <h1 className="mb-2 px-2 text-center text-2xl font-medium md:text-4xl">
         Our Latest Creations
       </h1>
-      <p className="mb-6 text-center text-lg text-foreground/80">
+      <p className="mb-6 px-2 text-center text-foreground/70 md:text-lg">
         Explore some of our recent projects and see how we&apos;ve helped
         businesses achieve their goals.
       </p>
