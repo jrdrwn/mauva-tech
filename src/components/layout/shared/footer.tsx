@@ -12,10 +12,10 @@ import { MountainIcon } from 'lucide-react';
 export default function Footer() {
   return (
     <footer>
-      <div className="container mx-auto grid grid-cols-1 gap-4 py-20 md:grid-cols-3 lg:grid-cols-5">
+      <div className="container mx-auto grid gap-8 px-2 py-20 sm:grid-cols-2 sm:gap-4  lg:grid-cols-5">
         <div className="col-span-2">
           <MountainIcon size={150} />
-          <h3 className="my-4 scroll-m-20 text-2xl font-semibold tracking-tight">
+          <h3 className="my-4  text-xl font-semibold tracking-tight md:text-2xl">
             From a small team with big dreams to a trusted partner for
             businesses worldwide.
           </h3>
@@ -32,7 +32,7 @@ export default function Footer() {
           </Select>
         </div>
         <div>
-          <h3 className="mb-4 scroll-m-20 text-2xl font-semibold tracking-tight">
+          <h3 className="mb-4  text-xl font-semibold tracking-tight md:text-2xl">
             Menu
           </h3>
           <div className="flex flex-col items-start">
@@ -57,7 +57,7 @@ export default function Footer() {
           </div>
         </div>
         <div>
-          <h3 className="mb-4 scroll-m-20 text-2xl font-semibold tracking-tight">
+          <h3 className="mb-4  text-xl font-semibold tracking-tight md:text-2xl">
             Social
           </h3>
           <div className="flex flex-col items-start">
@@ -76,7 +76,7 @@ export default function Footer() {
           </div>
         </div>
         <div>
-          <h3 className="mb-4 scroll-m-20 text-2xl font-semibold tracking-tight">
+          <h3 className="mb-4  text-xl font-semibold tracking-tight md:text-2xl">
             Contact
           </h3>
           <div className="flex flex-col items-start">
@@ -93,7 +93,7 @@ export default function Footer() {
         </div>
       </div>
       <Separator className="container mx-auto" />
-      <div className="container mx-auto flex items-center justify-between gap-2 py-5">
+      <div className="container mx-auto flex flex-col-reverse flex-wrap items-center justify-center gap-2 py-5 md:flex-row md:justify-between">
         <p className="leading-7 [&:not(:first-child)]:mt-6">
           © 2025 MauvaTech. All rights reserved.
         </p>

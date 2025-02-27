@@ -17,18 +17,20 @@ import { useEffect, useId, useState } from 'react';
 
 export default function AboutUs() {
   return (
-    <section className="container mx-auto flex min-h-[calc(100dvh-65px)] flex-col items-center justify-center py-16">
-      <h1 className="mb-2 text-center text-4xl font-medium">Who We Are</h1>
-      <p className="mb-6 text-center text-lg text-foreground/80">
+    <section className="container mx-auto flex h-full flex-col items-center justify-center py-16">
+      <h1 className="mb-2 px-2 text-center text-2xl font-medium md:text-4xl">
+        Who We Are
+      </h1>
+      <p className="mb-6 px-2 text-center text-foreground/70 md:text-lg">
         Discover how our passion for technology drives us to create solutions
         that make a difference.
       </p>
-      <WobbleCardDemo />
+      <WobbleCardContainer />
     </section>
   );
 }
 
-export function WobbleCardDemo() {
+export function WobbleCardContainer() {
   const people = [
     {
       id: 1,
@@ -67,13 +69,13 @@ export function WobbleCardDemo() {
     },
   ];
   return (
-    <div className="mx-auto grid w-full max-w-7xl grid-cols-1 gap-4 lg:grid-cols-3">
+    <div className="mx-auto grid w-full max-w-7xl grid-cols-1 gap-4 px-2 md:px-0 lg:grid-cols-3">
       <WobbleCard
         containerClassName="col-span-1 lg:col-span-2 h-full  min-h-[500px] lg:min-h-[300px]"
         className=""
       >
         <div className="max-w-lg">
-          <h2 className="text-balance text-left text-base font-semibold tracking-[-0.015em] text-white md:text-xl lg:text-3xl">
+          <h2 className="text-balance text-left text-lg font-semibold tracking-[-0.015em] text-white md:text-xl lg:text-3xl">
             About us
           </h2>
           <p className="mt-4 text-left  text-base/6 text-neutral-200">
@@ -93,7 +95,7 @@ export function WobbleCardDemo() {
       </WobbleCard>
       <Card className="relative col-span-1 flex min-h-[300px] flex-col rounded-2xl ">
         <CardHeader>
-          <CardTitle>Our Team</CardTitle>
+          <CardTitle className="text-xl md:text-2xl">Our Team</CardTitle>
           <CardDescription>
             Meet the people who make it all happen.
           </CardDescription>

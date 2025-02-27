@@ -4,7 +4,7 @@ import { MoveUpRight } from 'lucide-react';
 
 export default function EndCTA() {
   return (
-    <section className="flex min-h-[calc(100dvh-65px)] flex-col items-center justify-center">
+    <section className="flex h-full flex-col items-center justify-center">
       <div className="container relative  mx-auto flex flex-col items-center justify-center overflow-hidden rounded-3xl border-2 border-border bg-secondary/50 py-20 shadow-xl">
         <h1 className="mb-2 text-center text-4xl font-medium text-secondary-foreground">
           Let&apos;s Build Something Amazing Together!

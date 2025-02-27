@@ -8,7 +8,7 @@ export default function Hero() {
   return (
     <section className="flex min-h-[calc(100dvh-65px)] items-center justify-center  bg-grid-small-black/[0.2] dark:bg-grid-small-white/[0.2]">
       <div className="pointer-events-none absolute inset-0 flex items-center justify-center bg-background  [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]"></div>
-      <div className="container mx-auto flex flex-col items-center justify-center">
+      <div className="container mx-auto flex flex-col items-center justify-center px-2">
         <button className="group relative inline-block cursor-pointer rounded-full bg-secondary/75 p-px text-xs font-semibold leading-6 text-secondary-foreground no-underline  shadow-2xl shadow-secondary">
           <span className="absolute inset-0 overflow-hidden rounded-full">
             <span className="absolute inset-0 rounded-full bg-[image:radial-gradient(75%_100%_at_50%_0%,rgba(56,189,248,0.6)_0%,rgba(56,189,248,0)_75%)] opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
@@ -46,11 +46,11 @@ export default function Hero() {
             duration: 0.5,
             ease: [0.4, 0.0, 0.2, 1],
           }}
-          className="mx-auto mt-4 max-w-4xl px-4 text-center text-2xl  font-bold leading-relaxed text-foreground md:text-4xl lg:text-5xl lg:leading-snug"
+          className="mx-auto mt-4 max-w-4xl px-4 text-center text-3xl  font-bold leading-relaxed text-foreground md:text-4xl lg:text-5xl lg:leading-snug"
         >
           Where <Highlight>Vision</Highlight> Meets <Cover>Innovation</Cover>
         </motion.h1>
-        <p className="mx-auto mt-4 max-w-xl text-center text-sm text-foreground/60 md:text-lg">
+        <p className="mx-auto mt-4  max-w-xs  text-center  text-foreground/60 md:max-w-xl md:text-lg">
           We build cutting-edge websites and mobile apps that drive results.
         </p>
         <HoverBorderGradient

@@ -34,11 +34,11 @@ export default function Services() {
     },
   ];
   return (
-    <section className="container mx-auto flex min-h-[calc(100dvh-65px)] flex-col items-center justify-center">
-      <h1 className="mb-2 text-center text-4xl font-medium">
+    <section className="container mx-auto flex h-full flex-col items-center justify-center py-10">
+      <h1 className="mb-2 px-2 text-center text-2xl font-medium md:text-4xl">
         Transforming Ideas into Reality
       </h1>
-      <p className="mb-6 text-center text-lg text-foreground/80">
+      <p className="mb-6 px-2 text-center text-foreground/70 md:text-lg">
         We combine creativity, technology, and strategy to build solutions that
         make an impact.
       </p>
