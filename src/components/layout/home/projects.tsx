@@ -11,6 +11,7 @@ import {
   CardTitle,
 } from '@/components/ui/card';
 import { GlowingEffect } from '@/components/ui/glowing-effect';
+import { ScrollArea, ScrollBar } from '@/components/ui/scroll-area';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { MoveUpRight } from 'lucide-react';
 import Image from 'next/image';
@@ -29,7 +30,7 @@ function ProjectCard({
   category,
 }: ProjectCardProps) {
   return (
-    <Card className="relative flex w-full max-w-96 flex-col">
+    <Card className="relative flex w-full max-w-96 shrink-0 flex-col">
       <GlowingEffect
         spread={40}
         glow={true}
@@ -130,45 +131,56 @@ export default function Projects() {
           <TabsTrigger value="mobile">Mobile</TabsTrigger>
           <TabsTrigger value="ui/ux">UI/UX</TabsTrigger>
         </TabsList>
-        <TabsContent
-          value="all"
-          className="mt-0 flex flex-wrap justify-center gap-4"
-        >
-          {projects.map((project, index) => (
-            <ProjectCard key={index} {...project} />
-          ))}
+        <TabsContent value="all" className="mt-0 w-full">
+          <ScrollArea className="w-full pb-4">
+            <div className="flex w-full gap-4">
+              {projects.map((project, index) => (
+                <ProjectCard key={index} {...project} />
+              ))}
+            </div>
+            <ScrollBar orientation="horizontal" />
+          </ScrollArea>
         </TabsContent>
-        <TabsContent
-          value="website"
-          className="mt-0 flex flex-wrap justify-center gap-4"
-        >
-          {projects
-            .filter((project) => project.category === 'Website')
-            .map((project, index) => (
-              <ProjectCard key={index} {...project} />
-            ))}
+        <TabsContent value="website" className="mt-0 w-full">
+          <ScrollArea className="w-full pb-4">
+            <div className="flex w-full gap-4">
+              {projects
+                .filter((project) => project.category === 'Website')
+                .map((project, index) => (
+                  <ProjectCard key={index} {...project} />
+                ))}
+            </div>
+            <ScrollBar orientation="horizontal" />
+          </ScrollArea>
         </TabsContent>
-        <TabsContent
-          value="mobile"
-          className="mt-0 flex flex-wrap justify-center gap-4"
-        >
-          {projects
-            .filter((project) => project.category === 'Mobile')
-            .map((project, index) => (
-              <ProjectCard key={index} {...project} />
-            ))}
+        <TabsContent value="mobile" className="mt-0 w-full">
+          <ScrollArea className="w-full pb-4">
+            <div className="flex w-full gap-4">
+              {projects
+                .filter((project) => project.category === 'Mobile')
+                .map((project, index) => (
+                  <ProjectCard key={index} {...project} />
+                ))}
+            </div>
+            <ScrollBar orientation="horizontal" />
+          </ScrollArea>
         </TabsContent>
-        <TabsContent
-          value="ui/ux"
-          className="mt-0 flex flex-wrap justify-center gap-4"
-        >
-          {projects
-            .filter((project) => project.category === 'UI/UX')
-            .map((project, index) => (
-              <ProjectCard key={index} {...project} />
-            ))}
+        <TabsContent value="ui/ux" className="mt-0 w-full">
+          <ScrollArea className="w-full pb-4">
+            <div className="flex w-full gap-4">
+              {projects
+                .filter((project) => project.category === 'UI/UX')
+                .map((project, index) => (
+                  <ProjectCard key={index} {...project} />
+                ))}
+            </div>
+            <ScrollBar orientation="horizontal" />
+          </ScrollArea>
         </TabsContent>
       </Tabs>
+      <Button variant={'outline'} className="mx-auto mt-8">
+        View All Projects
+      </Button>
     </section>
   );
 }
