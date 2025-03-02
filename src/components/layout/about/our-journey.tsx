@@ -1,9 +1,9 @@
 import { Timeline } from '@/components/ui/timeline';
 import Image from 'next/image';
-import { ReactElement } from 'react';
+import { ReactNode } from 'react';
 
 export default function OurJourney() {
-  const data: { title: string; content: ReactElement }[] = [
+  const data: { title: string; content: ReactNode }[] = [
     {
       title: '2020 - The Beginning',
       content: (
