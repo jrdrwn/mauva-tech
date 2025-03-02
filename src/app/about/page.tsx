@@ -2,6 +2,7 @@
 
 import OurJourney from '@/components/layout/about/our-journey';
 import VisionMission from '@/components/layout/about/vision-mission';
+import WhatDefinesUs from '@/components/layout/about/what-defines-us';
 import EndCTA from '@/components/layout/shared/end-cta';
 import Footer from '@/components/layout/shared/footer';
 import Header from '@/components/layout/shared/header';
@@ -19,6 +20,7 @@ export default function AboutPage() {
       />
       <VisionMission />
       <OurJourney />
+      <WhatDefinesUs />
       <EndCTA />
       <Footer />
     </>
