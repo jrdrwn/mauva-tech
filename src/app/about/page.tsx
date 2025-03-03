@@ -1,6 +1,7 @@
 'use client';
 
 import OurJourney from '@/components/layout/about/our-journey';
+import Team from '@/components/layout/about/team';
 import VisionMission from '@/components/layout/about/vision-mission';
 import WhatDefinesUs from '@/components/layout/about/what-defines-us';
 import EndCTA from '@/components/layout/shared/end-cta';
@@ -21,6 +22,7 @@ export default function AboutPage() {
       <VisionMission />
       <OurJourney />
       <WhatDefinesUs />
+      <Team />
       <EndCTA />
       <Footer />
     </>
