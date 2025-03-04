@@ -47,7 +47,7 @@ export default function Team() {
         {teamMembers.map((member) => (
           <div
             key={member.name}
-            className="flex flex-col items-center gap-8 md:flex-row md:items-stretch "
+            className="flex flex-col items-center gap-4  md:flex-row md:items-stretch md:gap-8"
           >
             <Image
               src={member.imageUrl}
