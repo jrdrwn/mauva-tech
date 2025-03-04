@@ -8,10 +8,12 @@ export const WobbleCard = ({
   children,
   containerClassName,
   className,
+  animated = true,
 }: {
   children: React.ReactNode;
   containerClassName?: string;
   className?: string;
+  animated?: boolean;
 }) => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [isHovering, setIsHovering] = useState(false);
@@ -32,9 +34,10 @@ export const WobbleCard = ({
         setMousePosition({ x: 0, y: 0 });
       }}
       style={{
-        transform: isHovering
-          ? `translate3d(${mousePosition.x}px, ${mousePosition.y}px, 0) scale3d(1, 1, 1)`
-          : 'translate3d(0px, 0px, 0) scale3d(1, 1, 1)',
+        transform:
+          isHovering && animated
+            ? `translate3d(${mousePosition.x}px, ${mousePosition.y}px, 0) scale3d(1, 1, 1)`
+            : 'translate3d(0px, 0px, 0) scale3d(1, 1, 1)',
         transition: 'transform 0.1s ease-out',
       }}
       className={cn(
@@ -51,9 +54,11 @@ export const WobbleCard = ({
       >
         <motion.div
           style={{
-            transform: isHovering
-              ? `translate3d(${-mousePosition.x}px, ${-mousePosition.y}px, 0) scale3d(1.03, 1.03, 1)`
-              : 'translate3d(0px, 0px, 0) scale3d(1, 1, 1)',
+            transform: animated
+              ? isHovering
+                ? `translate3d(${-mousePosition.x}px, ${-mousePosition.y}px, 0) scale3d(1.03, 1.03, 1)`
+                : 'translate3d(0px, 0px, 0) scale3d(1, 1, 1)'
+              : '',
             transition: 'transform 0.1s ease-out',
           }}
           className={cn('h-full px-4 py-20 sm:px-10', className)}

@@ -6,6 +6,7 @@ const nextConfig: NextConfig = {
     remotePatterns: [
       { hostname: 'cdn.prod.website-files.com' },
       { hostname: 'images.unsplash.com' },
+      { hostname: 'images.pexels.com' },
     ],
   },
 };

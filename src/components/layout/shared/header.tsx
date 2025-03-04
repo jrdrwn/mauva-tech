@@ -30,11 +30,11 @@ export default function Header() {
   const menus = [
     {
       title: 'Home',
-      href: '#',
+      href: '/',
     },
     {
       title: 'About',
-      href: '#',
+      href: '/about',
     },
     {
       title: 'Services',
