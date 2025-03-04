@@ -45,7 +45,10 @@ export default function Team() {
       </p>
       <div className="grid w-full grid-cols-1 gap-x-8 gap-y-12 px-2 md:grid-cols-2">
         {teamMembers.map((member) => (
-          <div key={member.name} className="flex flex-col gap-8 md:flex-row ">
+          <div
+            key={member.name}
+            className="flex flex-col items-center gap-8 md:flex-row md:items-stretch "
+          >
             <Image
               src={member.imageUrl}
               alt={member.name}
@@ -53,7 +56,7 @@ export default function Team() {
               width={600}
               height={600}
             />
-            <div className="flex flex-col items-start">
+            <div className="flex flex-col items-center text-center md:items-start md:text-left">
               <h3 className="text-lg font-semibold">{member.name}</h3>
               <p className="text-sm text-muted-foreground">{member.title}</p>
               <p className="mt-3 line-clamp-2">{member.bio}</p>
