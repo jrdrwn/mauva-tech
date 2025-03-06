@@ -38,7 +38,7 @@ export default function Header() {
     },
     {
       title: 'Services',
-      href: '#',
+      href: '/services',
     },
     {
       title: 'Contact',
