@@ -1,5 +1,6 @@
 'use client';
 
+import WhatWeDo from '@/components/layout/services/what-we-do';
 import EndCTA from '@/components/layout/shared/end-cta';
 import Footer from '@/components/layout/shared/footer';
 import Header from '@/components/layout/shared/header';
@@ -15,6 +16,7 @@ export default function Services() {
         description="From custom websites to mobile apps, we provide tailored solutions that drive growth, efficiency, and innovation. Let us help you transform your ideas into reality."
         cta="Get a Free Consultation"
       />
+      <WhatWeDo />
       <EndCTA />
       <Footer />
     </>
