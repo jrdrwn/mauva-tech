@@ -13,7 +13,7 @@ export default function WhatWeDo() {
         'CMS integration',
         'Responsive design',
         'SEO optimization',
-        'Maintenance and support',
+        'Maintenance',
       ],
     },
     {
@@ -27,7 +27,7 @@ export default function WhatWeDo() {
         'User-friendly designs',
         'API integration',
         'Scalable architecture',
-        'Quality assurance testing',
+        'Quality assurance',
       ],
     },
     {
@@ -51,7 +51,7 @@ export default function WhatWeDo() {
       image: '/support.webp',
       offers: [
         'Regular updates',
-        'Performance monitoring',
+        'Monitoring',
         'Security patches',
         'Content management',
         'Technical support',
