@@ -2,9 +2,11 @@
 
 import { cn } from '@/lib/utils';
 import { motion, useMotionValueEvent, useScroll } from 'framer-motion';
-import { BadgeCheck } from 'lucide-react';
+import { BadgeCheck, MoveUpRight } from 'lucide-react';
 import Image from 'next/image';
 import React, { useRef } from 'react';
+
+import { buttonVariants } from './button';
 
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
@@ -64,7 +66,7 @@ export const StickyScroll = ({
                 animate={{
                   opacity: activeCard === index ? 1 : 0.3,
                 }}
-                className="text-2xl font-bold  "
+                className="mb-2 text-2xl font-medium md:text-4xl"
               >
                 {item.title}
               </motion.h2>
@@ -75,7 +77,7 @@ export const StickyScroll = ({
                 animate={{
                   opacity: activeCard === index ? 1 : 0.3,
                 }}
-                className="mt-4  text-lg text-foreground/70"
+                className="mb-6  text-foreground/70 md:text-lg"
               >
                 {item.description}
               </motion.p>
@@ -86,19 +88,42 @@ export const StickyScroll = ({
                 animate={{
                   opacity: activeCard === index ? 1 : 0.3,
                 }}
-                className="mt-4 grid grid-cols-2 gap-x-1 gap-y-2"
+                className="grid grid-cols-2 gap-x-1 gap-y-2"
               >
                 {item.offers.map((offer, index) => (
                   <motion.span
                     key={offer + index}
-                    className="text-lg text-foreground/70"
+                    className="text-foreground/70 md:text-lg"
                   >
                     <BadgeCheck className="mr-2 inline-block" size={20} />
                     {offer}
                   </motion.span>
                 ))}
               </motion.div>
-              <div className="mt-4 w-full overflow-hidden  rounded-md   lg:hidden">
+              <motion.button
+                initial={{
+                  opacity: 0,
+                }}
+                animate={{
+                  opacity: activeCard === index ? 1 : 0.3,
+                }}
+                className={buttonVariants({
+                  variant: 'outline',
+                  className: 'mt-4 group/button',
+                })}
+              >
+                Learn More
+                <MoveUpRight className="w-4 transition-all duration-300 group-hover/button:size-5 group-hover/button:rotate-45" />
+              </motion.button>
+              <motion.div
+                initial={{
+                  opacity: 0,
+                }}
+                animate={{
+                  opacity: activeCard === index ? 1 : 0.3,
+                }}
+                className="mt-4 w-full overflow-hidden  rounded-md   lg:hidden"
+              >
                 <Image
                   src={item.image}
                   alt="A Project"
@@ -106,7 +131,7 @@ export const StickyScroll = ({
                   height={1024}
                   className="aspect-square size-full object-cover"
                 />
-              </div>
+              </motion.div>
             </div>
           ))}
         </div>
