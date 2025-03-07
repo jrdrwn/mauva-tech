@@ -2,6 +2,8 @@
 
 import { cn } from '@/lib/utils';
 import { motion, useMotionValueEvent, useScroll } from 'framer-motion';
+import { BadgeCheck } from 'lucide-react';
+import Image from 'next/image';
 import React, { useRef } from 'react';
 
 /* eslint-disable @typescript-eslint/no-explicit-any */
@@ -13,7 +15,8 @@ export const StickyScroll = ({
   content: {
     title: string;
     description: string;
-    content?: React.ReactNode | any;
+    image: string;
+    offers: string[];
   }[];
   contentClassName?: string;
 }) => {
@@ -52,7 +55,7 @@ export const StickyScroll = ({
           {content.map((item, index) => (
             <div
               key={item.title + index}
-              className="top-[calc(100%-28rem)] md:mt-96 md:h-96"
+              className="top-[calc(100%-28rem)] lg:mt-96 lg:h-96"
             >
               <motion.h2
                 initial={{
@@ -61,7 +64,7 @@ export const StickyScroll = ({
                 animate={{
                   opacity: activeCard === index ? 1 : 0.3,
                 }}
-                className="text-2xl font-bold text-slate-100 "
+                className="text-2xl font-bold  "
               >
                 {item.title}
               </motion.h2>
@@ -72,12 +75,37 @@ export const StickyScroll = ({
                 animate={{
                   opacity: activeCard === index ? 1 : 0.3,
                 }}
-                className="mt-10  text-lg text-slate-300"
+                className="mt-4  text-lg text-foreground/70"
               >
                 {item.description}
               </motion.p>
-              <div className="mt-4 block h-48 w-full overflow-hidden  rounded-md bg-white  md:hidden">
-                {item.content ?? null}
+              <motion.div
+                initial={{
+                  opacity: 0,
+                }}
+                animate={{
+                  opacity: activeCard === index ? 1 : 0.3,
+                }}
+                className="mt-4 grid grid-cols-2 gap-x-1 gap-y-2"
+              >
+                {item.offers.map((offer, index) => (
+                  <motion.span
+                    key={offer + index}
+                    className="text-lg text-foreground/70"
+                  >
+                    <BadgeCheck className="mr-2 inline-block" size={20} />
+                    {offer}
+                  </motion.span>
+                ))}
+              </motion.div>
+              <div className="mt-4 w-full overflow-hidden  rounded-md   lg:hidden">
+                <Image
+                  src={item.image}
+                  alt="A Project"
+                  width={1024}
+                  height={1024}
+                  className="aspect-square size-full object-cover"
+                />
               </div>
             </div>
           ))}
@@ -85,11 +113,17 @@ export const StickyScroll = ({
       </div>
       <div
         className={cn(
-          'hidden md:block h-[30rem] w-full aspect-square rounded-md bg-white sticky top-[calc(100%-32rem)]  overflow-hidden',
+          'hidden lg:block h-[30rem] w-full aspect-square rounded-md  sticky top-[calc(100%-32rem)]  overflow-hidden',
           contentClassName,
         )}
       >
-        {content[activeCard].content ?? null}
+        <Image
+          src={content[activeCard].image}
+          alt="A Project"
+          width={1024}
+          height={1024}
+          className="aspect-square size-full object-cover"
+        />
       </div>
     </motion.div>
   );

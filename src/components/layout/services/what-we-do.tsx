@@ -1,53 +1,62 @@
 import { StickyScroll } from '@/components/ui/sticky-scroll-reveal';
-import Image from 'next/image';
 
 export default function WhatWeDo() {
   const content = [
     {
-      title: 'Collaborative Editing',
+      title: 'Web Development',
       description:
-        'Work together in real time with your team, clients, and stakeholders. Collaborate on documents, share ideas, and make decisions quickly. With our platform, you can streamline your workflow and increase productivity.',
-      content: (
-        <div className="flex size-full items-center justify-center bg-[linear-gradient(to_bottom_right,var(--cyan-500),var(--emerald-500))] text-white">
-          Collaborative Editing
-        </div>
-      ),
+        'We build responsive, scalable, and user-friendly websites tailored to your business needs. From company profiles to e-commerce platforms, we ensure your site is fast, secure, and optimized for growth. Let us help you create a digital presence that drives results.',
+      image: '/website.webp',
+      offers: [
+        'Custom website',
+        'E-commerce',
+        'CMS integration',
+        'Responsive design',
+        'SEO optimization',
+        'Maintenance and support',
+      ],
     },
     {
-      title: 'Real time changes',
+      title: 'Mobile App Development',
       description:
-        'See changes as they happen. With our platform, you can track every modification in real time. No more confusion about the latest version of your project. Say goodbye to the chaos of version control and embrace the simplicity of real-time updates.',
-      content: (
-        <div className="flex size-full  items-center justify-center text-white">
-          <Image
-            src="https://images.unsplash.com/photo-1595675024853-0f3ec9098ac7?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&dl=niclas-illg-FJ5e_2f96h4-unsplash.jpg&w=640"
-            alt="A Project"
-            width={300}
-            height={300}
-            className="size-full object-cover"
-          />
-        </div>
-      ),
+        'From concept to launch, we create mobile apps that are intuitive, engaging, and built to scale. Whether for iOS, Android, or cross-platform, we deliver solutions that stand out and keep users coming back for more.',
+      image: '/mobile.webp',
+      offers: [
+        'iOS & Android',
+        'Cross-platform',
+        'User-friendly designs',
+        'API integration',
+        'Scalable architecture',
+        'Quality assurance testing',
+      ],
     },
     {
-      title: 'Version control',
+      title: 'UI/UX Design',
       description:
-        "Experience real-time updates and never stress about version control again. Our platform ensures that you're always working on the most recent version of your project, eliminating the need for constant manual updates. Stay in the loop, keep your team aligned, and maintain the flow of your work without any interruptions.",
-      content: (
-        <div className="flex size-full items-center justify-center bg-[linear-gradient(to_bottom_right,var(--orange-500),var(--yellow-500))] text-white">
-          Version control
-        </div>
-      ),
+        'We design intuitive and visually appealing interfaces that enhance user experience and drive engagement. Our focus is on creating designs that are not only beautiful but also functional and user-centric.',
+      image: '/design.webp',
+      offers: [
+        'User research',
+        'Wireframing',
+        'Prototyping',
+        'User testing',
+        'Responsive design',
+        'Design systems',
+      ],
     },
     {
-      title: 'Running out of content',
+      title: 'Maintenance & Support',
       description:
-        "Experience real-time updates and never stress about version control again. Our platform ensures that you're always working on the most recent version of your project, eliminating the need for constant manual updates. Stay in the loop, keep your team aligned, and maintain the flow of your work without any interruptions.",
-      content: (
-        <div className="flex size-full items-center justify-center bg-[linear-gradient(to_bottom_right,var(--cyan-500),var(--emerald-500))] text-white">
-          Running out of content
-        </div>
-      ),
+        'We ensure your systems run smoothly with reliable support, updates, and optimization services. From bug fixes to security monitoring, we’re here to keep your digital solutions performing at their best.',
+      image: '/support.webp',
+      offers: [
+        'Regular updates',
+        'Performance monitoring',
+        'Security patches',
+        'Content management',
+        'Technical support',
+        'Backup and recovery',
+      ],
     },
   ];
   return (
