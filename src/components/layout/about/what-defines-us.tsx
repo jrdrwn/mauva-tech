@@ -378,4 +378,3 @@ export default function WhatDefinesUs() {
     </section>
   );
 }
-
