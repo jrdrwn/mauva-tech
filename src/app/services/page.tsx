@@ -1,5 +1,6 @@
 'use client';
 
+import Testimonial from '@/components/layout/services/testimonial';
 import WhatWeDo from '@/components/layout/services/what-we-do';
 import EndCTA from '@/components/layout/shared/end-cta';
 import Footer from '@/components/layout/shared/footer';
@@ -17,6 +18,7 @@ export default function Services() {
         cta="Get a Free Consultation"
       />
       <WhatWeDo />
+      <Testimonial />
       <EndCTA />
       <Footer />
     </>
