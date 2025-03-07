@@ -3,58 +3,71 @@
  * @see https://v0.dev/t/obus3LxsAfo
  * Documentation: https://v0.dev/docs#integrating-generated-code-into-your-nextjs-app
  */
-import { Button } from "@/components/ui/button";
+import { Button } from '@/components/ui/button';
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
-import { Input } from "@/components/ui/inputv2";
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import Link from "next/link";
-import { ModeToggle } from "./ui/ModeToggle";
+} from '@/components/ui/dropdown-menu';
+import { Input } from '@/components/ui/input';
+import {
+  NavigationMenu,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+  navigationMenuTriggerStyle,
+} from '@/components/ui/navigation-menu';
+import {
+  Sheet,
+  SheetContent,
+  SheetTitle,
+  SheetTrigger,
+} from '@/components/ui/sheet';
+import { ModeToggle } from '@/components/ui/theme-toggle';
+import Link from 'next/link';
 
 export default function Header() {
+  const menus = [
+    {
+      title: 'Home',
+      href: '/',
+    },
+    {
+      title: 'About',
+      href: '/about',
+    },
+    {
+      title: 'Services',
+      href: '/services',
+    },
+    {
+      title: 'Contact',
+      href: '#',
+    },
+  ];
   return (
-    <header className="sticky top-0 z-50 w-full border-b bg-background border-border">
-      <div className="container mx-auto flex h-16 max-w-6xl items-center justify-between px-4 md:px-6">
+    <header className="sticky top-0 z-50 w-full border-b border-border bg-background">
+      <div className="container mx-auto flex h-16  items-center justify-between px-2">
         <Link href="#" className="flex items-center gap-2" prefetch={false}>
-          <MountainIcon className="h-6 w-6" />
+          <MountainIcon className="size-6" />
           <span className="sr-only">Mauva Tech</span>
         </Link>
-        <nav className="hidden items-center gap-6 text-sm font-medium md:flex">
-          <Link
-            href="#"
-            className="text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-50"
-            prefetch={false}
-          >
-            Home
-          </Link>
-          <Link
-            href="#"
-            className="text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-50"
-            prefetch={false}
-          >
-            About
-          </Link>
-          <Link
-            href="#"
-            className="text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-50"
-            prefetch={false}
-          >
-            Services
-          </Link>
-          <Link
-            href="/contact"
-            className="text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-50"
-            prefetch={false}
-          >
-            Contact
-          </Link>
-        </nav>
+        <NavigationMenu>
+          <NavigationMenuList className="hidden items-center gap-6 text-sm font-medium md:flex">
+            {menus.map((menu) => (
+              <NavigationMenuItem key={menu.title}>
+                <Link href={menu.href} prefetch={false} legacyBehavior passHref>
+                  <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                    {menu.title}
+                  </NavigationMenuLink>
+                </Link>
+              </NavigationMenuItem>
+            ))}
+          </NavigationMenuList>
+        </NavigationMenu>
         <div className="flex items-center gap-4">
           <div className="hidden items-center gap-2 text-sm font-medium md:flex">
-            <PhoneIcon className="h-5 w-5 text-gray-500 dark:text-gray-400" />
+            <PhoneIcon className="size-5 text-gray-500 dark:text-gray-400" />
             <span className="text-gray-500 dark:text-gray-400">
               123-456-7890
             </span>
@@ -62,17 +75,17 @@ export default function Header() {
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
               <Button variant="ghost" size="icon" className="rounded-full">
-                <SearchIcon className="h-5 w-5 text-gray-500 dark:text-gray-400" />
+                <SearchIcon className="size-5 text-gray-500 dark:text-gray-400" />
                 <span className="sr-only">Search</span>
               </Button>
             </DropdownMenuTrigger>
             <DropdownMenuContent className="w-[300px] p-4">
               <div className="relative">
-                <SearchIcon className="absolute left-2.5 top-2.5 h-4 w-4 text-gray-500 dark:text-gray-400" />
+                <SearchIcon className="absolute left-2.5 top-2.5 size-4 text-gray-500 dark:text-gray-400" />
                 <Input
                   type="search"
                   placeholder="Search..."
-                  className="pl-8 w-full"
+                  className="w-full pl-8"
                 />
               </div>
             </DropdownMenuContent>
@@ -85,41 +98,32 @@ export default function Header() {
                 size="icon"
                 className="rounded-full md:hidden"
               >
-                <MenuIcon className="h-5 w-5 text-gray-500 dark:text-gray-400" />
+                <MenuIcon className="size-5 text-gray-500 dark:text-gray-400" />
                 <span className="sr-only">Toggle navigation menu</span>
               </Button>
             </SheetTrigger>
             <SheetContent side="left" className="md:hidden">
-              <div className="grid gap-4 p-4">
-                <Link
-                  href="#"
-                  className="text-sm font-medium text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-50"
-                  prefetch={false}
-                >
-                  Home
-                </Link>
-                <Link
-                  href="#"
-                  className="text-sm font-medium text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-50"
-                  prefetch={false}
-                >
-                  About
-                </Link>
-                <Link
-                  href="#"
-                  className="text-sm font-medium text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-50"
-                  prefetch={false}
-                >
-                  Services
-                </Link>
-                <Link
-                  href="#"
-                  className="text-sm font-medium text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-50"
-                  prefetch={false}
-                >
-                  Contact
-                </Link>
-              </div>
+              <SheetTitle>Menu</SheetTitle>
+              <NavigationMenu>
+                <NavigationMenuList className="grid gap-4 p-4">
+                  {menus.map((menu) => (
+                    <NavigationMenuItem key={menu.title}>
+                      <Link
+                        href={menu.href}
+                        prefetch={false}
+                        legacyBehavior
+                        passHref
+                      >
+                        <NavigationMenuLink
+                          className={navigationMenuTriggerStyle()}
+                        >
+                          {menu.title}
+                        </NavigationMenuLink>
+                      </Link>
+                    </NavigationMenuItem>
+                  ))}
+                </NavigationMenuList>
+              </NavigationMenu>
             </SheetContent>
           </Sheet>
         </div>
