@@ -42,7 +42,7 @@ export default function Header() {
     },
     {
       title: 'Contact',
-      href: '#',
+      href: '/contact',
     },
   ];
   return (
