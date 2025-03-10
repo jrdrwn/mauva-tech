@@ -131,11 +131,11 @@ export default function Projects() {
           <TabsTrigger value="mobile">Mobile</TabsTrigger>
           <TabsTrigger value="ui/ux">UI/UX</TabsTrigger>
         </TabsList>
-        <TabsContent value="all" className="relative mt-0 w-full">
-          <div className="absolute inset-y-0 left-0 z-10 w-[15%] bg-gradient-to-r from-background to-transparent" />
-          <div className="absolute inset-y-0 right-0 z-10 w-[15%] bg-gradient-to-l from-background to-transparent" />
+        <TabsContent value="all" className="relative mt-0 w-full ">
+          <div className="absolute inset-y-0 left-0 z-10 w-[5%] bg-gradient-to-r from-background to-transparent" />
+          <div className="absolute inset-y-0 right-0 z-10 w-[5%] bg-gradient-to-l from-background to-transparent" />
           <ScrollContainer
-            className="flex w-full cursor-grab gap-x-4  overflow-x-scroll  pb-4 pr-4  "
+            className="flex w-full cursor-grab gap-x-4  overflow-x-scroll  px-4 pb-4  "
             horizontal={true}
             vertical={false}
             hideScrollbars={false}
@@ -146,10 +146,10 @@ export default function Projects() {
           </ScrollContainer>
         </TabsContent>
         <TabsContent value="website" className="relative mt-0 w-full">
-          <div className="absolute inset-y-0 left-0 z-10 w-[15%] bg-gradient-to-r from-background to-transparent" />
-          <div className="absolute inset-y-0 right-0 z-10 w-[15%] bg-gradient-to-l from-background to-transparent" />
+          <div className="absolute inset-y-0 left-0 z-10 w-[5%] bg-gradient-to-r from-background to-transparent" />
+          <div className="absolute inset-y-0 right-0 z-10 w-[5%] bg-gradient-to-l from-background to-transparent" />
           <ScrollContainer
-            className="flex w-full cursor-grab gap-x-4  overflow-x-scroll  pb-4 pr-4  "
+            className="flex w-full cursor-grab gap-x-4  overflow-x-scroll  px-4 pb-4  "
             horizontal={true}
             vertical={false}
             hideScrollbars={false}
@@ -162,10 +162,10 @@ export default function Projects() {
           </ScrollContainer>
         </TabsContent>
         <TabsContent value="mobile" className="relative mt-0 w-full">
-          <div className="absolute inset-y-0 left-0 z-10 w-[15%] bg-gradient-to-r from-background to-transparent" />
-          <div className="absolute inset-y-0 right-0 z-10 w-[15%] bg-gradient-to-l from-background to-transparent" />
+          <div className="absolute inset-y-0 left-0 z-10 w-[5%] bg-gradient-to-r from-background to-transparent" />
+          <div className="absolute inset-y-0 right-0 z-10 w-[5%] bg-gradient-to-l from-background to-transparent" />
           <ScrollContainer
-            className="flex w-full cursor-grab gap-x-4  overflow-x-scroll  pb-4 pr-4  "
+            className="flex w-full cursor-grab gap-x-4  overflow-x-scroll  px-4 pb-4  "
             horizontal={true}
             vertical={false}
             hideScrollbars={false}
@@ -178,10 +178,10 @@ export default function Projects() {
           </ScrollContainer>
         </TabsContent>
         <TabsContent value="ui/ux" className="relative mt-0 w-full">
-          <div className="absolute inset-y-0 left-0 z-10 w-[15%] bg-gradient-to-r from-background to-transparent" />
-          <div className="absolute inset-y-0 right-0 z-10 w-[15%] bg-gradient-to-l from-background to-transparent" />
+          <div className="absolute inset-y-0 left-0 z-10 w-[5%] bg-gradient-to-r from-background to-transparent" />
+          <div className="absolute inset-y-0 right-0 z-10 w-[5%] bg-gradient-to-l from-background to-transparent" />
           <ScrollContainer
-            className="flex w-full cursor-grab gap-x-4  overflow-x-scroll  pb-4 pr-4  "
+            className="flex w-full cursor-grab gap-x-4  overflow-x-scroll  px-4 pb-4  "
             horizontal={true}
             vertical={false}
             hideScrollbars={false}
