@@ -69,17 +69,21 @@ export default function Blogs() {
         Stay ahead of the curve with our latest insights on technology, design,
         and business growth.
       </p>
-      <ScrollContainer
-        className="flex w-full cursor-grab gap-x-4  overflow-x-scroll  pb-4"
-        horizontal={true}
-        vertical={false}
-        hideScrollbars={false}
-        nativeMobileScroll={true}
-      >
-        {blogs.map((blog) => (
-          <BlogCard key={blog.title} {...blog} />
-        ))}
-      </ScrollContainer>
+      <div className="relative w-full">
+        <div className="absolute inset-y-0 left-0 z-10 w-[15%] bg-gradient-to-r from-background to-transparent" />
+        <div className="absolute inset-y-0 right-0 z-10 w-[15%] bg-gradient-to-l from-background to-transparent" />
+        <ScrollContainer
+          className="relative flex w-full cursor-grab  gap-x-4  overflow-x-scroll pb-4"
+          horizontal={true}
+          vertical={false}
+          hideScrollbars={false}
+          nativeMobileScroll={true}
+        >
+          {blogs.map((blog) => (
+            <BlogCard key={blog.title} {...blog} />
+          ))}
+        </ScrollContainer>
+      </div>
       <Button variant={'outline'} className="mx-auto mt-8">
         View All Blogs
       </Button>
