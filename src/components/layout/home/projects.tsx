@@ -11,10 +11,10 @@ import {
   CardTitle,
 } from '@/components/ui/card';
 import { GlowingEffect } from '@/components/ui/glowing-effect';
-import { ScrollArea, ScrollBar } from '@/components/ui/scroll-area';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { MoveUpRight } from 'lucide-react';
 import Image from 'next/image';
+import ScrollContainer from 'react-indiana-drag-scroll';
 
 interface ProjectCardProps {
   title: string;
@@ -132,50 +132,58 @@ export default function Projects() {
           <TabsTrigger value="ui/ux">UI/UX</TabsTrigger>
         </TabsList>
         <TabsContent value="all" className="mt-0 w-full">
-          <ScrollArea className="w-full pb-4">
-            <div className="flex w-full gap-4">
-              {projects.map((project, index) => (
-                <ProjectCard key={index} {...project} />
-              ))}
-            </div>
-            <ScrollBar orientation="horizontal" />
-          </ScrollArea>
+          <ScrollContainer
+            className="flex w-full cursor-grab gap-x-4  overflow-x-scroll  pb-4 pr-4  "
+            horizontal={true}
+            vertical={false}
+            hideScrollbars={false}
+          >
+            {projects.map((project, index) => (
+              <ProjectCard key={index} {...project} />
+            ))}
+          </ScrollContainer>
         </TabsContent>
         <TabsContent value="website" className="mt-0 w-full">
-          <ScrollArea className="w-full pb-4">
-            <div className="flex w-full gap-4">
-              {projects
-                .filter((project) => project.category === 'Website')
-                .map((project, index) => (
-                  <ProjectCard key={index} {...project} />
-                ))}
-            </div>
-            <ScrollBar orientation="horizontal" />
-          </ScrollArea>
+          <ScrollContainer
+            className="flex w-full cursor-grab gap-x-4  overflow-x-scroll  pb-4 pr-4  "
+            horizontal={true}
+            vertical={false}
+            hideScrollbars={false}
+          >
+            {projects
+              .filter((project) => project.category === 'Website')
+              .map((project, index) => (
+                <ProjectCard key={index} {...project} />
+              ))}
+          </ScrollContainer>
         </TabsContent>
         <TabsContent value="mobile" className="mt-0 w-full">
-          <ScrollArea className="w-full pb-4">
-            <div className="flex w-full gap-4">
-              {projects
-                .filter((project) => project.category === 'Mobile')
-                .map((project, index) => (
-                  <ProjectCard key={index} {...project} />
-                ))}
-            </div>
-            <ScrollBar orientation="horizontal" />
-          </ScrollArea>
+          <ScrollContainer
+            className="flex w-full cursor-grab gap-x-4  overflow-x-scroll  pb-4 pr-4  "
+            horizontal={true}
+            vertical={false}
+            hideScrollbars={false}
+          >
+            {projects
+              .filter((project) => project.category === 'Mobile')
+              .map((project, index) => (
+                <ProjectCard key={index} {...project} />
+              ))}
+          </ScrollContainer>
         </TabsContent>
         <TabsContent value="ui/ux" className="mt-0 w-full">
-          <ScrollArea className="w-full pb-4">
-            <div className="flex w-full gap-4">
-              {projects
-                .filter((project) => project.category === 'UI/UX')
-                .map((project, index) => (
-                  <ProjectCard key={index} {...project} />
-                ))}
-            </div>
-            <ScrollBar orientation="horizontal" />
-          </ScrollArea>
+          <ScrollContainer
+            className="flex w-full cursor-grab gap-x-4  overflow-x-scroll  pb-4 pr-4  "
+            horizontal={true}
+            vertical={false}
+            hideScrollbars={false}
+          >
+            {projects
+              .filter((project) => project.category === 'UI/UX')
+              .map((project, index) => (
+                <ProjectCard key={index} {...project} />
+              ))}
+          </ScrollContainer>
         </TabsContent>
       </Tabs>
       <Button variant={'outline'} className="mx-auto mt-8">

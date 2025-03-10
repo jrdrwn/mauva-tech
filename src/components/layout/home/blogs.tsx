@@ -8,9 +8,9 @@ import {
   CardTitle,
 } from '@/components/ui/card';
 import { GlowingEffect } from '@/components/ui/glowing-effect';
-import { ScrollArea, ScrollBar } from '@/components/ui/scroll-area';
 import { MoveUpRight } from 'lucide-react';
 import Image from 'next/image';
+import ScrollContainer from 'react-indiana-drag-scroll';
 
 export default function Blogs() {
   const blogs = [
@@ -69,14 +69,17 @@ export default function Blogs() {
         Stay ahead of the curve with our latest insights on technology, design,
         and business growth.
       </p>
-      <ScrollArea className="w-full">
-        <div className="flex w-full gap-x-4 pb-4 pr-4">
-          {blogs.map((blog) => (
-            <BlogCard key={blog.title} {...blog} />
-          ))}
-        </div>
-        <ScrollBar orientation="horizontal" />
-      </ScrollArea>
+      <ScrollContainer
+        className="flex w-full cursor-grab gap-x-4  overflow-x-scroll  pb-4"
+        horizontal={true}
+        vertical={false}
+        hideScrollbars={false}
+        nativeMobileScroll={true}
+      >
+        {blogs.map((blog) => (
+          <BlogCard key={blog.title} {...blog} />
+        ))}
+      </ScrollContainer>
       <Button variant={'outline'} className="mx-auto mt-8">
         View All Blogs
       </Button>
@@ -94,7 +97,7 @@ interface BlogCardProps {
 
 function BlogCard(props: BlogCardProps) {
   return (
-    <div className="w-96">
+    <div className="w-96 min-w-96">
       <div className="relative overflow-hidden rounded-lg">
         <Image
           alt="An Image"
