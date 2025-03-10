@@ -25,6 +25,7 @@ import {
 } from '@/components/ui/sheet';
 import { ModeToggle } from '@/components/ui/theme-toggle';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 
 export default function Header() {
   const menus = [
@@ -45,6 +46,9 @@ export default function Header() {
       href: '/contact',
     },
   ];
+
+  const pathname = usePathname();
+
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border bg-background">
       <div className="container mx-auto flex h-16  items-center justify-between px-2">
@@ -57,7 +61,10 @@ export default function Header() {
             {menus.map((menu) => (
               <NavigationMenuItem key={menu.title}>
                 <Link href={menu.href} prefetch={false} legacyBehavior passHref>
-                  <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                  <NavigationMenuLink
+                    className={navigationMenuTriggerStyle()}
+                    active={pathname === menu.href}
+                  >
                     {menu.title}
                   </NavigationMenuLink>
                 </Link>
@@ -116,6 +123,7 @@ export default function Header() {
                       >
                         <NavigationMenuLink
                           className={navigationMenuTriggerStyle()}
+                          active={pathname === menu.href}
                         >
                           {menu.title}
                         </NavigationMenuLink>
