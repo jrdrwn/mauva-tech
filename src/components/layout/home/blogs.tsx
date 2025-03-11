@@ -8,6 +8,7 @@ import {
   CardTitle,
 } from '@/components/ui/card';
 import { GlowingEffect } from '@/components/ui/glowing-effect';
+import { GridLayout } from '@/components/ui/grid-layout';
 import { MoveUpRight } from 'lucide-react';
 import Image from 'next/image';
 import ScrollContainer from 'react-indiana-drag-scroll';
@@ -63,7 +64,18 @@ export default function Blogs() {
   return (
     <section className="container mx-auto flex h-full flex-col items-center justify-center py-16">
       <h1 className="mb-2 px-2 text-center text-2xl font-medium md:text-4xl">
-        Insights & Updates
+        <GridLayout
+          crosshairs={{
+            topLeft: true,
+            topRight: true,
+            bottomLeft: true,
+            bottomRight: true,
+          }}
+          lineVariant="none"
+          className="mx-auto max-w-max p-2"
+        >
+          Insights & Updates
+        </GridLayout>
       </h1>
       <p className="mb-6 px-2 text-center text-foreground/70 md:text-lg">
         Stay ahead of the curve with our latest insights on technology, design,

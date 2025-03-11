@@ -1,5 +1,6 @@
 import { Avatar, AvatarFallback } from '@/components/ui/avatar';
 import { Button } from '@/components/ui/button';
+import { GridLayout } from '@/components/ui/grid-layout';
 import Marquee from '@/components/ui/marquee';
 import Link from 'next/link';
 import { ComponentProps } from 'react';
@@ -65,7 +66,18 @@ const Testimonial = () => (
   <section className="container mx-auto  py-16">
     <div className=" flex h-full flex-col items-center justify-center">
       <h1 className="mb-2 px-2 text-center text-2xl font-medium md:text-4xl">
-        Our Clients&apos; Stories
+        <GridLayout
+          crosshairs={{
+            topLeft: true,
+            topRight: true,
+            bottomLeft: true,
+            bottomRight: true,
+          }}
+          lineVariant="none"
+          className="mx-auto max-w-max p-2"
+        >
+          Our Clients&apos; Stories
+        </GridLayout>
       </h1>
       <p className="mb-6 px-2 text-center text-foreground/70 md:text-lg">
         Our clients&apos; success is our greatest achievement. Here&apos;s what

@@ -11,6 +11,7 @@ import {
   CardTitle,
 } from '@/components/ui/card';
 import { GlowingEffect } from '@/components/ui/glowing-effect';
+import { GridLayout } from '@/components/ui/grid-layout';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { MoveUpRight } from 'lucide-react';
 import Image from 'next/image';
@@ -118,7 +119,18 @@ export default function Projects() {
   return (
     <section className="container mx-auto flex h-full flex-col  justify-center py-10">
       <h1 className="mb-2 px-2 text-center text-2xl font-medium md:text-4xl">
-        Our Latest Creations
+        <GridLayout
+          crosshairs={{
+            topLeft: true,
+            topRight: true,
+            bottomLeft: true,
+            bottomRight: true,
+          }}
+          lineVariant="none"
+          className="mx-auto max-w-max p-2"
+        >
+          Our Latest Creations
+        </GridLayout>
       </h1>
       <p className="mb-6 px-2 text-center text-foreground/70 md:text-lg">
         Explore some of our recent projects and see how we&apos;ve helped

@@ -1,3 +1,4 @@
+import { GridLayout } from '@/components/ui/grid-layout';
 import { Timeline } from '@/components/ui/timeline';
 import Image from 'next/image';
 import { ReactNode } from 'react';
@@ -105,7 +106,18 @@ export default function OurJourney() {
   return (
     <section className="container mx-auto flex h-full flex-col items-center justify-center pb-72 pt-20">
       <h2 className="mb-2 px-2 text-center text-2xl font-medium md:text-4xl">
-        Our Journey
+        <GridLayout
+          crosshairs={{
+            topLeft: true,
+            topRight: true,
+            bottomLeft: true,
+            bottomRight: true,
+          }}
+          lineVariant="none"
+          className="mx-auto max-w-max p-2"
+        >
+          Our Journey
+        </GridLayout>
       </h2>
       <p className="mb-6 px-2 text-center text-foreground/70 md:text-lg">
         We started as a small team with big dreams and have grown into a trusted

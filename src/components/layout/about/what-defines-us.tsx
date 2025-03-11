@@ -1,6 +1,7 @@
 'use client';
 
 import { BentoGrid, BentoGridItem } from '@/components/ui/bento-grid';
+import { GridLayout } from '@/components/ui/grid-layout';
 import { cn } from '@/lib/utils';
 import {
   IconBoxAlignRightFilled,
@@ -357,7 +358,18 @@ export default function WhatDefinesUs() {
   return (
     <section className="container mx-auto flex h-full flex-col items-center justify-center py-16">
       <h1 className="mb-2 px-2 text-center text-2xl font-medium md:text-4xl">
-        What Defines Us?
+        <GridLayout
+          crosshairs={{
+            topLeft: true,
+            topRight: true,
+            bottomLeft: true,
+            bottomRight: true,
+          }}
+          lineVariant="none"
+          className="mx-auto max-w-max p-2"
+        >
+          What Defines Us?
+        </GridLayout>
       </h1>
       <p className="mb-6 px-2 text-center text-foreground/70 md:text-lg">
         Discover how our passion for technology drives us to create solutions
