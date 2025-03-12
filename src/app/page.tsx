@@ -7,6 +7,7 @@ import Projects from '@/components/layout/home/projects';
 import Services from '@/components/layout/home/services';
 import Testimonials from '@/components/layout/home/tesminonials';
 import EndCTA from '@/components/layout/shared/end-cta';
+import FAQSection from '@/components/layout/shared/faq';
 import Footer from '@/components/layout/shared/footer';
 import Header from '@/components/layout/shared/header';
 
@@ -20,6 +21,7 @@ export default function Home() {
       <Testimonials />
       <AboutUs />
       <Blogs />
+      <FAQSection />
       <EndCTA />
       <Footer />
     </>

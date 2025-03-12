@@ -8,9 +8,10 @@ import {
   CardTitle,
 } from '@/components/ui/card';
 import { GlowingEffect } from '@/components/ui/glowing-effect';
-import { ScrollArea, ScrollBar } from '@/components/ui/scroll-area';
+import { GridLayout } from '@/components/ui/grid-layout';
 import { MoveUpRight } from 'lucide-react';
 import Image from 'next/image';
+import ScrollContainer from 'react-indiana-drag-scroll';
 
 export default function Blogs() {
   const blogs = [
@@ -63,20 +64,38 @@ export default function Blogs() {
   return (
     <section className="container mx-auto flex h-full flex-col items-center justify-center py-16">
       <h1 className="mb-2 px-2 text-center text-2xl font-medium md:text-4xl">
-        Insights & Updates
+        <GridLayout
+          crosshairs={{
+            topLeft: true,
+            topRight: true,
+            bottomLeft: true,
+            bottomRight: true,
+          }}
+          lineVariant="none"
+          className="mx-auto max-w-max p-2"
+        >
+          Insights & Updates
+        </GridLayout>
       </h1>
       <p className="mb-6 px-2 text-center text-foreground/70 md:text-lg">
         Stay ahead of the curve with our latest insights on technology, design,
         and business growth.
       </p>
-      <ScrollArea className="w-full">
-        <div className="flex w-full gap-x-4 pb-4 pr-4">
+      <div className="relative w-full">
+        <div className="absolute inset-y-0 left-0 z-10 w-[5%] bg-gradient-to-r from-background to-transparent" />
+        <div className="absolute inset-y-0 right-0 z-10 w-[5%] bg-gradient-to-l from-background to-transparent" />
+        <ScrollContainer
+          className="relative flex w-full cursor-grab  gap-x-4  overflow-x-scroll px-4 pb-4"
+          horizontal={true}
+          vertical={false}
+          hideScrollbars={false}
+          nativeMobileScroll={true}
+        >
           {blogs.map((blog) => (
             <BlogCard key={blog.title} {...blog} />
           ))}
-        </div>
-        <ScrollBar orientation="horizontal" />
-      </ScrollArea>
+        </ScrollContainer>
+      </div>
       <Button variant={'outline'} className="mx-auto mt-8">
         View All Blogs
       </Button>
@@ -94,7 +113,7 @@ interface BlogCardProps {
 
 function BlogCard(props: BlogCardProps) {
   return (
-    <div className="w-96">
+    <div className="w-96 min-w-96">
       <div className="relative overflow-hidden rounded-lg">
         <Image
           alt="An Image"

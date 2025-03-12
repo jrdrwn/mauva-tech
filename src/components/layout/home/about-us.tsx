@@ -10,6 +10,7 @@ import {
   CardHeader,
   CardTitle,
 } from '@/components/ui/card';
+import { GridLayout } from '@/components/ui/grid-layout';
 import { WobbleCard } from '@/components/ui/wobble-card';
 import { MoveUpRight } from 'lucide-react';
 import Image from 'next/image';
@@ -19,7 +20,18 @@ export default function AboutUs() {
   return (
     <section className="container mx-auto flex h-full flex-col items-center justify-center py-16">
       <h1 className="mb-2 px-2 text-center text-2xl font-medium md:text-4xl">
-        Who We Are
+        <GridLayout
+          crosshairs={{
+            topLeft: true,
+            topRight: true,
+            bottomLeft: true,
+            bottomRight: true,
+          }}
+          lineVariant="none"
+          className="mx-auto max-w-max p-2"
+        >
+          Who We Are
+        </GridLayout>
       </h1>
       <p className="mb-6 px-2 text-center text-foreground/70 md:text-lg">
         Discover how our passion for technology drives us to create solutions

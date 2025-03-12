@@ -1,3 +1,5 @@
+'use client';
+
 /**
  * v0 by Vercel.
  * @see https://v0.dev/t/obus3LxsAfo
@@ -24,7 +26,11 @@ import {
   SheetTrigger,
 } from '@/components/ui/sheet';
 import { ModeToggle } from '@/components/ui/theme-toggle';
+import { cn } from '@/lib/utils';
+import { useMotionValueEvent, useScroll } from 'framer-motion';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
+import { Ref, useRef, useState } from 'react';
 
 export default function Header() {
   const menus = [
@@ -41,13 +47,55 @@ export default function Header() {
       href: '/services',
     },
     {
+      title: 'Blog',
+      href: '/blog',
+    },
+    {
+      title: 'Projects',
+      href: '/projects',
+    },
+    {
       title: 'Contact',
       href: '/contact',
     },
+    {
+      title: 'FAQ',
+      href: '/faq',
+    },
   ];
+
+  const pathname = usePathname();
+
+  const { scrollY } = useScroll();
+  const [transformHeader, setTransformHeader] = useState(false);
+  const ref: Ref<HTMLElement> | undefined = useRef(null);
+
+  useMotionValueEvent(scrollY, 'change', (latest) => {
+    if (ref.current && latest > ref.current.clientHeight) {
+      setTransformHeader(true);
+    } else {
+      setTransformHeader(false);
+    }
+  });
+
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-border bg-background">
-      <div className="container mx-auto flex h-16  items-center justify-between px-2">
+    <header
+      ref={ref}
+      className={cn(
+        'sticky z-50 transition-[top,padding] ',
+        transformHeader
+          ? ' container  top-1 rounded-full mx-auto px-4 bg-transparent'
+          : 'w-full top-0 border-border border-b bg-background',
+      )}
+    >
+      <div
+        className={cn(
+          'container mx-auto flex h-16  items-center justify-between px-2 transition-[border-radius,padding] ',
+          transformHeader
+            ? 'border border-border rounded-full px-3 bg-background'
+            : 'rounded-none',
+        )}
+      >
         <Link href="#" className="flex items-center gap-2" prefetch={false}>
           <MountainIcon className="size-6" />
           <span className="sr-only">Mauva Tech</span>
@@ -57,7 +105,10 @@ export default function Header() {
             {menus.map((menu) => (
               <NavigationMenuItem key={menu.title}>
                 <Link href={menu.href} prefetch={false} legacyBehavior passHref>
-                  <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                  <NavigationMenuLink
+                    className={navigationMenuTriggerStyle()}
+                    active={pathname === menu.href}
+                  >
                     {menu.title}
                   </NavigationMenuLink>
                 </Link>
@@ -116,6 +167,7 @@ export default function Header() {
                       >
                         <NavigationMenuLink
                           className={navigationMenuTriggerStyle()}
+                          active={pathname === menu.href}
                         >
                           {menu.title}
                         </NavigationMenuLink>

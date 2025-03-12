@@ -1,4 +1,5 @@
 import { Button } from '@/components/ui/button';
+import { GridLayout } from '@/components/ui/grid-layout';
 import { IconBrandGithub, IconBrandLinkedin } from '@tabler/icons-react';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -38,7 +39,18 @@ export default function Team() {
   return (
     <section className="container mx-auto flex h-full flex-col items-center justify-center py-16">
       <h1 className="mb-2 px-2 text-center text-2xl font-medium md:text-4xl">
-        Meet the Team
+        <GridLayout
+          crosshairs={{
+            topLeft: true,
+            topRight: true,
+            bottomLeft: true,
+            bottomRight: true,
+          }}
+          lineVariant="none"
+          className="mx-auto max-w-max p-2"
+        >
+          Meet the Team
+        </GridLayout>
       </h1>
       <p className="mb-6 px-2 text-center text-foreground/70 md:text-lg">
         The passionate minds behind MauvaTech.

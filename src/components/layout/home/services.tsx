@@ -1,3 +1,4 @@
+import { GridLayout } from '@/components/ui/grid-layout';
 import { cn } from '@/lib/utils';
 import {
   IconAdjustmentsBolt,
@@ -36,7 +37,18 @@ export default function Services() {
   return (
     <section className="container mx-auto flex h-full flex-col items-center justify-center py-10">
       <h1 className="mb-2 px-2 text-center text-2xl font-medium md:text-4xl">
-        Transforming Ideas into Reality
+        <GridLayout
+          crosshairs={{
+            topLeft: true,
+            topRight: true,
+            bottomLeft: true,
+            bottomRight: true,
+          }}
+          lineVariant="none"
+          className="mx-auto max-w-max p-2"
+        >
+          Transforming Ideas into Reality
+        </GridLayout>
       </h1>
       <p className="mb-6 px-2 text-center text-foreground/70 md:text-lg">
         We combine creativity, technology, and strategy to build solutions that

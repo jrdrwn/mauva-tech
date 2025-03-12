@@ -1,5 +1,4 @@
 import { Cover } from '@/components/ui/cover';
-import { Highlight } from '@/components/ui/hero-highlight';
 import { HoverBorderGradient } from '@/components/ui/hover-border-gradient';
 import { motion } from 'framer-motion';
 import { MoveUpRight } from 'lucide-react';
@@ -48,7 +47,7 @@ export default function Hero() {
           }}
           className="mx-auto mt-4 max-w-4xl px-4 text-center text-3xl  font-bold leading-relaxed text-foreground md:text-4xl lg:text-5xl lg:leading-snug"
         >
-          Where <Highlight>Vision</Highlight> Meets <Cover>Innovation</Cover>
+          Where Vision Meets <Cover>Innovation</Cover>
         </motion.h1>
         <p className="mx-auto mt-4  max-w-xs  text-center  text-foreground/60 md:max-w-xl md:text-lg">
           We build cutting-edge websites and mobile apps that drive results.

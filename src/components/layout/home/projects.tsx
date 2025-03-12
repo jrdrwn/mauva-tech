@@ -11,10 +11,11 @@ import {
   CardTitle,
 } from '@/components/ui/card';
 import { GlowingEffect } from '@/components/ui/glowing-effect';
-import { ScrollArea, ScrollBar } from '@/components/ui/scroll-area';
+import { GridLayout } from '@/components/ui/grid-layout';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { MoveUpRight } from 'lucide-react';
 import Image from 'next/image';
+import ScrollContainer from 'react-indiana-drag-scroll';
 
 interface ProjectCardProps {
   title: string;
@@ -118,7 +119,18 @@ export default function Projects() {
   return (
     <section className="container mx-auto flex h-full flex-col  justify-center py-10">
       <h1 className="mb-2 px-2 text-center text-2xl font-medium md:text-4xl">
-        Our Latest Creations
+        <GridLayout
+          crosshairs={{
+            topLeft: true,
+            topRight: true,
+            bottomLeft: true,
+            bottomRight: true,
+          }}
+          lineVariant="none"
+          className="mx-auto max-w-max p-2"
+        >
+          Our Latest Creations
+        </GridLayout>
       </h1>
       <p className="mb-6 px-2 text-center text-foreground/70 md:text-lg">
         Explore some of our recent projects and see how we&apos;ve helped
@@ -131,51 +143,67 @@ export default function Projects() {
           <TabsTrigger value="mobile">Mobile</TabsTrigger>
           <TabsTrigger value="ui/ux">UI/UX</TabsTrigger>
         </TabsList>
-        <TabsContent value="all" className="mt-0 w-full">
-          <ScrollArea className="w-full pb-4">
-            <div className="flex w-full gap-4">
-              {projects.map((project, index) => (
+        <TabsContent value="all" className="relative mt-0 w-full ">
+          <div className="absolute inset-y-0 left-0 z-10 w-[5%] bg-gradient-to-r from-background to-transparent" />
+          <div className="absolute inset-y-0 right-0 z-10 w-[5%] bg-gradient-to-l from-background to-transparent" />
+          <ScrollContainer
+            className="flex w-full cursor-grab gap-x-4  overflow-x-scroll  px-4 pb-4  "
+            horizontal={true}
+            vertical={false}
+            hideScrollbars={false}
+          >
+            {projects.map((project, index) => (
+              <ProjectCard key={index} {...project} />
+            ))}
+          </ScrollContainer>
+        </TabsContent>
+        <TabsContent value="website" className="relative mt-0 w-full">
+          <div className="absolute inset-y-0 left-0 z-10 w-[5%] bg-gradient-to-r from-background to-transparent" />
+          <div className="absolute inset-y-0 right-0 z-10 w-[5%] bg-gradient-to-l from-background to-transparent" />
+          <ScrollContainer
+            className="flex w-full cursor-grab gap-x-4  overflow-x-scroll  px-4 pb-4  "
+            horizontal={true}
+            vertical={false}
+            hideScrollbars={false}
+          >
+            {projects
+              .filter((project) => project.category === 'Website')
+              .map((project, index) => (
                 <ProjectCard key={index} {...project} />
               ))}
-            </div>
-            <ScrollBar orientation="horizontal" />
-          </ScrollArea>
+          </ScrollContainer>
         </TabsContent>
-        <TabsContent value="website" className="mt-0 w-full">
-          <ScrollArea className="w-full pb-4">
-            <div className="flex w-full gap-4">
-              {projects
-                .filter((project) => project.category === 'Website')
-                .map((project, index) => (
-                  <ProjectCard key={index} {...project} />
-                ))}
-            </div>
-            <ScrollBar orientation="horizontal" />
-          </ScrollArea>
+        <TabsContent value="mobile" className="relative mt-0 w-full">
+          <div className="absolute inset-y-0 left-0 z-10 w-[5%] bg-gradient-to-r from-background to-transparent" />
+          <div className="absolute inset-y-0 right-0 z-10 w-[5%] bg-gradient-to-l from-background to-transparent" />
+          <ScrollContainer
+            className="flex w-full cursor-grab gap-x-4  overflow-x-scroll  px-4 pb-4  "
+            horizontal={true}
+            vertical={false}
+            hideScrollbars={false}
+          >
+            {projects
+              .filter((project) => project.category === 'Mobile')
+              .map((project, index) => (
+                <ProjectCard key={index} {...project} />
+              ))}
+          </ScrollContainer>
         </TabsContent>
-        <TabsContent value="mobile" className="mt-0 w-full">
-          <ScrollArea className="w-full pb-4">
-            <div className="flex w-full gap-4">
-              {projects
-                .filter((project) => project.category === 'Mobile')
-                .map((project, index) => (
-                  <ProjectCard key={index} {...project} />
-                ))}
-            </div>
-            <ScrollBar orientation="horizontal" />
-          </ScrollArea>
-        </TabsContent>
-        <TabsContent value="ui/ux" className="mt-0 w-full">
-          <ScrollArea className="w-full pb-4">
-            <div className="flex w-full gap-4">
-              {projects
-                .filter((project) => project.category === 'UI/UX')
-                .map((project, index) => (
-                  <ProjectCard key={index} {...project} />
-                ))}
-            </div>
-            <ScrollBar orientation="horizontal" />
-          </ScrollArea>
+        <TabsContent value="ui/ux" className="relative mt-0 w-full">
+          <div className="absolute inset-y-0 left-0 z-10 w-[5%] bg-gradient-to-r from-background to-transparent" />
+          <div className="absolute inset-y-0 right-0 z-10 w-[5%] bg-gradient-to-l from-background to-transparent" />
+          <ScrollContainer
+            className="flex w-full cursor-grab gap-x-4  overflow-x-scroll  px-4 pb-4  "
+            horizontal={true}
+            vertical={false}
+            hideScrollbars={false}
+          >
+            {projects
+              .filter((project) => project.category === 'UI/UX')
+              .map((project, index) => (
+                <ProjectCard key={index} {...project} />
+              ))}
+          </ScrollContainer>
         </TabsContent>
       </Tabs>
       <Button variant={'outline'} className="mx-auto mt-8">
