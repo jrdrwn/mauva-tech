@@ -90,7 +90,7 @@ export default function Header() {
     >
       <div
         className={cn(
-          'container mx-auto flex h-16  items-center justify-between px-2',
+          'container mx-auto flex h-16  items-center justify-between px-2 transition-[border-radius,padding] ',
           transformHeader
             ? 'border border-border rounded-full px-3 bg-background'
             : 'rounded-none',
