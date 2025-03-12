@@ -1,3 +1,5 @@
+'use client';
+
 /**
  * v0 by Vercel.
  * @see https://v0.dev/t/obus3LxsAfo
@@ -42,8 +44,20 @@ export default function Header() {
       href: '/services',
     },
     {
+      title: 'Blog',
+      href: '/blog',
+    },
+    {
+      title: 'Projects',
+      href: '/projects',
+    },
+    {
       title: 'Contact',
       href: '/contact',
+    },
+    {
+      title: 'FAQ',
+      href: '/faq',
     },
   ];
 
