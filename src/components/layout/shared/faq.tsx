@@ -36,8 +36,8 @@ export default function FAQSection({ onlyFaq = false }: { onlyFaq?: boolean }) {
   ];
 
   return (
-    <section className="container mx-auto  py-16">
-      <div className=" flex h-full flex-col items-center justify-center">
+    <section className=" py-16">
+      <div className=" container mx-auto flex h-full flex-col items-center justify-center px-4">
         {!onlyFaq && (
           <>
             <h1 className="mb-2 px-2 text-center text-2xl font-medium md:text-4xl">
