@@ -9,7 +9,7 @@ import { useEffect, useState } from 'react';
 
 export default function Hero() {
   const { theme } = useTheme();
-  const [color, setColor] = useState(theme === 'dark' ? '#ffffff' : '#000000');
+  const [color, setColor] = useState('#ffffff');
 
   useEffect(() => {
     setColor(theme === 'dark' ? '#ffffff' : '#000000');
