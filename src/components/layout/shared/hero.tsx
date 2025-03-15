@@ -51,7 +51,7 @@ export default function Hero({ label, title, description, cta }: HeroProps) {
             duration: 0.5,
             ease: [0.4, 0.0, 0.2, 1],
           }}
-          className="mx-auto mt-4 max-w-4xl px-4 text-center text-3xl  font-bold leading-relaxed text-foreground md:text-4xl lg:text-5xl lg:leading-snug"
+          className="mx-auto mt-4 max-w-5xl bg-gradient-to-br from-foreground/80 to-foreground/20  bg-clip-text px-4 text-center text-3xl font-semibold leading-relaxed text-transparent md:text-4xl lg:text-7xl lg:leading-snug"
         >
           {title}
         </motion.h1>

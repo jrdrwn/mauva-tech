@@ -1,13 +1,14 @@
-import { Cover } from '@/components/ui/cover';
+import { BorderBeam } from '@/components/ui/border-beam';
 import { HoverBorderGradient } from '@/components/ui/hover-border-gradient';
 import { motion } from 'framer-motion';
 import { MoveUpRight } from 'lucide-react';
+import Image from 'next/image';
 
 export default function Hero() {
   return (
-    <section className="flex min-h-[calc(100dvh-65px)] items-center justify-center  bg-grid-small-black/[0.2] dark:bg-grid-small-white/[0.2]">
+    <section className="relative flex min-h-[calc(100dvh-65px)] items-center  justify-center bg-grid-small-black/[0.2] dark:bg-grid-small-white/[0.2]">
       <div className="pointer-events-none absolute inset-0 flex items-center justify-center bg-background  [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]"></div>
-      <div className="container mx-auto flex flex-col items-center justify-center px-2">
+      <div className="container relative mx-auto flex flex-col items-center justify-center px-2 pb-16 pt-36">
         <button className="group relative inline-block cursor-pointer rounded-full bg-secondary/75 p-px text-xs font-semibold leading-6 text-secondary-foreground no-underline  shadow-2xl shadow-secondary">
           <span className="absolute inset-0 overflow-hidden rounded-full">
             <span className="absolute inset-0 rounded-full bg-[image:radial-gradient(75%_100%_at_50%_0%,rgba(56,189,248,0.6)_0%,rgba(56,189,248,0)_75%)] opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
@@ -45,15 +46,15 @@ export default function Hero() {
             duration: 0.5,
             ease: [0.4, 0.0, 0.2, 1],
           }}
-          className="mx-auto mt-4 max-w-4xl px-4 text-center text-3xl  font-bold leading-relaxed text-foreground md:text-4xl lg:text-5xl lg:leading-snug"
+          className="mx-auto mt-4 max-w-5xl bg-gradient-to-br from-foreground/80 to-foreground/20  bg-clip-text px-4 text-center text-3xl font-semibold leading-relaxed text-transparent md:text-4xl lg:text-7xl lg:leading-snug"
         >
-          Where Vision Meets <Cover>Innovation</Cover>
+          Your Partner in Modern Digital Solutions
         </motion.h1>
         <p className="mx-auto mt-4  max-w-xs  text-center  text-foreground/60 md:max-w-xl md:text-lg">
           We build cutting-edge websites and mobile apps that drive results.
         </p>
         <HoverBorderGradient
-          containerClassName="rounded-full mx-auto mt-4"
+          containerClassName="rounded-full mx-auto mt-8"
           as="button"
           className="group/button flex items-center gap-2 bg-background text-foreground  "
         >
@@ -62,6 +63,18 @@ export default function Hero() {
             <MoveUpRight className="w-4 transition-all duration-300 group-hover/button:size-5 group-hover/button:rotate-45" />
           </span>
         </HoverBorderGradient>
+        <div className="relative mt-8 w-full overflow-hidden px-2 sm:mr-0 sm:mt-12 md:mt-20">
+          <div className="relative mx-auto max-w-6xl overflow-hidden rounded-2xl border bg-background p-1 shadow-lg  ring-1 ring-background ">
+            <BorderBeam />
+            <Image
+              className="relative  aspect-video rounded-2xl bg-background object-cover object-center  "
+              src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&dl=luke-chesser-JKUTrJ4vK00-unsplash.jpg&w=1920"
+              alt="app screen"
+              width="1920"
+              height="1080"
+            />
+          </div>
+        </div>
       </div>
     </section>
   );
