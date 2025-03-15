@@ -85,7 +85,7 @@ export default function Header() {
         'sticky z-50 transition-[top,padding] ',
         transformHeader
           ? ' container  top-1 rounded-full mx-auto px-4 bg-transparent'
-          : 'w-full top-0 border-border border-b bg-background',
+          : 'w-full top-0 border-border border-b ',
       )}
     >
       <div
@@ -106,7 +106,9 @@ export default function Header() {
               <NavigationMenuItem key={menu.title}>
                 <Link href={menu.href} prefetch={false} legacyBehavior passHref>
                   <NavigationMenuLink
-                    className={navigationMenuTriggerStyle()}
+                    className={navigationMenuTriggerStyle({
+                      className: 'bg-transparent ',
+                    })}
                     active={pathname === menu.href}
                   >
                     {menu.title}
