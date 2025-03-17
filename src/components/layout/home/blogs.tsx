@@ -11,6 +11,7 @@ import { GlowingEffect } from '@/components/ui/glowing-effect';
 import { GridLayout } from '@/components/ui/grid-layout';
 import { MoveUpRight } from 'lucide-react';
 import Image from 'next/image';
+import Link from 'next/link';
 import ScrollContainer from 'react-indiana-drag-scroll';
 
 export default function Blogs() {
@@ -96,9 +97,9 @@ export default function Blogs() {
           ))}
         </ScrollContainer>
       </div>
-      <Button variant={'outline'} className="mx-auto mt-8">
-        View All Blogs
-      </Button>
+      <Link href="/blog" scroll={false} className="mx-auto mt-8">
+        <Button>View All Blogs</Button>
+      </Link>
     </section>
   );
 }
