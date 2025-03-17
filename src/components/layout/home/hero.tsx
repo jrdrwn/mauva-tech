@@ -1,6 +1,7 @@
 import { BorderBeam } from '@/components/ui/border-beam';
 import { HoverBorderGradient } from '@/components/ui/hover-border-gradient';
 import Particles from '@/components/ui/particles';
+import { hslToHex } from '@/lib/utils';
 import { motion } from 'framer-motion';
 import { MoveUpRight } from 'lucide-react';
 import { useTheme } from 'next-themes';
@@ -8,17 +9,29 @@ import Image from 'next/image';
 import { useEffect, useState } from 'react';
 
 export default function Hero() {
-  const { theme } = useTheme();
-  const [color, setColor] = useState('#ffffff');
+  const { resolvedTheme } = useTheme();
+  const [color, setColor] = useState('');
 
   useEffect(() => {
-    setColor(theme === 'dark' ? '#ffffff' : '#000000');
-  }, [theme]);
+    const particlesColor = setTimeout(() => {
+      const hsl = window
+        .getComputedStyle(document.documentElement)
+        .getPropertyValue('--foreground');
+      const [h, s, l] = hsl
+        .split(' ')
+        .map((value, index) =>
+          index === 0 ? parseInt(value) : parseFloat(value),
+        );
+      const hex = hslToHex(h, s, l);
+      setColor(hex);
+    }, 0);
+    return () => clearTimeout(particlesColor);
+  }, [resolvedTheme]);
   return (
     <section className="relative isolate  min-h-[calc(100dvh-65px)]  ">
       <Particles
         className="absolute inset-0"
-        quantity={100}
+        quantity={50}
         ease={80}
         color={color}
         refresh
