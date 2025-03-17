@@ -80,4 +80,3 @@ export default function ContactDetail() {
     </section>
   );
 }
-
