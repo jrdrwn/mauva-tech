@@ -28,7 +28,7 @@ export default function Hero() {
     return () => clearTimeout(particlesColor);
   }, [resolvedTheme]);
   return (
-    <section className="relative isolate  min-h-[calc(100dvh-65px)]  ">
+    <section className="relative isolate">
       <Particles
         className="absolute inset-0"
         quantity={50}
