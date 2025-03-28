@@ -5,7 +5,7 @@ import Blogs from '@/components/layout/home/blogs';
 import Hero from '@/components/layout/home/hero';
 import Projects from '@/components/layout/home/projects';
 import Services from '@/components/layout/home/services';
-import Testimonials from '@/components/layout/home/tesminonials';
+import Testimonial from '@/components/layout/services/testimonial';
 import EndCTA from '@/components/layout/shared/end-cta';
 import FAQSection from '@/components/layout/shared/faq';
 import Footer from '@/components/layout/shared/footer';
@@ -19,7 +19,7 @@ export default function Home() {
       <Services />
       <AboutUs />
       <Projects />
-      <Testimonials />
+      <Testimonial />
       <Blogs />
       <FAQSection />
       <EndCTA />
