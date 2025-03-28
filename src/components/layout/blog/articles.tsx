@@ -8,14 +8,11 @@ import {
   CardTitle,
 } from '@/components/ui/card';
 import { GlowingEffect } from '@/components/ui/glowing-effect';
-import { GridLayout } from '@/components/ui/grid-layout';
 import { MoveUpRight } from 'lucide-react';
 import Image from 'next/image';
-import Link from 'next/link';
-import ScrollContainer from 'react-indiana-drag-scroll';
 
-export default function Blogs() {
-  const blogs = [
+export default function Articles() {
+  const articles = [
     {
       title: 'How to build a successful startup',
       summary:
@@ -63,48 +60,17 @@ export default function Blogs() {
     },
   ];
   return (
-    <section className="container mx-auto flex h-full flex-col items-center justify-center py-16">
-      <h1 className="mb-2 px-2 text-center text-2xl font-medium md:text-4xl">
-        <GridLayout
-          crosshairs={{
-            topLeft: true,
-            topRight: true,
-            bottomLeft: true,
-            bottomRight: true,
-          }}
-          lineVariant="none"
-          className="mx-auto max-w-max p-2"
-        >
-          Insights & Updates
-        </GridLayout>
-      </h1>
-      <p className="mb-6 px-2 text-center text-foreground/70 md:text-lg">
-        Stay ahead of the curve with our latest insights on technology, design,
-        and business growth.
-      </p>
-      <div className="relative w-full">
-        <div className="absolute inset-y-0 left-0 z-10 w-[5%] bg-gradient-to-r from-background to-transparent" />
-        <div className="absolute inset-y-0 right-0 z-10 w-[5%] bg-gradient-to-l from-background to-transparent" />
-        <ScrollContainer
-          className="relative flex w-full cursor-grab  gap-x-4  overflow-x-scroll px-4 pb-4"
-          horizontal={true}
-          vertical={false}
-          hideScrollbars={false}
-          nativeMobileScroll={true}
-        >
-          {blogs.map((blog) => (
-            <BlogCard key={blog.title} {...blog} />
-          ))}
-        </ScrollContainer>
+    <section className="container mx-auto  py-16">
+      <div className="relative flex w-full flex-wrap justify-center gap-4">
+        {articles.map((blog) => (
+          <ArticleCard key={blog.title} {...blog} />
+        ))}
       </div>
-      <Link href="/blog" scroll={false} className="mx-auto mt-8">
-        <Button>View All Blogs</Button>
-      </Link>
     </section>
   );
 }
 
-interface BlogCardProps {
+interface ArticleCardProps {
   title: string;
   summary: string;
   date: string;
@@ -112,7 +78,7 @@ interface BlogCardProps {
   image: string;
 }
 
-function BlogCard(props: BlogCardProps) {
+function ArticleCard(props: ArticleCardProps) {
   return (
     <div className="w-96 min-w-96">
       <div className="relative overflow-hidden rounded-lg">
