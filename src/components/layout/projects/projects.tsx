@@ -14,6 +14,7 @@ import { GlowingEffect } from '@/components/ui/glowing-effect';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { MoveUpRight } from 'lucide-react';
 import Image from 'next/image';
+import { useEffect, useState } from 'react';
 
 interface ProjectCardProps {
   title: string;
@@ -64,56 +65,26 @@ function ProjectCard({
 }
 
 export default function Projects() {
-  const projects = [
-    {
-      title: 'E-commerce Platform for Fashionista',
-      description:
-        'A fully customized e-commerce solution designed to boost sales and enhance user experience.',
-      image:
-        'https://images.unsplash.com/photo-1595675024853-0f3ec9098ac7?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&dl=niclas-illg-FJ5e_2f96h4-unsplash.jpg&w=640',
-      category: 'Website',
-    },
-    {
-      title: 'E-commerce Platform for Fashionista',
-      description:
-        'A fully customized e-commerce solution designed to boost sales and enhance user experience.',
-      image:
-        'https://images.unsplash.com/photo-1595675024853-0f3ec9098ac7?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&dl=niclas-illg-FJ5e_2f96h4-unsplash.jpg&w=640',
-      category: 'Website',
-    },
-    {
-      title: 'HealthTrack Mobile App',
-      description:
-        'A health monitoring app that empowers users to take control of their wellness journey.',
-      image:
-        'https://images.unsplash.com/photo-1595675024853-0f3ec9098ac7?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&dl=niclas-illg-FJ5e_2f96h4-unsplash.jpg&w=640',
-      category: 'Mobile',
-    },
-    {
-      title: 'HealthTrack Mobile App',
-      description:
-        'A health monitoring app that empowers users to take control of their wellness journey.',
-      image:
-        'https://images.unsplash.com/photo-1595675024853-0f3ec9098ac7?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&dl=niclas-illg-FJ5e_2f96h4-unsplash.jpg&w=640',
-      category: 'Mobile',
-    },
-    {
-      title: 'Corporate Website for GreenTech Solutions',
-      description:
-        'A modern and informative website that reflects the company’s commitment to sustainability.',
-      image:
-        'https://images.unsplash.com/photo-1595675024853-0f3ec9098ac7?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&dl=niclas-illg-FJ5e_2f96h4-unsplash.jpg&w=640',
-      category: 'UI/UX',
-    },
-    {
-      title: 'Corporate Website for GreenTech Solutions',
-      description:
-        'A modern and informative website that reflects the company’s commitment to sustainability.',
-      image:
-        'https://images.unsplash.com/photo-1595675024853-0f3ec9098ac7?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&dl=niclas-illg-FJ5e_2f96h4-unsplash.jpg&w=640',
-      category: 'UI/UX',
-    },
-  ];
+  const [projects, setProjects] = useState<ProjectCardProps[]>([]);
+
+  useEffect(() => {
+    const fetchProjects = async () => {
+      try {
+        const res = await fetch('/api/projects', {
+          cache: 'no-store',
+        });
+        if (!res.ok) {
+          throw new Error('Failed to fetch data');
+        }
+        const data = await res.json();
+        setProjects(data);
+      } catch (error) {
+        console.error(error);
+      }
+    };
+
+    fetchProjects();
+  }, []);
   return (
     <section className="container mx-auto flex h-full flex-col  justify-center py-10">
       <Tabs defaultValue="all" className="flex flex-col items-center">
