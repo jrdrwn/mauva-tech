@@ -12,22 +12,19 @@ import {
 } from '@/components/ui/card';
 import { GlowingEffect } from '@/components/ui/glowing-effect';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
+import useProjects, { ProjectCardProps } from '@/hooks/use-projects';
 import { MoveUpRight } from 'lucide-react';
 import Image from 'next/image';
-import { useEffect, useState } from 'react';
+import Link from 'next/link';
 
-interface ProjectCardProps {
-  title: string;
-  description: string;
-  image: string;
-  category: string;
-}
 
-function ProjectCard({
+
+export function ProjectCard({
   title,
   description,
   image,
   category,
+  link,
 }: ProjectCardProps) {
   return (
     <Card className="relative flex w-full max-w-96 shrink-0 flex-col">
@@ -53,38 +50,22 @@ function ProjectCard({
       </CardContent>
       <CardFooter className="flex items-center justify-between">
         <Badge variant={'outline'}>{category}</Badge>
-        <Button variant={'ghost'} className="group/button">
-          Read more
-          <span>
-            <MoveUpRight className="w-4 transition-all duration-300 group-hover/button:size-5 group-hover/button:rotate-45" />
-          </span>
-        </Button>
+        <Link href={link} target="_blank">
+          <Button variant={'ghost'} className="group/button">
+            Read more
+            <span>
+              <MoveUpRight className="w-4 transition-all duration-300 group-hover/button:size-5 group-hover/button:rotate-45" />
+            </span>
+          </Button>
+        </Link>
       </CardFooter>
     </Card>
   );
 }
 
 export default function Projects() {
-  const [projects, setProjects] = useState<ProjectCardProps[]>([]);
+  const projects = useProjects()
 
-  useEffect(() => {
-    const fetchProjects = async () => {
-      try {
-        const res = await fetch('/api/projects', {
-          cache: 'no-store',
-        });
-        if (!res.ok) {
-          throw new Error('Failed to fetch data');
-        }
-        const data = await res.json();
-        setProjects(data);
-      } catch (error) {
-        console.error(error);
-      }
-    };
-
-    fetchProjects();
-  }, []);
   return (
     <section className="container mx-auto flex h-full flex-col  justify-center py-10">
       <Tabs defaultValue="all" className="flex flex-col items-center">
@@ -107,7 +88,7 @@ export default function Projects() {
           className="relative mt-0 flex w-full flex-wrap justify-center gap-4 "
         >
           {projects
-            .filter((project) => project.category === 'Website')
+            .filter((project) => project.category === 'website')
             .map((project, index) => (
               <ProjectCard key={index} {...project} />
             ))}
@@ -117,7 +98,7 @@ export default function Projects() {
           className="relative mt-0 flex w-full flex-wrap justify-center gap-4 "
         >
           {projects
-            .filter((project) => project.category === 'Mobile')
+            .filter((project) => project.category === 'mobile')
             .map((project, index) => (
               <ProjectCard key={index} {...project} />
             ))}
@@ -127,7 +108,7 @@ export default function Projects() {
           className="relative mt-0 flex w-full flex-wrap justify-center gap-4 "
         >
           {projects
-            .filter((project) => project.category === 'UI/UX')
+            .filter((project) => project.category === 'ui/ux')
             .map((project, index) => (
               <ProjectCard key={index} {...project} />
             ))}
