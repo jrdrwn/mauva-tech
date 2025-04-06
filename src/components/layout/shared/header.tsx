@@ -107,13 +107,7 @@ export default function Header() {
           <NavigationMenuList className="hidden items-center gap-6 text-sm font-medium md:flex">
             {menus.map((menu) => (
               <NavigationMenuItem key={menu.title}>
-                <Link
-                  href={menu.href}
-                  prefetch={false}
-                  legacyBehavior
-                  passHref
-                  scroll={false}
-                >
+                <Link href={menu.href} legacyBehavior passHref>
                   <NavigationMenuLink
                     className={navigationMenuTriggerStyle({
                       className: 'bg-transparent ',
@@ -168,12 +162,7 @@ export default function Header() {
                 <NavigationMenuList className="grid gap-4 p-4">
                   {menus.map((menu) => (
                     <NavigationMenuItem key={menu.title}>
-                      <Link
-                        href={menu.href}
-                        prefetch={false}
-                        legacyBehavior
-                        passHref
-                      >
+                      <Link href={menu.href} legacyBehavior passHref>
                         <NavigationMenuLink
                           className={navigationMenuTriggerStyle()}
                           active={pathname === menu.href}
