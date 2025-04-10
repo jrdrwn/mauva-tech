@@ -1,5 +1,3 @@
-'use client';
-
 import ContactDetail from '@/components/layout/contact/contact-detail';
 import EndCTA from '@/components/layout/shared/end-cta';
 import Footer from '@/components/layout/shared/footer';

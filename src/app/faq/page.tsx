@@ -1,5 +1,3 @@
-'use client';
-
 import EndCTA from '@/components/layout/shared/end-cta';
 import FAQSection from '@/components/layout/shared/faq';
 import Footer from '@/components/layout/shared/footer';

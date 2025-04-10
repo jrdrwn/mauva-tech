@@ -1,5 +1,3 @@
-'use client';
-
 import Articles from '@/components/layout/blog/articles';
 import EndCTA from '@/components/layout/shared/end-cta';
 import Footer from '@/components/layout/shared/footer';

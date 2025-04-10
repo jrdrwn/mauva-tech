@@ -1,5 +1,3 @@
-'use client';
-
 import AboutUs from '@/components/layout/home/about-us';
 import Blogs from '@/components/layout/home/blogs';
 import Hero from '@/components/layout/home/hero';

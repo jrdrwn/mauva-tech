@@ -1,5 +1,3 @@
-'use client';
-
 import OurJourney from '@/components/layout/about/our-journey';
 import Team from '@/components/layout/about/team';
 import VisionMission from '@/components/layout/about/vision-mission';

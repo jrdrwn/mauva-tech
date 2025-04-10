@@ -1,5 +1,3 @@
-'use client';
-
 import Projects from '@/components/layout/projects/projects';
 import EndCTA from '@/components/layout/shared/end-cta';
 import Footer from '@/components/layout/shared/footer';

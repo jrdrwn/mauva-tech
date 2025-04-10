@@ -5,11 +5,11 @@ import { GridLayout } from '@/components/ui/grid-layout';
 import useProjects from '@/hooks/use-projects';
 import Link from 'next/link';
 import ScrollContainer from 'react-indiana-drag-scroll';
+
 import { ProjectCard } from '../projects/projects';
 
-
 export default function Projects() {
-  const projects =  useProjects()
+  const projects = useProjects();
   return (
     <section className="container mx-auto flex h-full flex-col  justify-center py-10">
       <h1 className="mb-2 px-2 text-center text-2xl font-medium md:text-4xl">

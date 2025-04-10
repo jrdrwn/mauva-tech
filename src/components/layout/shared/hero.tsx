@@ -1,3 +1,5 @@
+'use client';
+
 import { HoverBorderGradient } from '@/components/ui/hover-border-gradient';
 import { motion } from 'framer-motion';
 import { MoveUpRight } from 'lucide-react';

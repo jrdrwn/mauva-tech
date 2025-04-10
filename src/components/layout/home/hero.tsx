@@ -1,3 +1,5 @@
+'use client';
+
 import { BorderBeam } from '@/components/ui/border-beam';
 import { HoverBorderGradient } from '@/components/ui/hover-border-gradient';
 import Particles from '@/components/ui/particles';
