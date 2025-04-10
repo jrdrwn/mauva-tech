@@ -66,7 +66,7 @@ function ArticleCard(props: ArticleCardProps) {
           </CardDescription>
         </CardHeader>
         <CardFooter className="relative flex-1 items-end">
-          <Link href={`/blog/${props.id}`} scroll={false}>
+          <Link href={`/blog/${props.id}`}>
             <Button variant={'outline'} className="group/button">
               Read More
               <span>
