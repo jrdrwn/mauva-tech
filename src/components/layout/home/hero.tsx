@@ -1,11 +1,11 @@
 'use client';
 
+import { AnimatedGroup } from '@/components/ui/animated-group';
 import { BorderBeam } from '@/components/ui/border-beam';
 import { HoverBorderGradient } from '@/components/ui/hover-border-gradient';
 import Particles from '@/components/ui/particles';
 import { hslToHex } from '@/lib/utils';
-import { motion } from 'framer-motion';
-import { MoveUpRight } from 'lucide-react';
+import { ArrowRight, MoveUpRight } from 'lucide-react';
 import { useTheme } from 'next-themes';
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
@@ -62,48 +62,28 @@ export default function Hero() {
           className="relative left-[calc(50%+3rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 bg-[linear-gradient(to_top_right_in_oklab,var(--tw-gradient-stops))] from-[#ff80b5] to-[#9089fc] opacity-30 sm:left-[calc(50%+36rem)] sm:w-[72.1875rem]"
         />
       </div>
-      <div className="container relative mx-auto flex flex-col items-center justify-center px-2 py-16 md:pt-24 lg:pt-36">
-        <button className="group relative inline-block cursor-pointer rounded-full bg-secondary/75 p-px text-xs font-semibold leading-6 text-secondary-foreground no-underline  shadow-2xl shadow-secondary">
-          <span className="absolute inset-0 overflow-hidden rounded-full">
-            <span className="absolute inset-0 rounded-full bg-[image:radial-gradient(75%_100%_at_50%_0%,rgba(56,189,248,0.6)_0%,rgba(56,189,248,0)_75%)] opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
-          </span>
-          <div className="relative z-10 flex items-center space-x-2 rounded-full bg-secondary/75 px-4 py-0.5 ring-1 ring-ring/10 ">
-            <span>MauvaTech</span>
-            <svg
-              fill="none"
-              height="16"
-              viewBox="0 0 24 24"
-              width="16"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M10.75 8.75L14.25 12L10.75 15.25"
-                stroke="currentColor"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="1.5"
-              />
-            </svg>
+      <AnimatedGroup
+        className="container relative z-10 mx-auto flex flex-col items-center justify-center px-2 py-16 md:pt-24 lg:pt-36"
+        preset="blur"
+      >
+        <button className="group mx-auto flex w-fit items-center gap-4 rounded-full border bg-muted p-1 pl-4 shadow-md  transition-colors duration-300 hover:bg-background dark:border-t-white/5  dark:hover:border-t-border">
+          <span className="text-sm text-foreground">Welcome to Our Agency</span>
+          <span className="block h-4 w-0.5 border-l bg-white dark:border-background dark:bg-zinc-700"></span>
+
+          <div className="size-6 overflow-hidden rounded-full bg-background duration-500 group-hover:bg-muted">
+            <div className="flex w-12 -translate-x-1/2 duration-500 ease-in-out group-hover:translate-x-0">
+              <span className="flex size-6">
+                <ArrowRight className="m-auto size-3" />
+              </span>
+              <span className="flex size-6">
+                <ArrowRight className="m-auto size-3" />
+              </span>
+            </div>
           </div>
-          <span className="absolute -bottom-0 left-[1.125rem] h-px w-[calc(100%-2.25rem)] bg-gradient-to-r from-emerald-400/0 via-emerald-400/90 to-emerald-400/0 transition-opacity duration-500 group-hover:opacity-40" />
         </button>
-        <motion.h1
-          initial={{
-            opacity: 0,
-            y: 20,
-          }}
-          animate={{
-            opacity: 1,
-            y: [20, -5, 0],
-          }}
-          transition={{
-            duration: 0.5,
-            ease: [0.4, 0.0, 0.2, 1],
-          }}
-          className="mx-auto mt-4 max-w-5xl bg-gradient-to-br from-foreground/80 to-foreground/20  bg-clip-text px-4 text-center text-3xl font-semibold leading-relaxed text-transparent md:text-4xl lg:text-7xl lg:leading-snug"
-        >
+        <h1 className="mx-auto mt-4 max-w-5xl bg-gradient-to-br from-foreground/80 to-foreground/20  bg-clip-text px-4 text-center text-3xl font-semibold leading-relaxed text-transparent md:text-4xl lg:text-7xl lg:leading-snug">
           Your Partner in Modern Digital Solutions
-        </motion.h1>
+        </h1>
         <p className="mx-auto mt-4  max-w-xs  text-center  text-foreground/60 md:max-w-xl md:text-lg">
           We build cutting-edge websites and mobile apps that drive results.
         </p>
@@ -129,7 +109,7 @@ export default function Hero() {
             />
           </div>
         </div>
-      </div>
+      </AnimatedGroup>
     </section>
   );
 }
