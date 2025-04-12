@@ -1,36 +1,26 @@
 'use client';
 
 import { Button } from '@/components/ui/button';
-import { GridLayout } from '@/components/ui/grid-layout';
-import useProjects from '@/hooks/use-projects';
+import { useFetch } from '@/hooks/use-fetch';
 import Link from 'next/link';
 import ScrollContainer from 'react-indiana-drag-scroll';
 
-import { ProjectCard } from '../projects/projects';
+import {
+  ProjectCard,
+  ProjectCardProps,
+  ProjectCardSkeleton,
+} from '../projects/projects';
+import TitleSubSection from '../shared/title-sub-section';
 
 export default function Projects() {
-  const projects = useProjects();
+  const { data, loading, error } =
+    useFetch<ProjectCardProps[]>('/api/projects');
   return (
-    <section className="container mx-auto flex h-full flex-col  justify-center py-10">
-      <h1 className="mb-2 px-2 text-center text-2xl font-medium md:text-4xl">
-        <GridLayout
-          crosshairs={{
-            topLeft: true,
-            topRight: true,
-            bottomLeft: true,
-            bottomRight: true,
-          }}
-          lineVariant="none"
-          className="mx-auto max-w-max p-2"
-        >
-          Our Latest Creations
-        </GridLayout>
-      </h1>
-      <p className="mb-6 px-2 text-center text-foreground/70 md:text-lg">
-        Explore some of our recent projects and see how we&apos;ve helped
-        businesses achieve their goals.
-      </p>
-
+    <section className="container mx-auto flex h-full flex-col  justify-center py-20">
+      <TitleSubSection
+        title="Our Latest Creations"
+        description="Explore some of our recent projects and see how we've helped businesses achieve their goals."
+      />
       <div className="relative mt-0 w-full ">
         <div className="absolute inset-y-0 left-0 z-10 w-[5%] bg-gradient-to-r from-background to-transparent" />
         <div className="absolute inset-y-0 right-0 z-10 w-[5%] bg-gradient-to-l from-background to-transparent" />
@@ -40,7 +30,22 @@ export default function Projects() {
           vertical={false}
           hideScrollbars={false}
         >
-          {projects.map((project, index) => (
+          {loading &&
+            Array(3)
+              .fill(0)
+              .map((_, index) => <ProjectCardSkeleton key={index} />)}
+          {error && <p>Error: {error}</p>}
+          {data?.length === 0 && (
+            <div className="flex size-full items-center justify-center">
+              <p className="text-lg">No projects found</p>
+            </div>
+          )}
+          {data?.length === 0 && (
+            <div className="flex size-full items-center justify-center">
+              <p className="text-lg">No projects found</p>
+            </div>
+          )}
+          {data?.map((project, index) => (
             <ProjectCard key={index} {...project} />
           ))}
         </ScrollContainer>

@@ -1,5 +1,6 @@
 'use client';
 
+import FadeBlur from '@/components/animations/fade-blur';
 import { AnimatedTooltip } from '@/components/ui/animated-tooltip';
 import { Button } from '@/components/ui/button';
 import {
@@ -10,33 +11,20 @@ import {
   CardHeader,
   CardTitle,
 } from '@/components/ui/card';
-import { GridLayout } from '@/components/ui/grid-layout';
 import { WobbleCard } from '@/components/ui/wobble-card';
 import { MoveUpRight } from 'lucide-react';
 import Image from 'next/image';
 import { useEffect, useId, useState } from 'react';
 
+import TitleSubSection from '../shared/title-sub-section';
+
 export default function AboutUs() {
   return (
-    <section className="container mx-auto flex h-full flex-col items-center justify-center py-16">
-      <h1 className="mb-2 px-2 text-center text-2xl font-medium md:text-4xl">
-        <GridLayout
-          crosshairs={{
-            topLeft: true,
-            topRight: true,
-            bottomLeft: true,
-            bottomRight: true,
-          }}
-          lineVariant="none"
-          className="mx-auto max-w-max p-2"
-        >
-          Who We Are
-        </GridLayout>
-      </h1>
-      <p className="mb-6 px-2 text-center text-foreground/70 md:text-lg">
-        Discover how our passion for technology drives us to create solutions
-        that make a difference.
-      </p>
+    <section className="container mx-auto flex h-full flex-col items-center justify-center py-20">
+      <TitleSubSection
+        title="Who We Are"
+        description="Discover how our passion for technology drives us to create solutions that make a difference."
+      />
       <WobbleCardContainer />
     </section>
   );
@@ -86,17 +74,19 @@ export function WobbleCardContainer() {
         containerClassName="col-span-1 lg:col-span-2 h-full  min-h-[500px] lg:min-h-[300px]"
         className=""
       >
-        <div className="max-w-lg">
-          <h2 className="text-balance text-left text-lg font-semibold tracking-[-0.015em] text-white md:text-xl lg:text-3xl">
-            About us
-          </h2>
-          <p className="mt-4 text-left  text-base/6 text-neutral-200">
-            MauvaTech is a leading software house specializing in web and mobile
-            app development. With a team of passionate developers and designers,
-            we help businesses transform their ideas into digital solutions that
-            drive results.
-          </p>
-        </div>
+        <FadeBlur>
+          <div className="max-w-lg">
+            <h2 className="text-balance text-left text-lg font-semibold tracking-[-0.015em] text-white md:text-xl lg:text-3xl">
+              About us
+            </h2>
+            <p className="mt-4 text-left  text-base/6 text-neutral-200">
+              MauvaTech is a leading software house specializing in web and
+              mobile app development. With a team of passionate developers and
+              designers, we help businesses transform their ideas into digital
+              solutions that drive results.
+            </p>
+          </div>
+        </FadeBlur>
         <Image
           src="https://images.unsplash.com/photo-1499750310107-5fef28a66643?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&dl=andrew-neel-cckf4TsHAuw-unsplash.jpg&w=640"
           width={500}
@@ -106,12 +96,14 @@ export function WobbleCardContainer() {
         />
       </WobbleCard>
       <Card className="relative col-span-1 flex min-h-[300px] flex-col rounded-2xl ">
-        <CardHeader>
-          <CardTitle className="text-xl md:text-2xl">Our Team</CardTitle>
-          <CardDescription>
-            Meet the people who make it all happen.
-          </CardDescription>
-        </CardHeader>
+        <FadeBlur>
+          <CardHeader>
+            <CardTitle className="text-xl md:text-2xl">Our Team</CardTitle>
+            <CardDescription>
+              Meet the people who make it all happen.
+            </CardDescription>
+          </CardHeader>
+        </FadeBlur>
         <CardContent className="flex flex-1 flex-col items-center justify-center">
           <Grid size={20} />
           <div className="flex w-full flex-row items-center">

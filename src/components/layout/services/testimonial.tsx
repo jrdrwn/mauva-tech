@@ -1,9 +1,11 @@
+import FadeBlur from '@/components/animations/fade-blur';
 import { Avatar, AvatarFallback } from '@/components/ui/avatar';
 import { Button } from '@/components/ui/button';
-import { GridLayout } from '@/components/ui/grid-layout';
 import Marquee from '@/components/ui/marquee';
 import Link from 'next/link';
 import { ComponentProps } from 'react';
+
+import TitleSubSection from '../shared/title-sub-section';
 
 const testimonials = [
   {
@@ -65,24 +67,10 @@ const testimonials = [
 const Testimonial = () => (
   <section className="container mx-auto  py-16">
     <div className=" flex h-full flex-col items-center justify-center">
-      <h1 className="mb-2 px-2 text-center text-2xl font-medium md:text-4xl">
-        <GridLayout
-          crosshairs={{
-            topLeft: true,
-            topRight: true,
-            bottomLeft: true,
-            bottomRight: true,
-          }}
-          lineVariant="none"
-          className="mx-auto max-w-max p-2"
-        >
-          Our Clients&apos; Stories
-        </GridLayout>
-      </h1>
-      <p className="mb-6 px-2 text-center text-foreground/70 md:text-lg">
-        Our clients&apos; success is our greatest achievement. Here&apos;s what
-        they have to say.
-      </p>
+      <TitleSubSection
+        title="Our Clients' Stories"
+        description="Our clients' success is our greatest achievement. Here's what they have to say."
+      />
     </div>
     <div className="relative">
       <div className="absolute inset-y-0 left-0 z-10 w-[15%] bg-gradient-to-r from-background to-transparent" />
@@ -99,30 +87,32 @@ const Testimonial = () => (
 
 const TestimonialList = () =>
   testimonials.map((testimonial) => (
-    <div
-      key={testimonial.id}
-      className="min-w-96 max-w-sm rounded-xl bg-accent p-6"
-    >
-      <div className="flex items-center justify-between">
-        <div className="flex items-center gap-4">
-          <Avatar>
-            <AvatarFallback className="bg-primary text-xl font-medium text-primary-foreground">
-              {testimonial.name.charAt(0)}
-            </AvatarFallback>
-          </Avatar>
-          <div>
-            <p className="text-lg font-semibold">{testimonial.name}</p>
-            <p className="text-sm text-gray-500">{testimonial.designation}</p>
+    <FadeBlur key={testimonial.id}>
+      <div
+        key={testimonial.id}
+        className="min-w-96 max-w-sm rounded-xl bg-accent p-6"
+      >
+        <div className="flex items-center justify-between">
+          <div className="flex items-center gap-4">
+            <Avatar>
+              <AvatarFallback className="bg-primary text-xl font-medium text-primary-foreground">
+                {testimonial.name.charAt(0)}
+              </AvatarFallback>
+            </Avatar>
+            <div>
+              <p className="text-lg font-semibold">{testimonial.name}</p>
+              <p className="text-sm text-gray-500">{testimonial.designation}</p>
+            </div>
           </div>
+          <Button variant="ghost" size="icon" asChild>
+            <Link href="#" target="_blank">
+              <TwitterLogo className="size-4" />
+            </Link>
+          </Button>
         </div>
-        <Button variant="ghost" size="icon" asChild>
-          <Link href="#" target="_blank">
-            <TwitterLogo className="size-4" />
-          </Link>
-        </Button>
+        <p className="mt-5 text-[17px]">{testimonial.testimonial}</p>
       </div>
-      <p className="mt-5 text-[17px]">{testimonial.testimonial}</p>
-    </div>
+    </FadeBlur>
   ));
 
 const TwitterLogo = (props: ComponentProps<'svg'>) => (

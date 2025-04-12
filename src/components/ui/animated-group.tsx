@@ -59,6 +59,7 @@ export const presetVariants: Record<PresetType, Variants> = {
         type: 'spring',
         bounce: 0.3,
         duration: 1.5,
+        filter: { type: 'tween', duration: 0.5 },
       },
     },
   },
