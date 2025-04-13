@@ -1,9 +1,11 @@
 import FadeBlur from '@/components/animations/fade-blur';
 import { GridLayout } from '@/components/ui/grid-layout';
+import { cn } from '@/lib/utils';
 
 interface TitleSubSectionProps {
   title: string;
   description: string;
+  descriptionClassName?: string;
 }
 
 export default function TitleSubSection(props: TitleSubSectionProps) {
@@ -23,7 +25,12 @@ export default function TitleSubSection(props: TitleSubSectionProps) {
           {props.title}
         </GridLayout>
       </h1>
-      <p className="mb-6 px-2 text-center text-foreground/70 md:text-lg">
+      <p
+        className={cn(
+          'mb-6 px-2 text-center text-foreground/70 md:text-lg',
+          props.descriptionClassName,
+        )}
+      >
         {props.description}
       </p>
     </FadeBlur>
