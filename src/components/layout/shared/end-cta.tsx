@@ -2,6 +2,7 @@ import FadeBlur from '@/components/animations/fade-blur';
 import { Boxes } from '@/components/ui/background-boxes';
 import { HoverBorderGradient } from '@/components/ui/hover-border-gradient';
 import { MoveUpRight } from 'lucide-react';
+import Link from 'next/link';
 
 export default function EndCTA() {
   return (
@@ -16,16 +17,18 @@ export default function EndCTA() {
             achieve your goals.
           </p>
         </FadeBlur>
-        <HoverBorderGradient
-          containerClassName="rounded-full mx-auto mt-4"
-          as="button"
-          className="group/button flex items-center gap-2 bg-secondary text-foreground  "
-        >
-          <span>Request a Quote</span>
-          <span>
-            <MoveUpRight className="w-4 transition-all duration-300 group-hover/button:size-5 group-hover/button:rotate-45" />
-          </span>
-        </HoverBorderGradient>
+        <Link href="/contact">
+          <HoverBorderGradient
+            containerClassName="rounded-full mx-auto mt-4"
+            as="button"
+            className="group/button flex items-center gap-2 bg-secondary text-foreground  "
+          >
+            <span>Request a Quote</span>
+            <span>
+              <MoveUpRight className="w-4 transition-all duration-300 group-hover/button:size-5 group-hover/button:rotate-45" />
+            </span>
+          </HoverBorderGradient>
+        </Link>
         <Boxes />
       </div>
     </section>

@@ -11,7 +11,7 @@ import { useEffect, useState } from 'react';
 
 interface HeroProps {
   label: string;
-  title: string;
+  title: string | React.ReactNode;
   description: string;
   cta?: string;
   ctaLink?: string;
@@ -102,7 +102,7 @@ export default function Hero({
             </div>
           </div>
         </div>
-        <h1 className="mx-auto mt-4 max-w-5xl bg-gradient-to-br from-foreground/80 to-foreground/20  bg-clip-text px-4 text-center text-5xl font-semibold leading-normal text-transparent md:text-5xl md:leading-relaxed lg:text-7xl lg:leading-snug">
+        <h1 className="mx-auto mt-4 max-w-5xl bg-gradient-to-br from-foreground/80 to-foreground/20  bg-clip-text px-4 text-center text-4xl font-semibold leading-normal text-transparent md:text-5xl md:leading-relaxed lg:text-7xl lg:leading-snug">
           {title}
         </h1>
         <p className="mx-auto mb-8 mt-4  max-w-xs  text-center  text-foreground/60 md:max-w-xl md:text-lg">

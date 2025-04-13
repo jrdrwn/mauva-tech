@@ -12,12 +12,12 @@ export default function SupportSection() {
   });
 
   const rotate = useTransform(scrollYProgress, [0, 1], [0, 30]);
-  const scale = useTransform(scrollYProgress, [0, 1], [1.05, 1]);
+  const scale = useTransform(scrollYProgress, [0, 1], [1, 1]);
 
   return (
     <div
       ref={containerRef}
-      className="relative mt-8 w-full px-2 sm:mr-0 sm:mt-12 md:mt-20"
+      className="relative mx-auto mt-8 w-11/12 px-2  sm:mt-12 md:mt-20"
       style={{
         transformStyle: 'preserve-3d',
         perspective: '1000px',
@@ -42,3 +42,4 @@ export default function SupportSection() {
     </div>
   );
 }
+
