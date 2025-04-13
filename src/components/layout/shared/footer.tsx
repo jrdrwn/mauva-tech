@@ -28,12 +28,11 @@ function LinkGroup(links: LinkItem[]) {
 
 export default function Footer() {
   const menuLinks: LinkItem[] = [
-    { name: 'Home', href: '/' },
     { name: 'About', href: '/about' },
     { name: 'Services', href: '/services' },
     { name: 'Projects', href: '/projects' },
     { name: 'Blogs', href: '/blog' },
-    { name: 'Contact', href: '/contact' },
+    { name: 'Pricing', href: '/pricing' },
   ];
   const socialLinks: LinkItem[] = [
     { name: 'Facebook', href: 'https://facebook.com', target: '_blank' },

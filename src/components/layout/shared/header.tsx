@@ -54,6 +54,10 @@ export default function Header() {
       title: 'Contact',
       href: '/contact',
     },
+    {
+      title: 'Pricing',
+      href: '/pricing',
+    },
   ];
 
   const pathname = usePathname();
