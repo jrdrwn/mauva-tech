@@ -14,6 +14,7 @@ interface HeroProps {
   description: string;
   cta: string;
   support?: React.ReactNode;
+  ref?: React.RefObject<HTMLElement | null>;
 }
 
 export default function Hero({
@@ -22,6 +23,7 @@ export default function Hero({
   description,
   cta,
   support,
+  ref,
 }: HeroProps) {
   const { resolvedTheme } = useTheme();
   const [color, setColor] = useState('');
@@ -42,7 +44,7 @@ export default function Hero({
     return () => clearTimeout(particlesColor);
   }, [resolvedTheme]);
   return (
-    <section className="relative">
+    <section ref={ref} className="relative">
       <Particles
         className="absolute inset-0"
         quantity={50}
@@ -93,7 +95,7 @@ export default function Hero({
             </div>
           </div>
         </button>
-        <h1 className="mx-auto mt-4 max-w-5xl bg-gradient-to-br from-foreground/80 to-foreground/20  bg-clip-text px-4 text-center text-3xl font-semibold leading-relaxed text-transparent md:text-4xl lg:text-7xl lg:leading-snug">
+        <h1 className="mx-auto mt-4 max-w-5xl bg-gradient-to-br from-foreground/80 to-foreground/20  bg-clip-text px-4 text-center text-5xl font-semibold leading-normal text-transparent md:text-5xl md:leading-relaxed lg:text-7xl lg:leading-snug">
           {title}
         </h1>
         <p className="mx-auto mt-4  max-w-xs  text-center  text-foreground/60 md:max-w-xl md:text-lg">

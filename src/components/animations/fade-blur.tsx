@@ -1,15 +1,20 @@
 import { InView } from '../ui/in-view';
 
-export default function FadeBlur(props: {
+export default function FadeBlur({
+  children,
+  className,
+  slide = true,
+}: {
   children: React.ReactNode;
   className?: string;
+  slide?: boolean;
 }) {
   return (
     <InView
-      className={props.className}
+      className={className}
       viewOptions={{ margin: '0px 0px -200px 0px' }}
       variants={{
-        hidden: { filter: 'blur(4px)', opacity: 0, y: 20 },
+        hidden: { filter: 'blur(4px)', opacity: 0, y: slide ? 20 : 0 },
         visible: {
           filter: 'blur(0px)',
           opacity: 1,
@@ -23,7 +28,7 @@ export default function FadeBlur(props: {
         },
       }}
     >
-      {props.children}
+      {children}
     </InView>
   );
 }

@@ -1,3 +1,5 @@
+'use client';
+
 import AboutUs from '@/components/layout/home/about-us';
 import Blogs from '@/components/layout/home/blogs';
 import Projects from '@/components/layout/home/projects';
@@ -9,9 +11,19 @@ import Footer from '@/components/layout/shared/footer';
 import Header from '@/components/layout/shared/header';
 import Hero from '@/components/layout/shared/hero';
 import { BorderBeam } from '@/components/ui/border-beam';
+import { motion, useScroll, useTransform } from 'framer-motion';
 import Image from 'next/image';
+import { useRef } from 'react';
 
 export default function Home() {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+  });
+
+  const rotate = useTransform(scrollYProgress, [0, 1], [0, 30]);
+  const scale = useTransform(scrollYProgress, [0, 1], [1.05, 1]);
+
   return (
     <>
       <Header />
@@ -21,8 +33,21 @@ export default function Home() {
         description="We build cutting-edge websites and mobile apps that drive results."
         cta="Explore Our Work"
         support={
-          <div className="relative mt-8 w-full overflow-hidden px-2 sm:mr-0 sm:mt-12 md:mt-20">
-            <div className="relative mx-auto max-w-6xl overflow-hidden rounded-2xl border bg-background p-1 shadow-lg  ring-1 ring-background ">
+          <div
+            ref={containerRef}
+            className="relative mt-8 w-full px-2 sm:mr-0 sm:mt-12 md:mt-20"
+            style={{
+              transformStyle: 'preserve-3d',
+              perspective: '1000px',
+            }}
+          >
+            <motion.div
+              style={{
+                rotateX: rotate,
+                scale,
+              }}
+              className="relative mx-auto max-w-6xl overflow-hidden rounded-2xl border bg-background p-1 shadow-lg  ring-1 ring-background "
+            >
               <BorderBeam />
               <Image
                 className="relative  aspect-video rounded-2xl bg-background object-cover object-top  "
@@ -31,7 +56,7 @@ export default function Home() {
                 width="1920"
                 height="1080"
               />
-            </div>
+            </motion.div>
           </div>
         }
       />

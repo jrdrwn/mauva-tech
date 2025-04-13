@@ -34,8 +34,8 @@ export function ProjectCard({
   link,
 }: ProjectCardProps) {
   return (
-    <FadeBlur className="relative flex w-full max-w-96 shrink-0 flex-col ">
-      <Card className="relative flex size-full max-w-96 shrink-0 flex-col">
+    <FadeBlur className="shrink-0" slide={false}>
+      <Card className="relative flex size-full max-w-96 flex-col">
         <GlowingEffect
           spread={40}
           glow={true}
@@ -73,7 +73,10 @@ export function ProjectCard({
 }
 export function ProjectCardSkeleton() {
   return (
-    <FadeBlur className="relative flex w-full max-w-96 shrink-0 flex-col ">
+    <FadeBlur
+      className="relative flex w-full max-w-96 shrink-0 flex-col "
+      slide={false}
+    >
       <Card className="relative flex size-full max-w-96 shrink-0 flex-col">
         <GlowingEffect
           spread={40}

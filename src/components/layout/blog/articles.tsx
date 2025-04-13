@@ -28,7 +28,7 @@ export interface ArticleCardProps {
 
 export function ArticleCardSkeleton() {
   return (
-    <FadeBlur>
+    <FadeBlur slide={false}>
       <div className="h-full w-96 min-w-96">
         <div className="relative overflow-hidden rounded-lg">
           <Skeleton className="h-40 w-full max-w-96 rounded-lg" />
@@ -78,7 +78,7 @@ export default function Articles() {
 
 export function ArticleCard(props: ArticleCardProps) {
   return (
-    <FadeBlur>
+    <FadeBlur slide={false}>
       <div className="h-full w-96 min-w-96">
         <div className="relative overflow-hidden rounded-lg">
           <Image
