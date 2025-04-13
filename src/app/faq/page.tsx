@@ -13,6 +13,7 @@ export default function FAQ() {
         title="Frequently Asked Questions"
         description="Quick answers to common questions about our products & services."
         cta="Have a question that is not listed here?"
+        ctaLink="/contact"
       />
       <FAQSection onlyFaq={true} />
       <EndCTA />

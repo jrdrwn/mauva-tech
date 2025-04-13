@@ -13,6 +13,7 @@ export default function ProjectsPage() {
         title="Explore Our Work"
         description="Explore some of our recent projects and see how we've helped businesses achieve their goals."
         cta="Get in Touch"
+        ctaLink="/contact"
       />
       <Projects />
       <EndCTA />

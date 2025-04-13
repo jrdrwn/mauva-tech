@@ -38,7 +38,10 @@ export default function Team() {
   ];
 
   return (
-    <section className="container mx-auto flex h-full flex-col items-center justify-center py-16">
+    <section
+      className="container mx-auto flex h-full flex-col items-center justify-center py-16"
+      id="team"
+    >
       <TitleSubSection
         title="Meet the Team"
         description="The passionate minds behind MauvaTech."

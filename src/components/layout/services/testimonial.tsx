@@ -65,7 +65,7 @@ const testimonials = [
 ];
 
 const Testimonial = () => (
-  <section className="container mx-auto  py-16">
+  <section className="container mx-auto  py-16" id="testimonial">
     <div className=" flex h-full flex-col items-center justify-center">
       <TitleSubSection
         title="Our Clients' Stories"

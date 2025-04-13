@@ -6,13 +6,17 @@ import Particles from '@/components/ui/particles';
 import { hslToHex } from '@/lib/utils';
 import { ArrowRight, MoveUpRight } from 'lucide-react';
 import { useTheme } from 'next-themes';
+import Link from 'next/link';
 import { useEffect, useState } from 'react';
 
 interface HeroProps {
   label: string;
   title: string;
   description: string;
-  cta: string;
+  cta?: string;
+  ctaLink?: string;
+  startSupportCta?: React.ReactNode;
+  EndSupportCta?: React.ReactNode;
   support?: React.ReactNode;
   ref?: React.RefObject<HTMLElement | null>;
 }
@@ -22,6 +26,9 @@ export default function Hero({
   title,
   description,
   cta,
+  ctaLink,
+  startSupportCta,
+  EndSupportCta,
   support,
   ref,
 }: HeroProps) {
@@ -80,7 +87,7 @@ export default function Hero({
         className="container relative z-10 mx-auto flex flex-col items-center justify-center px-2 py-16 md:pt-24 lg:pt-36"
         preset="blur"
       >
-        <button className="group mx-auto flex w-fit items-center gap-4 rounded-full border bg-muted p-1 pl-4 shadow-md  transition-colors duration-300 hover:bg-background dark:border-t-white/5  dark:hover:border-t-border">
+        <div className="group mx-auto flex w-fit items-center gap-4 rounded-full border bg-muted p-1 pl-4 shadow-md  transition-colors duration-300 hover:bg-background/50 dark:border-t-white/5  dark:hover:border-t-border">
           <span className="text-sm text-foreground">{label}</span>
           <span className="block h-4 w-0.5 border-l bg-white dark:border-background dark:bg-zinc-700"></span>
 
@@ -94,23 +101,32 @@ export default function Hero({
               </span>
             </div>
           </div>
-        </button>
+        </div>
         <h1 className="mx-auto mt-4 max-w-5xl bg-gradient-to-br from-foreground/80 to-foreground/20  bg-clip-text px-4 text-center text-5xl font-semibold leading-normal text-transparent md:text-5xl md:leading-relaxed lg:text-7xl lg:leading-snug">
           {title}
         </h1>
-        <p className="mx-auto mt-4  max-w-xs  text-center  text-foreground/60 md:max-w-xl md:text-lg">
+        <p className="mx-auto mb-8 mt-4  max-w-xs  text-center  text-foreground/60 md:max-w-xl md:text-lg">
           {description}
         </p>
-        <HoverBorderGradient
-          containerClassName="rounded-full mx-auto mt-8"
-          as="button"
-          className="group/button flex items-center gap-2 bg-background text-foreground  "
-        >
-          <span>{cta}</span>
-          <span>
-            <MoveUpRight className="w-4 transition-all duration-300 group-hover/button:size-5 group-hover/button:rotate-45" />
-          </span>
-        </HoverBorderGradient>
+        <div className="flex w-full flex-wrap items-center justify-center gap-x-5 gap-y-8 ">
+          {startSupportCta}
+          {cta && (
+            <Link href={ctaLink || '/'}>
+              <HoverBorderGradient
+                containerClassName="rounded-full"
+                as="button"
+                className="group/button flex items-center gap-2 bg-background text-foreground  "
+              >
+                <span>{cta}</span>
+                <span>
+                  <MoveUpRight className="w-4 transition-all duration-300 group-hover/button:size-5 group-hover/button:rotate-45" />
+                </span>
+              </HoverBorderGradient>
+            </Link>
+          )}
+
+          {EndSupportCta}
+        </div>
         {support}
       </AnimatedGroup>
     </section>

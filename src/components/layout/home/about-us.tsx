@@ -14,6 +14,7 @@ import {
 import { WobbleCard } from '@/components/ui/wobble-card';
 import { MoveUpRight } from 'lucide-react';
 import Image from 'next/image';
+import Link from 'next/link';
 import { useEffect, useId, useState } from 'react';
 
 import TitleSubSection from '../shared/title-sub-section';
@@ -111,12 +112,14 @@ export function WobbleCardContainer() {
           </div>
         </CardContent>
         <CardFooter className=" items-end ">
-          <Button variant={'ghost'} className="group/button">
-            Learn More About Us
-            <span>
-              <MoveUpRight className="w-4 transition-all duration-300 group-hover/button:size-5 group-hover/button:rotate-45" />
-            </span>
-          </Button>
+          <Link href="/about">
+            <Button variant={'ghost'} className="group/button">
+              Learn More About Us
+              <span>
+                <MoveUpRight className="w-4 transition-all duration-300 group-hover/button:size-5 group-hover/button:rotate-45" />
+              </span>
+            </Button>
+          </Link>
         </CardFooter>
       </Card>
     </div>

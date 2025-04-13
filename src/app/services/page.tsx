@@ -14,6 +14,7 @@ export default function Services() {
         title="Empowering Your Business with Cutting-Edge Digital Solutions"
         description="From custom websites to mobile apps, we provide tailored solutions that drive growth, efficiency, and innovation. Let us help you transform your ideas into reality."
         cta="Get a Free Consultation"
+        ctaLink="/contact"
       />
       <WhatWeDo />
       <Testimonial />
