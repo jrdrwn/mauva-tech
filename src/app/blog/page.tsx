@@ -1,5 +1,3 @@
-'use client';
-
 import Articles from '@/components/layout/blog/articles';
 import EndCTA from '@/components/layout/shared/end-cta';
 import Footer from '@/components/layout/shared/footer';
@@ -14,7 +12,6 @@ export default function BlogPage() {
         label="Blog"
         title="Welcome to Our Blog"
         description="Stay updated with our latest news and articles"
-        cta="Read More"
       />
       <Articles />
       <EndCTA />

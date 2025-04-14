@@ -1,7 +1,6 @@
 'use client';
 
 import { BentoGrid, BentoGridItem } from '@/components/ui/bento-grid';
-import { GridLayout } from '@/components/ui/grid-layout';
 import { cn } from '@/lib/utils';
 import {
   IconBoxAlignRightFilled,
@@ -13,6 +12,8 @@ import {
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
+
+import TitleSubSection from '../shared/title-sub-section';
 
 const SkeletonOne = () => {
   const variants = {
@@ -113,33 +114,16 @@ const SkeletonTwo = () => {
   );
 };
 const SkeletonThree = () => {
-  const variants = {
-    initial: {
-      backgroundPosition: '0 50%',
-    },
-    animate: {
-      backgroundPosition: ['0, 50%', '100% 50%', '0 50%'],
-    },
-  };
   return (
-    <motion.div
-      initial="initial"
-      animate="animate"
-      variants={variants}
-      transition={{
-        duration: 5,
-        repeat: Infinity,
-        repeatType: 'reverse',
-      }}
-      className="flex size-full min-h-24 flex-1 flex-col space-y-2 rounded-lg bg-dot-black/[0.2] dark:bg-dot-white/[0.2]"
-      style={{
-        background:
-          'linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab)',
-        backgroundSize: '400% 400%',
-      }}
-    >
-      <motion.div className="size-full rounded-lg"></motion.div>
-    </motion.div>
+    <Image
+    width={640}
+    height={426}
+    className='aspect-video h-36 w-full rounded-xl object-cover object-center'
+      src={
+        'https://images.unsplash.com/photo-1562408590-e32931084e23?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&dl=umberto-jXd2FSvcRr8-unsplash.jpg&w=1920'
+      }
+      alt='An Image'
+    />
   );
 };
 const SkeletonFour = () => {
@@ -163,6 +147,30 @@ const SkeletonFour = () => {
       rotate: 0,
     },
   };
+  const avatars = [
+    {
+      src: 'https://images.unsplash.com/photo-1599566150163-29194dcaad36?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3387&q=80',
+      alt: 'Avatar 1',
+      quote: 'Vanilla JavaScript is the foundation of modern web development.',
+      label: 'Essential',
+      labelColor: 'bg-blue-100 text-blue-600 border-blue-500',
+    },
+    {
+      src: 'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YXZhdGFyfGVufDB8fDB8fHww&auto=format&fit=crop&w=800&q=60',
+      alt: 'Avatar 2',
+      quote: 'Tailwind CSS simplifies styling with utility-first classes.',
+      label: 'Innovative',
+      labelColor: 'bg-green-100 text-green-600 border-green-500',
+    },
+    {
+      src: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8YXZhdGFyfGVufDB8fDB8fHww&auto=format&fit=crop&w=800&q=60',
+      alt: 'Avatar 3',
+      quote: 'React is a powerful library for building user interfaces.',
+      label: 'Popular',
+      labelColor: 'bg-orange-100 text-orange-600 border-orange-500',
+    },
+  ];
+
   return (
     <motion.div
       initial="initial"
@@ -170,57 +178,30 @@ const SkeletonFour = () => {
       whileHover="hover"
       className="flex size-full min-h-24 flex-1 flex-row space-x-2 bg-dot-black/[0.2] dark:bg-dot-white/[0.2]"
     >
-      <motion.div
-        variants={first}
-        className="flex h-full w-1/3 flex-col items-center  justify-center rounded-2xl border border-border bg-card p-4"
-      >
-        <Image
-          src="https://images.unsplash.com/photo-1599566150163-29194dcaad36?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3387&q=80"
-          alt="avatar"
-          height="100"
-          width="100"
-          className="size-10 rounded-full"
-        />
-        <p className="mt-4 text-center text-xs font-semibold text-neutral-500 sm:text-sm">
-          Just code in Vanilla Javascript
-        </p>
-        <p className="mt-4 rounded-full border border-red-500 bg-red-100 px-2 py-0.5 text-xs text-red-600 dark:bg-red-900/20">
-          Delusional
-        </p>
-      </motion.div>
-      <motion.div className="relative z-20 flex h-full w-1/3 flex-col items-center  justify-center rounded-2xl border border-border bg-card p-4">
-        <Image
-          src="https://images.unsplash.com/photo-1599566150163-29194dcaad36?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3387&q=80"
-          alt="avatar"
-          height="100"
-          width="100"
-          className="size-10 rounded-full"
-        />
-        <p className="mt-4 text-center text-xs font-semibold text-neutral-500 sm:text-sm">
-          Tailwind CSS is cool, you know
-        </p>
-        <p className="mt-4 rounded-full border border-green-500 bg-green-100 px-2 py-0.5 text-xs text-green-600 dark:bg-green-900/20">
-          Sensible
-        </p>
-      </motion.div>
-      <motion.div
-        variants={second}
-        className="flex h-full w-1/3 flex-col items-center  justify-center rounded-2xl border border-border bg-card p-4"
-      >
-        <Image
-          src="https://images.unsplash.com/photo-1599566150163-29194dcaad36?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3387&q=80"
-          alt="avatar"
-          height="100"
-          width="100"
-          className="size-10 rounded-full"
-        />
-        <p className="mt-4 text-center text-xs font-semibold text-neutral-500 sm:text-sm">
-          I love angular, RSC, and Redux.
-        </p>
-        <p className="mt-4 rounded-full border border-orange-500 bg-orange-100 px-2 py-0.5 text-xs text-orange-600 dark:bg-orange-900/20">
-          Helpless
-        </p>
-      </motion.div>
+      {avatars.map((avatar, index) => (
+        <motion.div
+          key={index}
+          variants={index % 2 === 0 ? first : second}
+          className="flex h-full w-1/3 flex-col items-center justify-center rounded-2xl border border-border bg-card p-4"
+        >
+          <Image
+            src={avatar.src}
+            alt={avatar.alt}
+            height="100"
+            width="100"
+            className="size-10 rounded-full object-cover"
+          />
+          <p className="mt-4 text-center text-xs font-semibold text-neutral-500 sm:text-sm">
+            {avatar.quote}
+          </p>
+          <p
+            // eslint-disable-next-line tailwindcss/migration-from-tailwind-2
+            className={`mt-4 rounded-full border px-2 py-0.5 text-xs ${avatar.labelColor} dark:bg-opacity-20`}
+          >
+            {avatar.label}
+          </p>
+        </motion.div>
+      ))}
     </motion.div>
   );
 };
@@ -257,29 +238,28 @@ const SkeletonFive = () => {
       className="flex size-full min-h-24 flex-1 flex-col space-y-2 bg-dot-black/[0.2] dark:bg-dot-white/[0.2]"
     >
       <motion.div
-        variants={variants}
-        className="flex flex-row items-start space-x-2 rounded-2xl border  border-border bg-card p-2"
+      variants={variants}
+      className="flex flex-row items-start space-x-2 rounded-2xl border border-border bg-card p-2"
       >
-        <div className="w-20">
-          <Image
-            src="https://images.unsplash.com/photo-1599566150163-29194dcaad36?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3387&q=80"
-            alt="avatar"
-            height="100"
-            width="100"
-            className="size-10  rounded-full object-cover object-center "
-          />
-        </div>
-        <p className="text-xs text-neutral-500">
-          There are a lot of cool framerworks out there like React, Angular,
-          Vue, Svelte that can make your life ....
-        </p>
+      <div className="w-20">
+        <Image
+        src="https://images.unsplash.com/photo-1599566150163-29194dcaad36?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3387&q=80"
+        alt="avatar"
+        height="100"
+        width="100"
+        className="size-10 rounded-full object-cover object-center"
+        />
+      </div>
+      <p className="text-xs text-neutral-500">
+        There are numerous frameworks like React, Angular, Vue, and Svelte that empower developers to build amazing applications efficiently and effectively.
+      </p>
       </motion.div>
       <motion.div
-        variants={variantsSecond}
-        className="ml-auto flex w-3/4 flex-row items-center justify-end space-x-2 rounded-full border border-border bg-card p-2"
+      variants={variantsSecond}
+      className="ml-auto flex w-3/4 flex-row items-center justify-end space-x-2 rounded-full border border-border bg-card p-2"
       >
-        <p className="text-xs text-neutral-500">Use PHP.</p>
-        <div className="size-6 shrink-0 rounded-full bg-gradient-to-r from-pink-500 to-violet-500" />
+      <p className="text-xs text-neutral-500">Consider exploring PHP for backend development—it remains a robust and versatile choice.</p>
+      <div className="size-6 shrink-0 rounded-full bg-gradient-to-r from-pink-500 to-violet-500" />
       </motion.div>
     </motion.div>
   );
@@ -357,24 +337,10 @@ const items = [
 export default function WhatDefinesUs() {
   return (
     <section className="container mx-auto flex h-full flex-col items-center justify-center py-16">
-      <h1 className="mb-2 px-2 text-center text-2xl font-medium md:text-4xl">
-        <GridLayout
-          crosshairs={{
-            topLeft: true,
-            topRight: true,
-            bottomLeft: true,
-            bottomRight: true,
-          }}
-          lineVariant="none"
-          className="mx-auto max-w-max p-2"
-        >
-          What Defines Us?
-        </GridLayout>
-      </h1>
-      <p className="mb-6 px-2 text-center text-foreground/70 md:text-lg">
-        Discover how our passion for technology drives us to create solutions
-        that make a difference.
-      </p>
+      <TitleSubSection
+        title="What Defines Us?"
+        description="Discover how our passion for technology drives us to create solutions that make a difference."
+      />
       <BentoGrid className="mx-auto px-2 md:auto-rows-[20rem]  ">
         {items.map((item, i) => (
           <BentoGridItem

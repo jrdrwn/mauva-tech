@@ -1,4 +1,4 @@
-import { GridLayout } from '@/components/ui/grid-layout';
+import FadeBlur from '@/components/animations/fade-blur';
 import { cn } from '@/lib/utils';
 import {
   IconAdjustmentsBolt,
@@ -6,6 +6,8 @@ import {
   IconHelp,
   IconTerminal2,
 } from '@tabler/icons-react';
+
+import TitleSubSection from '../shared/title-sub-section';
 
 export default function Services() {
   const features = [
@@ -35,25 +37,12 @@ export default function Services() {
     },
   ];
   return (
-    <section className="container mx-auto flex h-full flex-col items-center justify-center py-10">
-      <h1 className="mb-2 px-2 text-center text-2xl font-medium md:text-4xl">
-        <GridLayout
-          crosshairs={{
-            topLeft: true,
-            topRight: true,
-            bottomLeft: true,
-            bottomRight: true,
-          }}
-          lineVariant="none"
-          className="mx-auto max-w-max p-2"
-        >
-          Transforming Ideas into Reality
-        </GridLayout>
-      </h1>
-      <p className="mb-6 px-2 text-center text-foreground/70 md:text-lg">
-        We combine creativity, technology, and strategy to build solutions that
-        make an impact.
-      </p>
+    <section className="container mx-auto flex h-full flex-col items-center justify-center py-20">
+      <TitleSubSection
+        title="Transforming Ideas into Reality"
+        description="We combine creativity, technology, and strategy to build solutions that make an impact."
+      />
+
       <div className="relative z-10 mx-auto grid  max-w-6xl grid-cols-1 py-10 md:grid-cols-2 lg:grid-cols-4">
         {features.map((feature, index) => (
           <Feature key={feature.title} {...feature} index={index} />
@@ -88,18 +77,20 @@ const Feature = ({
       {index >= 4 && (
         <div className="pointer-events-none absolute inset-0 size-full bg-gradient-to-b from-neutral-100 to-transparent opacity-0 transition duration-200 group-hover/feature:opacity-100 dark:from-neutral-800" />
       )}
-      <div className="relative z-10 mb-4 px-8 text-neutral-600 dark:text-neutral-400">
-        {icon}
-      </div>
-      <div className="relative z-10 mb-2 px-8 text-lg font-bold">
-        <div className="absolute inset-y-0 left-0 h-6 w-1 origin-center rounded-r-full bg-neutral-300 transition-all duration-200 group-hover/feature:h-8 group-hover/feature:bg-blue-500 dark:bg-neutral-700" />
-        <span className="inline-block text-neutral-800 transition duration-200 group-hover/feature:translate-x-2 dark:text-neutral-100">
-          {title}
-        </span>
-      </div>
-      <p className="relative z-10 max-w-xs px-8 text-sm text-neutral-600 dark:text-neutral-300">
-        {description}
-      </p>
+      <FadeBlur>
+        <div className="relative z-10 mb-4 px-8 text-neutral-600 dark:text-neutral-400">
+          {icon}
+        </div>
+        <div className="relative z-10 mb-2 px-8 text-lg font-bold">
+          <div className="absolute inset-y-0 left-0 h-6 w-1 origin-center rounded-r-full bg-neutral-300 transition-all duration-200 group-hover/feature:h-8 group-hover/feature:bg-blue-500 dark:bg-neutral-700" />
+          <span className="inline-block text-neutral-800 transition duration-200 group-hover/feature:translate-x-2 dark:text-neutral-100">
+            {title}
+          </span>
+        </div>
+        <p className="relative z-10 max-w-xs px-8 text-sm text-neutral-600 dark:text-neutral-300">
+          {description}
+        </p>
+      </FadeBlur>
     </div>
   );
 };

@@ -1,3 +1,4 @@
+import FadeBlur from '@/components/animations/fade-blur';
 import {
   Accordion,
   AccordionContent,
@@ -39,7 +40,7 @@ export default function FAQSection({ onlyFaq = false }: { onlyFaq?: boolean }) {
     <section className=" py-16">
       <div className=" container mx-auto flex h-full flex-col items-center justify-center px-4">
         {!onlyFaq && (
-          <>
+          <FadeBlur>
             <h1 className="mb-2 px-2 text-center text-2xl font-medium md:text-4xl">
               <GridLayout
                 crosshairs={{
@@ -57,7 +58,7 @@ export default function FAQSection({ onlyFaq = false }: { onlyFaq?: boolean }) {
             <p className="mb-6 px-2 text-center text-foreground/70 md:text-lg">
               Quick answers to common questions about our products and services.
             </p>
-          </>
+          </FadeBlur>
         )}
         <Accordion
           type="single"
@@ -65,12 +66,14 @@ export default function FAQSection({ onlyFaq = false }: { onlyFaq?: boolean }) {
           defaultValue="question-0"
         >
           {faq.map(({ question, answer }, index) => (
-            <AccordionItem key={question} value={`question-${index}`}>
-              <AccordionTrigger className="text-left text-lg">
-                {question}
-              </AccordionTrigger>
-              <AccordionContent>{answer}</AccordionContent>
-            </AccordionItem>
+            <FadeBlur key={question}>
+              <AccordionItem value={`question-${index}`}>
+                <AccordionTrigger className="text-left text-lg">
+                  {question}
+                </AccordionTrigger>
+                <AccordionContent>{answer}</AccordionContent>
+              </AccordionItem>
+            </FadeBlur>
           ))}
         </Accordion>
       </div>

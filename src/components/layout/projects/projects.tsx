@@ -1,5 +1,6 @@
 'use client';
 
+import FadeBlur from '@/components/animations/fade-blur';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import {
@@ -11,109 +12,98 @@ import {
   CardTitle,
 } from '@/components/ui/card';
 import { GlowingEffect } from '@/components/ui/glowing-effect';
+import { Skeleton } from '@/components/ui/skeleton';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
+import { useFetch } from '@/hooks/use-fetch';
 import { MoveUpRight } from 'lucide-react';
 import Image from 'next/image';
+import Link from 'next/link';
 
-interface ProjectCardProps {
+export interface ProjectCardProps {
   title: string;
   description: string;
   image: string;
   category: string;
+  link: string;
 }
-
-function ProjectCard({
+export function ProjectCard({
   title,
   description,
   image,
   category,
+  link,
 }: ProjectCardProps) {
   return (
-    <Card className="relative flex w-full max-w-96 shrink-0 flex-col">
-      <GlowingEffect
-        spread={40}
-        glow={true}
-        disabled={false}
-        proximity={64}
-        inactiveZone={0.01}
-      />
-      <CardHeader className="flex-1">
-        <CardTitle className="text-xl md:text-2xl">{title}</CardTitle>
-        <CardDescription>{description}</CardDescription>
-      </CardHeader>
-      <CardContent>
-        <Image
-          className="aspect-video w-full rounded-lg object-cover object-center"
-          src={image}
-          alt="Hero"
-          width={300}
-          height={200}
+    <FadeBlur className="shrink-0" slide={false}>
+      <Card className="relative flex size-full max-w-96 flex-col">
+        <GlowingEffect
+          spread={40}
+          glow={true}
+          disabled={false}
+          proximity={64}
+          inactiveZone={0.01}
         />
-      </CardContent>
-      <CardFooter className="flex items-center justify-between">
-        <Badge variant={'outline'}>{category}</Badge>
-        <Button variant={'ghost'} className="group/button">
-          Read more
-          <span>
-            <MoveUpRight className="w-4 transition-all duration-300 group-hover/button:size-5 group-hover/button:rotate-45" />
-          </span>
-        </Button>
-      </CardFooter>
-    </Card>
+        <CardHeader className="flex-1">
+          <CardTitle className="text-xl md:text-2xl">{title}</CardTitle>
+          <CardDescription>{description}</CardDescription>
+        </CardHeader>
+        <CardContent>
+          <Image
+            className="aspect-video w-full rounded-lg object-cover object-center"
+            src={image}
+            alt="Hero"
+            width={300}
+            height={200}
+          />
+        </CardContent>
+        <CardFooter className="flex items-center justify-between">
+          <Badge variant={'outline'}>{category}</Badge>
+          <Link href={link} target="_blank">
+            <Button variant={'ghost'} className="group/button">
+              Read more
+              <span>
+                <MoveUpRight className="w-4 transition-all duration-300 group-hover/button:size-5 group-hover/button:rotate-45" />
+              </span>
+            </Button>
+          </Link>
+        </CardFooter>
+      </Card>
+    </FadeBlur>
   );
 }
-
+export function ProjectCardSkeleton() {
+  return (
+    <FadeBlur
+      className="relative flex w-full max-w-96 shrink-0 flex-col "
+      slide={false}
+    >
+      <Card className="relative flex size-full max-w-96 shrink-0 flex-col">
+        <GlowingEffect
+          spread={40}
+          glow={true}
+          disabled={false}
+          proximity={64}
+          inactiveZone={0.01}
+        />
+        <CardHeader className="flex-1">
+          <Skeleton className="h-6 w-4/5 rounded-md" />
+          <Skeleton className="h-4 w-3/5 rounded-md" />
+        </CardHeader>
+        <CardContent>
+          <Skeleton className="aspect-video w-full rounded-lg" />
+        </CardContent>
+        <CardFooter className="flex items-center justify-between">
+          <Skeleton className="h-4 w-[30%] rounded-md" />
+          <Skeleton className="h-6 w-1/5 rounded-md" />
+        </CardFooter>
+      </Card>
+    </FadeBlur>
+  );
+}
 export default function Projects() {
-  const projects = [
-    {
-      title: 'E-commerce Platform for Fashionista',
-      description:
-        'A fully customized e-commerce solution designed to boost sales and enhance user experience.',
-      image:
-        'https://images.unsplash.com/photo-1595675024853-0f3ec9098ac7?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&dl=niclas-illg-FJ5e_2f96h4-unsplash.jpg&w=640',
-      category: 'Website',
-    },
-    {
-      title: 'E-commerce Platform for Fashionista',
-      description:
-        'A fully customized e-commerce solution designed to boost sales and enhance user experience.',
-      image:
-        'https://images.unsplash.com/photo-1595675024853-0f3ec9098ac7?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&dl=niclas-illg-FJ5e_2f96h4-unsplash.jpg&w=640',
-      category: 'Website',
-    },
-    {
-      title: 'HealthTrack Mobile App',
-      description:
-        'A health monitoring app that empowers users to take control of their wellness journey.',
-      image:
-        'https://images.unsplash.com/photo-1595675024853-0f3ec9098ac7?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&dl=niclas-illg-FJ5e_2f96h4-unsplash.jpg&w=640',
-      category: 'Mobile',
-    },
-    {
-      title: 'HealthTrack Mobile App',
-      description:
-        'A health monitoring app that empowers users to take control of their wellness journey.',
-      image:
-        'https://images.unsplash.com/photo-1595675024853-0f3ec9098ac7?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&dl=niclas-illg-FJ5e_2f96h4-unsplash.jpg&w=640',
-      category: 'Mobile',
-    },
-    {
-      title: 'Corporate Website for GreenTech Solutions',
-      description:
-        'A modern and informative website that reflects the company’s commitment to sustainability.',
-      image:
-        'https://images.unsplash.com/photo-1595675024853-0f3ec9098ac7?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&dl=niclas-illg-FJ5e_2f96h4-unsplash.jpg&w=640',
-      category: 'UI/UX',
-    },
-    {
-      title: 'Corporate Website for GreenTech Solutions',
-      description:
-        'A modern and informative website that reflects the company’s commitment to sustainability.',
-      image:
-        'https://images.unsplash.com/photo-1595675024853-0f3ec9098ac7?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&dl=niclas-illg-FJ5e_2f96h4-unsplash.jpg&w=640',
-      category: 'UI/UX',
-    },
-  ];
+  const { data, loading, error } =
+    useFetch<ProjectCardProps[]>('/api/projects');
+
   return (
     <section className="container mx-auto flex h-full flex-col  justify-center py-10">
       <Tabs defaultValue="all" className="flex flex-col items-center">
@@ -127,7 +117,12 @@ export default function Projects() {
           value="all"
           className="relative mt-0 flex w-full flex-wrap justify-center gap-4 "
         >
-          {projects.map((project, index) => (
+          {loading &&
+            Array(3)
+              .fill(0)
+              .map((_, index) => <ProjectCardSkeleton key={index} />)}
+          {error && <p>Error: {error}</p>}
+          {data?.map((project, index) => (
             <ProjectCard key={index} {...project} />
           ))}
         </TabsContent>
@@ -135,31 +130,25 @@ export default function Projects() {
           value="website"
           className="relative mt-0 flex w-full flex-wrap justify-center gap-4 "
         >
-          {projects
-            .filter((project) => project.category === 'Website')
-            .map((project, index) => (
-              <ProjectCard key={index} {...project} />
-            ))}
+          {data
+            ?.filter((project) => project.category === 'website')
+            .map((project, index) => <ProjectCard key={index} {...project} />)}
         </TabsContent>
         <TabsContent
           value="mobile"
           className="relative mt-0 flex w-full flex-wrap justify-center gap-4 "
         >
-          {projects
-            .filter((project) => project.category === 'Mobile')
-            .map((project, index) => (
-              <ProjectCard key={index} {...project} />
-            ))}
+          {data
+            ?.filter((project) => project.category === 'mobile')
+            .map((project, index) => <ProjectCard key={index} {...project} />)}
         </TabsContent>
         <TabsContent
           value="ui/ux"
           className="relative mt-0 flex w-full flex-wrap justify-center gap-4 "
         >
-          {projects
-            .filter((project) => project.category === 'UI/UX')
-            .map((project, index) => (
-              <ProjectCard key={index} {...project} />
-            ))}
+          {data
+            ?.filter((project) => project.category === 'ui/ux')
+            .map((project, index) => <ProjectCard key={index} {...project} />)}
         </TabsContent>
       </Tabs>
     </section>

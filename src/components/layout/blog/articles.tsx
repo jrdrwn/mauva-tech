@@ -1,3 +1,6 @@
+'use client';
+
+import FadeBlur from '@/components/animations/fade-blur';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import {
@@ -8,126 +11,123 @@ import {
   CardTitle,
 } from '@/components/ui/card';
 import { GlowingEffect } from '@/components/ui/glowing-effect';
+import { Skeleton } from '@/components/ui/skeleton';
+import { useFetch } from '@/hooks/use-fetch';
 import { MoveUpRight } from 'lucide-react';
 import Image from 'next/image';
+import Link from 'next/link';
+
+export interface ArticleCardProps {
+  id: string;
+  title: string;
+  summary: string;
+  created_at: string;
+  category: string;
+  image: string;
+}
+
+export function ArticleCardSkeleton() {
+  return (
+    <FadeBlur slide={false}>
+      <div className="h-full w-96 min-w-96">
+        <div className="relative overflow-hidden rounded-lg">
+          <Skeleton className="h-40 w-full max-w-96 rounded-lg" />
+        </div>
+        <Card className="relative mt-1 flex h-[230px] flex-col">
+          <GlowingEffect
+            spread={40}
+            glow={true}
+            disabled={false}
+            proximity={64}
+            inactiveZone={0.01}
+          />
+          <CardHeader>
+            <Skeleton className="h-6 w-full" />
+            <Skeleton className="h-4 w-full" />
+          </CardHeader>
+          <CardFooter className="relative flex-1 items-end">
+            <Skeleton className="h-10 w-full" />
+          </CardFooter>
+        </Card>
+      </div>
+    </FadeBlur>
+  );
+}
 
 export default function Articles() {
-  const articles = [
-    {
-      title: 'How to build a successful startup',
-      summary:
-        'Learn how to build a successful startup from scratch with our step-by-step guide.',
-      date: '2022-01-01',
-      category: 'News',
-      image:
-        'https://images.unsplash.com/photo-1421789665209-c9b2a435e3dc?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&dl=matthew-smith-Rfflri94rs8-unsplash.jpg&w=640',
-    },
-    {
-      title: 'The future of AI in business',
-      summary:
-        'Discover how AI is transforming businesses and what the future holds for this technology.',
-      date: '2022-01-02',
-      category: 'Technology',
-      image:
-        'https://images.unsplash.com/photo-1533518463843-d7d7e2b3c3b3?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&dl=franck-v-2Q3P2Jh8J0-unsplash.jpg&w=640',
-    },
-    {
-      title: 'Design trends to watch out for in 2022',
-      summary:
-        'Stay ahead of the curve with our list of design trends that will dominate 2022.',
-      date: '2022-01-03',
-      category: 'Design',
-      image:
-        'https://images.unsplash.com/photo-1556740739-887f6717d7e1?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&dl=charles-deluvio-7lXJ6YQbc4Y-unsplash.jpg&w=640',
-    },
-    {
-      title: 'The future of remote work',
-      summary:
-        'Explore the future of remote work and how it is reshaping the way we work.',
-      date: '2022-01-04',
-      category: 'Business',
-      image:
-        'https://images.unsplash.com/photo-1556740739-887f6717d7e1?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&dl=charles-deluvio-7lXJ6YQbc4Y-unsplash.jpg&w=640',
-    },
-    {
-      title: 'The impact of blockchain on the finance industry',
-      summary:
-        'Learn how blockchain technology is revolutionizing the finance industry and what the future holds.',
-      date: '2022-01-05',
-      category: 'Finance',
-      image:
-        'https://images.unsplash.com/photo-1556740739-887f6717d7e1?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&dl=charles-deluvio-7lXJ6YQbc4Y-unsplash.jpg&w=640',
-    },
-  ];
+  const { data, loading, error } =
+    useFetch<ArticleCardProps[]>('/api/articles');
   return (
     <section className="container mx-auto  py-16">
       <div className="relative flex w-full flex-wrap justify-center gap-4">
-        {articles.map((blog) => (
-          <ArticleCard key={blog.title} {...blog} />
-        ))}
+        {loading &&
+          Array(3)
+            .fill(0)
+            .map((_, index) => <ArticleCardSkeleton key={index} />)}
+        {error && <p>Error: {error}</p>}
+        {data?.length === 0 && (
+          <div className="flex size-full items-center justify-center">
+            <p className="text-lg">No articles found</p>
+          </div>
+        )}
+        {data?.map((blog) => <ArticleCard key={blog.title} {...blog} />)}
       </div>
     </section>
   );
 }
 
-interface ArticleCardProps {
-  title: string;
-  summary: string;
-  date: string;
-  category: string;
-  image: string;
-}
-
-function ArticleCard(props: ArticleCardProps) {
+export function ArticleCard(props: ArticleCardProps) {
   return (
-    <div className="w-96 min-w-96">
-      <div className="relative overflow-hidden rounded-lg">
-        <Image
-          alt="An Image"
-          src={
-            'https://images.unsplash.com/photo-1421789665209-c9b2a435e3dc?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&dl=matthew-smith-Rfflri94rs8-unsplash.jpg&w=640'
-          }
-          width={600}
-          height={400}
-          className="h-40 w-full max-w-96 rounded-lg object-cover object-center"
-        />
-        <div className="absolute bottom-4 left-4 flex flex-wrap gap-2">
-          <Badge className="shadow-lg" variant={'secondary'}>
-            {props.date &&
-              new Date(props.date).toLocaleDateString('id', {
-                dateStyle: 'medium',
-              })}
-          </Badge>
-          <Badge className="uppercase shadow-lg" variant={'secondary'}>
-            {props.category}
-          </Badge>
+    <FadeBlur slide={false}>
+      <div className="h-full w-96 min-w-96">
+        <div className="relative overflow-hidden rounded-lg">
+          <Image
+            alt="An Image"
+            src={props.image}
+            width={600}
+            height={400}
+            className="h-40 w-full max-w-96 rounded-lg object-cover object-center"
+          />
+          <div className="absolute bottom-4 left-4 flex flex-wrap gap-2">
+            <Badge className="shadow-lg" variant={'secondary'}>
+              {props.created_at &&
+                new Date(props.created_at).toLocaleDateString('id', {
+                  dateStyle: 'medium',
+                })}
+            </Badge>
+            <Badge className="uppercase shadow-lg" variant={'secondary'}>
+              {props.category}
+            </Badge>
+          </div>
         </div>
+        <Card className="relative mt-1 flex h-[230px] flex-col">
+          <GlowingEffect
+            spread={40}
+            glow={true}
+            disabled={false}
+            proximity={64}
+            inactiveZone={0.01}
+          />
+          <CardHeader>
+            <CardTitle className="line-clamp-2 text-ellipsis text-xl md:text-2xl">
+              {props.title}
+            </CardTitle>
+            <CardDescription className="line-clamp-2 text-ellipsis">
+              {props.summary}
+            </CardDescription>
+          </CardHeader>
+          <CardFooter className="relative flex-1 items-end">
+            <Link href={`/blog/${props.id}`}>
+              <Button variant={'outline'} className="group/button">
+                Read More
+                <span>
+                  <MoveUpRight className="w-4 transition-all duration-300 group-hover/button:size-5 group-hover/button:rotate-45" />
+                </span>
+              </Button>
+            </Link>
+          </CardFooter>
+        </Card>
       </div>
-      <Card className="relative mt-1 flex h-[230px] flex-col">
-        <GlowingEffect
-          spread={40}
-          glow={true}
-          disabled={false}
-          proximity={64}
-          inactiveZone={0.01}
-        />
-        <CardHeader>
-          <CardTitle className="line-clamp-2 text-ellipsis text-xl md:text-2xl">
-            {props.title}
-          </CardTitle>
-          <CardDescription className="line-clamp-2 text-ellipsis">
-            {props.summary}
-          </CardDescription>
-        </CardHeader>
-        <CardFooter className="relative flex-1 items-end">
-          <Button variant={'outline'} className="group/button">
-            Read More
-            <span>
-              <MoveUpRight className="w-4 transition-all duration-300 group-hover/button:size-5 group-hover/button:rotate-45" />
-            </span>
-          </Button>
-        </CardFooter>
-      </Card>
-    </div>
+    </FadeBlur>
   );
 }

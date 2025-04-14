@@ -1,5 +1,3 @@
-'use client';
-
 import OurJourney from '@/components/layout/about/our-journey';
 import Team from '@/components/layout/about/team';
 import VisionMission from '@/components/layout/about/vision-mission';
@@ -18,6 +16,7 @@ export default function AboutPage() {
         title="Explore Our Journey"
         description="From a small team with big dreams to a trusted partner for businesses worldwide."
         cta="Meet the Team"
+        ctaLink="#team"
       />
       <VisionMission />
       <OurJourney />

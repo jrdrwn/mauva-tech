@@ -8,8 +8,57 @@ import {
 } from '@/components/ui/select';
 import { Separator } from '@/components/ui/separator';
 import { MountainIcon } from 'lucide-react';
+import Link from 'next/link';
+
+interface LinkItem {
+  name: string;
+  href: string;
+  target?: string;
+}
+
+function LinkGroup(links: LinkItem[]) {
+  return links.map((link) => (
+    <Link href={link.href} key={link.name} target={link.target}>
+      <Button variant={'link'} className="px-0 text-muted-foreground">
+        {link.name}
+      </Button>
+    </Link>
+  ));
+}
 
 export default function Footer() {
+  const menuLinks: LinkItem[] = [
+    { name: 'About', href: '/about' },
+    { name: 'Services', href: '/services' },
+    { name: 'Projects', href: '/projects' },
+    { name: 'Blogs', href: '/blog' },
+    { name: 'Pricing', href: '/pricing' },
+  ];
+  const socialLinks: LinkItem[] = [
+    { name: 'Facebook', href: 'https://facebook.com', target: '_blank' },
+    { name: 'Twitter', href: 'https://twitter.com', target: '_blank' },
+    { name: 'Instagram', href: 'https://instagram.com', target: '_blank' },
+    { name: 'LinkedIn', href: 'https://linkedin.com', target: '_blank' },
+  ];
+  const contactLinks: LinkItem[] = [
+    {
+      name: 'Jakarta, Indonesia',
+      href: 'https://goo.gl/maps/xyz',
+      target: '_blank',
+    },
+    { name: '+62 123 4567 890', href: 'tel:+621234567890', target: '_blank' },
+    {
+      name: 'info@mauvatech.com',
+      href: 'mailto:info@mauvatech.com',
+      target: '_blank',
+    },
+  ];
+
+  const footerLinks: LinkItem[] = [
+    { name: 'Privacy Policy', href: '/privacy' },
+    { name: 'Terms of Service', href: '/terms' },
+  ];
+
   return (
     <footer className="pt-10 md:py-16">
       <div className="container mx-auto rounded-t-3xl bg-secondary/50 p-4 md:rounded-3xl md:p-8">
@@ -37,24 +86,7 @@ export default function Footer() {
               Menu
             </h3>
             <div className="flex flex-col items-start">
-              <Button variant={'link'} className="px-0">
-                Home
-              </Button>
-              <Button variant={'link'} className="px-0">
-                About
-              </Button>
-              <Button variant={'link'} className="px-0">
-                Services
-              </Button>
-              <Button variant={'link'} className="px-0">
-                Projects
-              </Button>
-              <Button variant={'link'} className="px-0">
-                Blogs
-              </Button>
-              <Button variant={'link'} className="px-0">
-                Contact
-              </Button>
+              {LinkGroup(menuLinks)}
             </div>
           </div>
           <div>
@@ -62,18 +94,7 @@ export default function Footer() {
               Social
             </h3>
             <div className="flex flex-col items-start">
-              <Button variant={'link'} className="px-0">
-                Facebook
-              </Button>
-              <Button variant={'link'} className="px-0">
-                Twitter
-              </Button>
-              <Button variant={'link'} className="px-0">
-                Instagram
-              </Button>
-              <Button variant={'link'} className="px-0">
-                LinkedIn
-              </Button>
+              {LinkGroup(socialLinks)}
             </div>
           </div>
           <div>
@@ -81,15 +102,7 @@ export default function Footer() {
               Contact
             </h3>
             <div className="flex flex-col items-start">
-              <Button variant={'link'} className="px-0">
-                Jakarta, Indonesia
-              </Button>
-              <Button variant={'link'} className="px-0">
-                +62 123 4567 890
-              </Button>
-              <Button variant={'link'} className="px-0">
-                info@mauvatech.com
-              </Button>
+              {LinkGroup(contactLinks)}
             </div>
           </div>
         </div>
@@ -98,14 +111,7 @@ export default function Footer() {
           <p className="leading-7 [&:not(:first-child)]:mt-6">
             © 2025 MauvaTech. All rights reserved.
           </p>
-          <div className="flex gap-2">
-            <Button variant={'link'} className="px-0">
-              Privacy Policy
-            </Button>
-            <Button variant={'link'} className="px-0">
-              Terms & Conditions
-            </Button>
-          </div>
+          <div className="flex gap-2">{LinkGroup(footerLinks)}</div>
         </div>
       </div>
     </footer>
