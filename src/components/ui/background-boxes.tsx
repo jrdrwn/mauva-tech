@@ -25,6 +25,9 @@ export const BoxesCore = ({ className, ...rest }: { className?: string }) => {
         >
           {cols.map((_, j) => (
             <motion.div
+              style={{
+                backgroundColor: `hsl(var(--secondary-foreground) / .0)`,
+              }}
               whileHover={{
                 backgroundColor: `hsl(var(--secondary-foreground) / .25)`,
                 transition: { duration: 0 },

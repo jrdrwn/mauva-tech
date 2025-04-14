@@ -1,5 +1,3 @@
-'use client';
-
 import ContactDetail from '@/components/layout/contact/contact-detail';
 import EndCTA from '@/components/layout/shared/end-cta';
 import Footer from '@/components/layout/shared/footer';
@@ -11,10 +9,9 @@ export default function Contact() {
     <>
       <Header />
       <Hero
-        label="Contact Us"
+        label="Don't be shy!"
         title="Get in touch with us"
         description="We are here to help you with any questions you may have. Reach out to us and we will get back to you as soon as possible."
-        cta="Send us a message"
       />
       <ContactDetail />
       <EndCTA />

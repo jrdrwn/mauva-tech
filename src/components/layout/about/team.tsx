@@ -3,6 +3,8 @@ import { IconBrandGithub, IconBrandLinkedin } from '@tabler/icons-react';
 import Image from 'next/image';
 import Link from 'next/link';
 
+import TitleSubSection from '../shared/title-sub-section';
+
 export default function Team() {
   const teamMembers = [
     {
@@ -36,13 +38,14 @@ export default function Team() {
   ];
 
   return (
-    <section className="container mx-auto flex h-full flex-col items-center justify-center py-16">
-      <h1 className="mb-2 px-2 text-center text-2xl font-medium md:text-4xl">
-        Meet the Team
-      </h1>
-      <p className="mb-6 px-2 text-center text-foreground/70 md:text-lg">
-        The passionate minds behind MauvaTech.
-      </p>
+    <section
+      className="container mx-auto flex h-full flex-col items-center justify-center py-16"
+      id="team"
+    >
+      <TitleSubSection
+        title="Meet the Team"
+        description="The passionate minds behind MauvaTech."
+      />
       <div className="grid w-full grid-cols-1 gap-x-8 gap-y-12 px-2 md:grid-cols-2">
         {teamMembers.map((member) => (
           <div

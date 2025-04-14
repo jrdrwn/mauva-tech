@@ -2,6 +2,8 @@ import { Timeline } from '@/components/ui/timeline';
 import Image from 'next/image';
 import { ReactNode } from 'react';
 
+import TitleSubSection from '../shared/title-sub-section';
+
 export default function OurJourney() {
   const data: { title: string; content: ReactNode }[] = [
     {
@@ -30,11 +32,11 @@ export default function OurJourney() {
             marked the beginning of our journey as a trusted software house.
           </p>
           <Image
-            src="https://images.unsplash.com/photo-1595675024853-0f3ec9098ac7?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&dl=niclas-illg-FJ5e_2f96h4-unsplash.jpg&w=640"
+            src="/project-1.png"
             alt="A Project"
             width={800}
             height={533}
-            className="mt-8 aspect-video w-full rounded-lg object-cover object-center"
+            className="mt-8 aspect-square w-full rounded-lg object-cover object-top"
           />
         </div>
       ),
@@ -52,11 +54,11 @@ export default function OurJourney() {
             reviews for its seamless user experience and innovative features.
           </p>
           <Image
-            src="https://images.unsplash.com/photo-1595675024853-0f3ec9098ac7?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&dl=niclas-illg-FJ5e_2f96h4-unsplash.jpg&w=640"
+            src="/project-2.png"
             alt="A Project"
             width={800}
             height={533}
-            className="mt-8 aspect-video w-full rounded-lg object-cover object-center"
+            className="mt-8 aspect-square w-full rounded-lg object-cover object-top"
           />
           <h3 className="mb-2 mt-8 text-2xl font-semibold">Team Growth</h3>
           <p className="text-secondary-foreground/80">
@@ -104,13 +106,10 @@ export default function OurJourney() {
   ];
   return (
     <section className="container mx-auto flex h-full flex-col items-center justify-center pb-72 pt-20">
-      <h2 className="mb-2 px-2 text-center text-2xl font-medium md:text-4xl">
-        Our Journey
-      </h2>
-      <p className="mb-6 px-2 text-center text-foreground/70 md:text-lg">
-        We started as a small team with big dreams and have grown into a trusted
-        partner for businesses worldwide.
-      </p>
+      <TitleSubSection
+        title="Our Journey"
+        description="We started as a small team with big dreams and have grown into a trusted partner for businesses worldwide."
+      />
       <div className="w-full">
         <Timeline data={data} />
       </div>

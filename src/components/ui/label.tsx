@@ -8,6 +8,8 @@ import * as React from 'react';
 
 // Label component extends from shadcnui - https://ui.shadcn.com/docs/components/label
 
+// Label component extends from shadcnui - https://ui.shadcn.com/docs/components/label
+
 const Label = React.forwardRef<
   React.ElementRef<typeof LabelPrimitive.Root>,
   React.ComponentPropsWithoutRef<typeof LabelPrimitive.Root>
