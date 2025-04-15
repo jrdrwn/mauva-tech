@@ -1,14 +1,8 @@
 import { Button } from '@/components/ui/button';
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from '@/components/ui/select';
 import { Separator } from '@/components/ui/separator';
 import { MountainIcon } from 'lucide-react';
 import Link from 'next/link';
+import ChangeLanguage from './change-language';
 
 interface LinkItem {
   name: string;
@@ -69,17 +63,7 @@ export default function Footer() {
               From a small team with big dreams to a trusted partner for
               businesses worldwide.
             </h3>
-            <Select defaultValue={'en'}>
-              <SelectTrigger className="w-max">
-                <SelectValue placeholder="Language" />
-              </SelectTrigger>
-              <SelectContent>
-                <SelectItem value="en" defaultChecked>
-                  English
-                </SelectItem>
-                <SelectItem value="id">Indonesia</SelectItem>
-              </SelectContent>
-            </Select>
+            <ChangeLanguage />
           </div>
           <div>
             <h3 className="mb-4  text-xl font-semibold tracking-tight md:text-2xl">

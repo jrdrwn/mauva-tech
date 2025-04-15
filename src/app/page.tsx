@@ -14,9 +14,11 @@ import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { FlipWords } from '@/components/ui/flip-words';
 import { ArrowRight, Star } from 'lucide-react';
+import { getTranslations } from 'next-intl/server';
 import Link from 'next/link';
 
-export default function Home() {
+export default async function Home() {
+  const t = await getTranslations('home')
   const reviews = {
     count: 200,
     rating: 4.5,
@@ -52,7 +54,7 @@ export default function Home() {
     <>
       <Header />
       <Hero
-        label="Welcome to Our Agency"
+        label={t('hero.label')}
         title={
           <>
             Your <FlipWords words={words} /> in Modern Digital Solutions
