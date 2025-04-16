@@ -5,6 +5,7 @@
   "home": {
     "hero": {
       "label": "Selamat datang di Agency kami",
+      "title": "<words></words> Anda dalam Solusi Digital Modern",
       "description": "Kami membangun situs web dan aplikasi mobile mutakhir yang memberikan hasil.",
       "startSupportCta": "Jelajahi Karya Kami",
       "endSupportCta": "dari {count}+",

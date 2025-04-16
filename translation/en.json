@@ -5,6 +5,7 @@
   "home": {
     "hero": {
       "label": "Welcome to Our Agency",
+      "title": "Your <words></words> in Modern Digital Solutions",
       "description": "We build cutting-edge websites and mobile apps that drive results.",
       "startSupportCta": "Explore Our Work",
       "endSupportCta": "from {count}+",
@@ -52,13 +53,13 @@
           "description": "Meet the people who make it all happen.",
           "cta": "Learn More About Us"
         }
-      },
-      "articles": {
-        "title": "Insights & Updates",
-        "description": "Stay ahead of the curve with our latest insights on technology, design, and business growth.",
-        "cta": "Read Our Articles",
-        "not-found": "No articles found"
       }
+    },
+    "articles": {
+      "title": "Insights & Updates",
+      "description": "Stay ahead of the curve with our latest insights on technology, design, and business growth.",
+      "cta": "Read Our Articles",
+      "not-found": "No articles found"
     },
     "startSupportCta": "Explore Our Work",
     "endSupportCta": "from {reviews.count}+ reviews"

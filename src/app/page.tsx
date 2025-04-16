@@ -57,7 +57,9 @@ export default async function Home() {
         label={t('hero.label')}
         title={
           <>
-            Your <FlipWords words={words} /> in Modern Digital Solutions
+            {t.rich('hero.title', {
+              words: () => <FlipWords words={words} />,
+            })}
           </>
         }
         description={t('hero.description')}
@@ -100,7 +102,7 @@ export default async function Home() {
               <p className="text-left font-medium text-muted-foreground">
                 {t('hero.endSupportCta', {
                   count: reviews.count,
-                })}{" "}
+                })}{' '}
                 <Link
                   href="/#testimonial"
                   className="underline underline-offset-2 "
