@@ -6,7 +6,6 @@ export default getRequestConfig(async () => {
   // read from `cookies()`, `headers()`, etc.
   const locale =
   (await cookies()).get('lang')?.value ?? 'en';
-  console.log(locale)
 
   return {
     locale,

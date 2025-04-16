@@ -4,7 +4,58 @@
   },
   "home": {
     "hero": {
-      "label": "Selamat datang di Agency kami"
-    }
+      "label": "Selamat datang di Agency kami",
+      "description": "Kami membangun situs web dan aplikasi mobile mutakhir yang memberikan hasil.",
+      "startSupportCta": "Jelajahi Karya Kami",
+      "endSupportCta": "dari {count}+",
+      "reviews": {
+        "text": "ulasan"
+      }
+    },
+    "services": {
+      "title": "Mengubah Ide menjadi Kenyataan",
+      "description": "Kami menggabungkan kreativitas, teknologi, dan strategi untuk membangun solusi yang memberikan dampak.",
+      "features": {
+        "webDevelopment": {
+          "title": "Pengembangan Web",
+          "description": "Kami membangun situs web yang responsif, skalabel, dan ramah pengguna sesuai kebutuhan Anda."
+        },
+        "mobileAppDevelopment": {
+          "title": "Pengembangan Aplikasi Mobile",
+          "description": "Dari konsep hingga peluncuran, kami menciptakan aplikasi mobile yang disukai pengguna."
+        },
+        "uiUxDesign": {
+          "title": "Desain UI/UX",
+          "description": "Kami merancang antarmuka yang intuitif dan menarik secara visual untuk pengalaman pengguna yang mulus."
+        },
+        "maintenanceSupport": {
+          "title": "Pemeliharaan & Dukungan",
+          "description": "Kami memastikan sistem Anda berjalan lancar dengan dukungan dan pembaruan yang andal."
+        }
+      }
+    },
+    "projects": {
+      "title": "Kreasi Terbaru Kami",
+      "description": "Jelajahi beberapa proyek terbaru kami dan lihat bagaimana kami membantu bisnis mencapai tujuan mereka.",
+      "error": "Kesalahan",
+      "noProjects": "Tidak ada proyek ditemukan",
+      "viewAllProjects": "Lihat Semua Proyek"
+    },
+    "aboutUs": {
+      "title": "Siapa Kami",
+      "description": "Temukan bagaimana hasrat kami terhadap teknologi mendorong kami untuk menciptakan solusi yang memberikan perbedaan.",
+      "content": {
+        "title": "Tentang Kami",
+        "description": "MauvaTech adalah perusahaan perangkat lunak terkemuka yang mengkhususkan diri dalam pengembangan web dan aplikasi mobile. Dengan tim pengembang dan desainer yang berdedikasi, kami membantu bisnis mengubah ide mereka menjadi solusi digital yang memberikan hasil.",
+        "team": {
+          "title": "Tim Kami",
+          "description": "Temui orang-orang yang membuat semuanya menjadi mungkin.",
+          "cta": "Pelajari Lebih Lanjut"
+        }
+      }
+    },
+    "description": "Kami membangun situs web dan aplikasi mobile mutakhir yang memberikan hasil.",
+    "startSupportCta": "Jelajahi Karya Kami",
+    "endSupportCta": "dari {reviews.count}+ ulasan"
   }
 }

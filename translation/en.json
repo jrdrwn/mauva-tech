@@ -4,7 +4,57 @@
   },
   "home": {
     "hero": {
-      "label": "Welcome to Our Agency"
-    }
+      "label": "Welcome to Our Agency",
+      "description": "We build cutting-edge websites and mobile apps that drive results.",
+      "startSupportCta": "Explore Our Work",
+      "endSupportCta": "from {count}+",
+      "reviews": {
+        "text": "reviews"
+      }
+    },
+    "services": {
+      "title": "Transforming Ideas into Reality",
+      "description": "We combine creativity, technology, and strategy to build solutions that make an impact.",
+      "features": {
+        "webDevelopment": {
+          "title": "Web Development",
+          "description": "We build responsive, scalable, and user-friendly websites tailored to your needs."
+        },
+        "mobileAppDevelopment": {
+          "title": "Mobile App Development",
+          "description": "From concept to launch, we create mobile apps that users love."
+        },
+        "uiUxDesign": {
+          "title": "UI/UX Design",
+          "description": "We design intuitive and visually appealing interfaces for seamless user experiences."
+        },
+        "maintenanceSupport": {
+          "title": "Maintenance & Support",
+          "description": "We ensure your systems run smoothly with reliable support and updates."
+        }
+      }
+    },
+    "projects": {
+      "title": "Our Latest Creations",
+      "description": "Explore some of our recent projects and see how we've helped businesses achieve their goals.",
+      "error": "Error",
+      "noProjects": "No projects found",
+      "viewAllProjects": "View All Projects"
+    },
+    "aboutUs": {
+      "title": "Who We Are",
+      "description": "Discover how our passion for technology drives us to create solutions that make a difference.",
+      "content": {
+        "title": "About Us",
+        "description": "MauvaTech is a leading software house specializing in web and mobile app development. With a team of passionate developers and designers, we help businesses transform their ideas into digital solutions that drive results.",
+        "team": {
+          "title": "Our Team",
+          "description": "Meet the people who make it all happen.",
+          "cta": "Learn More About Us"
+        }
+      }
+    },
+    "startSupportCta": "Explore Our Work",
+    "endSupportCta": "from {reviews.count}+ reviews"
   }
 }

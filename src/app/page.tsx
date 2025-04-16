@@ -18,7 +18,7 @@ import { getTranslations } from 'next-intl/server';
 import Link from 'next/link';
 
 export default async function Home() {
-  const t = await getTranslations('home')
+  const t = await getTranslations('home');
   const reviews = {
     count: 200,
     rating: 4.5,
@@ -60,12 +60,12 @@ export default async function Home() {
             Your <FlipWords words={words} /> in Modern Digital Solutions
           </>
         }
-        description="We build cutting-edge websites and mobile apps that drive results."
+        description={t('hero.description')}
         support={<SupportSection />}
         startSupportCta={
           <Link href="/projects">
             <Button variant="default" className="flex items-center gap-2">
-              Explore Our Work
+              {t('hero.startSupportCta')}
               <Badge variant={'secondary'} className="size-6 rounded-full p-0">
                 <ArrowRight className="mx-auto" />
               </Badge>
@@ -98,13 +98,15 @@ export default async function Home() {
                 </span>
               </div>
               <p className="text-left font-medium text-muted-foreground">
-                from {reviews.count}+{' '}
+                {t('hero.endSupportCta', {
+                  count: reviews.count,
+                })}{" "}
                 <Link
                   href="/#testimonial"
                   className="underline underline-offset-2 "
                 >
                   {' '}
-                  reviews
+                  {t('hero.reviews.text')}
                 </Link>
               </p>
             </div>

@@ -2,6 +2,7 @@
 
 import { Button } from '@/components/ui/button';
 import { useFetch } from '@/hooks/use-fetch';
+import { useTranslations } from 'next-intl';
 import Link from 'next/link';
 import ScrollContainer from 'react-indiana-drag-scroll';
 
@@ -13,13 +14,14 @@ import {
 import TitleSubSection from '../shared/title-sub-section';
 
 export default function Projects() {
+  const t = useTranslations('home.projects');
   const { data, loading, error } =
     useFetch<ProjectCardProps[]>('/api/projects');
   return (
     <section className="container mx-auto flex h-full flex-col  justify-center py-20">
       <TitleSubSection
-        title="Our Latest Creations"
-        description="Explore some of our recent projects and see how we've helped businesses achieve their goals."
+        title={t('title')}
+        description={t('description')}
       />
       <div className="relative mt-0 w-full ">
         <div className="absolute inset-y-0 left-0 z-10 w-[5%] bg-gradient-to-r from-background to-transparent" />
@@ -34,15 +36,10 @@ export default function Projects() {
             Array(3)
               .fill(0)
               .map((_, index) => <ProjectCardSkeleton key={index} />)}
-          {error && <p>Error: {error}</p>}
+          {error && <p>{t('error')}: {error}</p>}
           {data?.length === 0 && (
             <div className="flex size-full items-center justify-center">
-              <p className="text-lg">No projects found</p>
-            </div>
-          )}
-          {data?.length === 0 && (
-            <div className="flex size-full items-center justify-center">
-              <p className="text-lg">No projects found</p>
+              <p className="text-lg">{t('noProjects')}</p>
             </div>
           )}
           {data?.map((project, index) => (
@@ -52,7 +49,7 @@ export default function Projects() {
       </div>
 
       <Link className="mx-auto mt-8" href="/projects" scroll={false}>
-        <Button>View All Projects</Button>
+        <Button>{t('viewAllProjects')}</Button>
       </Link>
     </section>
   );
