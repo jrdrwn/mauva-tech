@@ -56,6 +56,12 @@
     },
     "description": "Kami membangun situs web dan aplikasi mobile mutakhir yang memberikan hasil.",
     "startSupportCta": "Jelajahi Karya Kami",
-    "endSupportCta": "dari {reviews.count}+ ulasan"
+    "endSupportCta": "dari {reviews.count}+ ulasan",
+    "articles": {
+      "title": "Wawasan & Pembaruan",
+      "description": "Tetap terdepan dengan wawasan terbaru kami tentang teknologi, desain, dan pertumbuhan bisnis.",
+      "cta": "Baca Artikel Kami",
+      "not-found": "Tidak ada artikel ditemukan"
+    }
   }
 }

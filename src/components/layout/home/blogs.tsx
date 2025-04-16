@@ -5,6 +5,7 @@ import { useFetch } from '@/hooks/use-fetch';
 import Link from 'next/link';
 import ScrollContainer from 'react-indiana-drag-scroll';
 
+import { useTranslations } from 'next-intl';
 import {
   ArticleCard,
   ArticleCardProps,
@@ -13,13 +14,14 @@ import {
 import TitleSubSection from '../shared/title-sub-section';
 
 export default function Blogs() {
+  const t = useTranslations('home.articles');
   const { data, loading, error } =
     useFetch<ArticleCardProps[]>('/api/articles');
   return (
     <section className="container mx-auto flex h-full flex-col items-center justify-center py-20">
       <TitleSubSection
-        title="Insights & Updates"
-        description="Stay ahead of the curve with our latest insights on technology, design, and business growth."
+        title={t('title')}
+        description={t('description')}
       />
       <div className="relative w-full">
         <div className="absolute inset-y-0 left-0 z-10 w-[5%] bg-gradient-to-r from-background to-transparent" />
@@ -38,14 +40,14 @@ export default function Blogs() {
           {error && <p>Error: {error}</p>}
           {data?.length === 0 && (
             <div className="flex size-full items-center justify-center">
-              <p className="text-lg">No articles found</p>
+              <p className="text-lg">{t('not-found')}</p>
             </div>
           )}
           {data?.map((blog) => <ArticleCard key={blog.title} {...blog} />)}
         </ScrollContainer>
       </div>
       <Link href="/blog" scroll={false} className="mx-auto mt-8">
-        <Button>View All Blogs</Button>
+        <Button>{t('cta')}</Button>
       </Link>
     </section>
   );

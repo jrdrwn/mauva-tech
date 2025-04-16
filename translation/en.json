@@ -52,6 +52,12 @@
           "description": "Meet the people who make it all happen.",
           "cta": "Learn More About Us"
         }
+      },
+      "articles": {
+        "title": "Insights & Updates",
+        "description": "Stay ahead of the curve with our latest insights on technology, design, and business growth.",
+        "cta": "Read Our Articles",
+        "not-found": "No articles found"
       }
     },
     "startSupportCta": "Explore Our Work",
