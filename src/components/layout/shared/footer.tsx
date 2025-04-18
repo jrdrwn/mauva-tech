@@ -1,6 +1,6 @@
 import { Button } from '@/components/ui/button';
 import { Separator } from '@/components/ui/separator';
-import { MountainIcon } from 'lucide-react';
+import { MousePointerClick } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 import Link from 'next/link';
 
@@ -61,7 +61,7 @@ export default function Footer() {
       <div className="container mx-auto rounded-t-3xl bg-secondary/50 p-4 md:rounded-3xl md:p-8">
         <div className=" grid gap-8  sm:grid-cols-2 sm:gap-4  lg:grid-cols-5">
           <div className="col-span-2">
-            <MountainIcon size={150} />
+            <MousePointerClick size={150} />
             <h3 className="my-4  text-xl font-semibold tracking-tight md:text-2xl">
               {t('description')}
             </h3>

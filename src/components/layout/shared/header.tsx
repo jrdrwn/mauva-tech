@@ -17,7 +17,7 @@ import {
 import { ModeToggle } from '@/components/ui/theme-toggle';
 import { cn } from '@/lib/utils';
 import { useMotionValueEvent, useScroll } from 'framer-motion';
-import { Menu, Mountain, Phone } from 'lucide-react';
+import { Menu, MousePointerClick, Phone } from 'lucide-react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { Ref, useRef, useState } from 'react';
@@ -95,7 +95,7 @@ export default function Header() {
           prefetch={false}
         >
           <Button size="icon" className="rounded-full">
-            <Mountain />
+            <MousePointerClick />
             <span className="sr-only">Mauva Tech</span>
           </Button>
         </Link>
