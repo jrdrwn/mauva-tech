@@ -2,12 +2,6 @@
 
 import { Button } from '@/components/ui/button';
 import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuTrigger,
-} from '@/components/ui/dropdown-menu';
-import { Input } from '@/components/ui/input';
-import {
   NavigationMenu,
   NavigationMenuItem,
   NavigationMenuLink,
@@ -23,10 +17,12 @@ import {
 import { ModeToggle } from '@/components/ui/theme-toggle';
 import { cn } from '@/lib/utils';
 import { useMotionValueEvent, useScroll } from 'framer-motion';
-import { Menu, Mountain, Phone, Search } from 'lucide-react';
+import { Menu, Mountain, Phone } from 'lucide-react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { Ref, useRef, useState } from 'react';
+
+import ChangeLanguage from './change-language';
 
 export default function Header() {
   const menus = [
@@ -126,24 +122,7 @@ export default function Header() {
             <Phone className="size-5 text-foreground/70" />
             <span className="text-foreground/70">123-456-7890</span>
           </div>
-          <DropdownMenu>
-            <DropdownMenuTrigger asChild>
-              <Button variant="ghost" size="icon" className="rounded-full">
-                <Search className="size-5 text-foreground/70" />
-                <span className="sr-only">Search</span>
-              </Button>
-            </DropdownMenuTrigger>
-            <DropdownMenuContent className="w-[300px] p-4">
-              <div className="relative">
-                <Search className="absolute left-2.5 top-2.5 size-4 text-foreground/70 " />
-                <Input
-                  type="search"
-                  placeholder="Search..."
-                  className="w-full pl-8"
-                />
-              </div>
-            </DropdownMenuContent>
-          </DropdownMenu>
+          <ChangeLanguage />
           <ModeToggle />
           <Sheet>
             <SheetTrigger asChild>

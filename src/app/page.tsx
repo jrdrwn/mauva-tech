@@ -99,7 +99,7 @@ export default async function Home() {
                   {reviews.rating?.toFixed(1)}
                 </span>
               </div>
-              <p className="text-left font-medium text-muted-foreground">
+              <p className="text-left text-sm font-medium text-muted-foreground md:text-base">
                 {t('hero.endSupportCta', {
                   count: reviews.count,
                 })}{' '}

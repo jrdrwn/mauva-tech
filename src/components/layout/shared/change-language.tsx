@@ -34,8 +34,8 @@ export default function ChangeLanguage() {
         <SelectValue placeholder={lang.toUpperCase()} />
       </SelectTrigger>
       <SelectContent defaultValue={lang}>
-        <SelectItem value="en">English</SelectItem>
-        <SelectItem value="id">Indonesia</SelectItem>
+        <SelectItem value="en">EN</SelectItem>
+        <SelectItem value="id">ID</SelectItem>
       </SelectContent>
     </Select>
   );
