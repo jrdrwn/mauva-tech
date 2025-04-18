@@ -14,7 +14,7 @@ export interface ArticleProps {
   image: string;
 }
 
-export default async function BlogDetail({
+export default async function ArticleDetail({
   params,
 }: {
   params: Promise<{ id: string[] }>;

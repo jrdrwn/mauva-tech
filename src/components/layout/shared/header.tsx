@@ -43,8 +43,8 @@ export default function Header() {
       href: '/services',
     },
     {
-      title: 'Blog',
-      href: '/blog',
+      title: 'Articles',
+      href: '/articles',
     },
     {
       title: 'Projects',

@@ -1,101 +1,113 @@
 {
   "root": {
-    "appname": "Mauva"
+    "appname": "Mauva",
+    "contact": {}
   },
-  "home": {
-    "hero": {
-      "label": "Selamat datang di Agency kami",
-      "title": "<words></words> Anda dalam Solusi Digital Modern",
-      "description": "Kami membangun situs web dan aplikasi mobile mutakhir yang memberikan hasil.",
-      "startSupportCta": "Jelajahi Karya Kami",
-      "endSupportCta": "dari {count}+",
-      "reviews": {
-        "text": "ulasan"
-      }
+  "shared": {
+    "end-cta": {
+      "title": "Siap membawa bisnis Anda ke level berikutnya?",
+      "description": "Hubungi kami hari ini untuk konsultasi gratis dan mari diskusikan bagaimana kami dapat membantu Anda mencapai tujuan Anda.",
+      "cta": "Hubungi Kami"
     },
-    "services": {
-      "title": "Mengubah Ide menjadi Kenyataan",
-      "description": "Kami menggabungkan kreativitas, teknologi, dan strategi untuk membangun solusi yang memberikan dampak.",
-      "features": {
-        "webDevelopment": {
-          "title": "Pengembangan Web",
-          "description": "Kami membangun situs web yang responsif, skalabel, dan ramah pengguna sesuai kebutuhan Anda."
-        },
-        "mobileAppDevelopment": {
-          "title": "Pengembangan Aplikasi Mobile",
-          "description": "Dari konsep hingga peluncuran, kami menciptakan aplikasi mobile yang disukai pengguna."
-        },
-        "uiUxDesign": {
-          "title": "Desain UI/UX",
-          "description": "Kami merancang antarmuka yang intuitif dan menarik secara visual untuk pengalaman pengguna yang mulus."
-        },
-        "maintenanceSupport": {
-          "title": "Pemeliharaan & Dukungan",
-          "description": "Kami memastikan sistem Anda berjalan lancar dengan dukungan dan pembaruan yang andal."
-        }
-      }
-    },
-    "projects": {
-      "title": "Kreasi Terbaru Kami",
-      "description": "Jelajahi beberapa proyek terbaru kami dan lihat bagaimana kami membantu bisnis mencapai tujuan mereka.",
-      "error": "Kesalahan",
-      "noProjects": "Tidak ada proyek ditemukan",
-      "viewAllProjects": "Lihat Semua Proyek"
-    },
-    "aboutUs": {
-      "title": "Siapa Kami",
-      "description": "Temukan bagaimana hasrat kami terhadap teknologi mendorong kami untuk menciptakan solusi yang memberikan perbedaan.",
-      "content": {
-        "title": "Tentang Kami",
-        "description": "MauvaTech adalah perusahaan perangkat lunak terkemuka yang mengkhususkan diri dalam pengembangan web dan aplikasi mobile. Dengan tim pengembang dan desainer yang berdedikasi, kami membantu bisnis mengubah ide mereka menjadi solusi digital yang memberikan hasil.",
-        "team": {
-          "title": "Tim Kami",
-          "description": "Temui orang-orang yang membuat semuanya menjadi mungkin.",
-          "cta": "Pelajari Lebih Lanjut"
-        }
-      }
-    },
-    "description": "Kami membangun situs web dan aplikasi mobile mutakhir yang memberikan hasil.",
-    "startSupportCta": "Jelajahi Karya Kami",
-    "endSupportCta": "dari {reviews.count}+ ulasan",
-    "articles": {
-      "title": "Wawasan & Pembaruan",
-      "description": "Tetap terdepan dengan wawasan terbaru kami tentang teknologi, desain, dan pertumbuhan bisnis.",
-      "cta": "Baca Artikel Kami",
-      "not-found": "Tidak ada artikel ditemukan"
-    }
-  },
-  "services": {
-    "hero": {
-      "label": "Apa yang Kami Tawarkan",
-      "title": "Memberdayakan Bisnis Anda dengan Solusi Digital Terkini",
-      "description": "Dari situs web khusus hingga aplikasi mobile, kami menyediakan solusi yang disesuaikan untuk mendorong pertumbuhan, efisiensi, dan inovasi. Biarkan kami membantu Anda mengubah ide menjadi kenyataan.",
-      "cta": "Dapatkan Konsultasi Gratis"
-    },
-    "whatWeDo": {
-      "webDevelopment": {
-        "title": "Pengembangan Web",
-        "description": "Kami membangun situs web yang responsif, skalabel, dan ramah pengguna sesuai kebutuhan bisnis Anda. Dari profil perusahaan hingga platform e-commerce, kami memastikan situs Anda cepat, aman, dan dioptimalkan untuk pertumbuhan. Biarkan kami membantu Anda menciptakan kehadiran digital yang memberikan hasil."
-      },
-      "mobileAppDevelopment": {
-        "title": "Pengembangan Aplikasi Mobile",
-        "description": "Dari konsep hingga peluncuran, kami menciptakan aplikasi mobile yang intuitif, menarik, dan dibangun untuk skala. Baik untuk iOS, Android, atau lintas platform, kami memberikan solusi yang menonjol dan membuat pengguna kembali lagi."
-      },
-      "uiUxDesign": {
-        "title": "Desain UI/UX",
-        "description": "Kami merancang antarmuka yang intuitif dan menarik secara visual yang meningkatkan pengalaman pengguna dan mendorong keterlibatan. Fokus kami adalah menciptakan desain yang tidak hanya indah tetapi juga fungsional dan berpusat pada pengguna."
-      },
-      "maintenanceSupport": {
-        "title": "Pemeliharaan & Dukungan",
-        "description": "Kami memastikan sistem Anda berjalan lancar dengan dukungan, pembaruan, dan layanan optimisasi yang andal. Dari perbaikan bug hingga pemantauan keamanan, kami di sini untuk menjaga solusi digital Anda tetap berkinerja terbaik."
-      }
-    },
-    "testimonials": {
-      "title": "Cerita Klien Kami",
-      "description": "Keberhasilan klien kami adalah pencapaian terbesar kami. Berikut adalah apa yang mereka katakan."
+    "footer": {
+      "description": "Dari tim kecil dengan mimpi besar hingga mitra terpercaya untuk bisnis di seluruh dunia.",
+      "change-language": "Ubah Bahasa"
     }
   },
   "pages": {
+    "home": {
+      "hero": {
+        "label": "Selamat datang di Agency kami",
+        "title": "<words></words> Anda dalam Solusi Digital Modern",
+        "description": "Kami membangun situs web dan aplikasi mobile mutakhir yang memberikan hasil.",
+        "startSupportCta": "Jelajahi Karya Kami",
+        "endSupportCta": "dari {count}+",
+        "reviews": {
+          "text": "ulasan"
+        }
+      },
+      "services": {
+        "title": "Mengubah Ide menjadi Kenyataan",
+        "description": "Kami menggabungkan kreativitas, teknologi, dan strategi untuk membangun solusi yang memberikan dampak.",
+        "features": {
+          "webDevelopment": {
+            "title": "Pengembangan Web",
+            "description": "Kami membangun situs web yang responsif, skalabel, dan ramah pengguna sesuai kebutuhan Anda."
+          },
+          "mobileAppDevelopment": {
+            "title": "Pengembangan Aplikasi Mobile",
+            "description": "Dari konsep hingga peluncuran, kami menciptakan aplikasi mobile yang disukai pengguna."
+          },
+          "uiUxDesign": {
+            "title": "Desain UI/UX",
+            "description": "Kami merancang antarmuka yang intuitif dan menarik secara visual untuk pengalaman pengguna yang mulus."
+          },
+          "maintenanceSupport": {
+            "title": "Pemeliharaan & Dukungan",
+            "description": "Kami memastikan sistem Anda berjalan lancar dengan dukungan dan pembaruan yang andal."
+          }
+        }
+      },
+      "projects": {
+        "title": "Kreasi Terbaru Kami",
+        "description": "Jelajahi beberapa proyek terbaru kami dan lihat bagaimana kami membantu bisnis mencapai tujuan mereka.",
+        "error": "Kesalahan",
+        "noProjects": "Tidak ada proyek ditemukan",
+        "viewAllProjects": "Lihat Semua Proyek"
+      },
+      "aboutUs": {
+        "title": "Siapa Kami",
+        "description": "Temukan bagaimana hasrat kami terhadap teknologi mendorong kami untuk menciptakan solusi yang memberikan perbedaan.",
+        "content": {
+          "title": "Tentang Kami",
+          "description": "MauvaTech adalah perusahaan perangkat lunak terkemuka yang mengkhususkan diri dalam pengembangan web dan aplikasi mobile. Dengan tim pengembang dan desainer yang berdedikasi, kami membantu bisnis mengubah ide mereka menjadi solusi digital yang memberikan hasil.",
+          "team": {
+            "title": "Tim Kami",
+            "description": "Temui orang-orang yang membuat semuanya menjadi mungkin.",
+            "cta": "Pelajari Lebih Lanjut"
+          }
+        }
+      },
+      "description": "Kami membangun situs web dan aplikasi mobile mutakhir yang memberikan hasil.",
+      "startSupportCta": "Jelajahi Karya Kami",
+      "endSupportCta": "dari {reviews.count}+ ulasan",
+      "articles": {
+        "title": "Wawasan & Pembaruan",
+        "description": "Tetap terdepan dengan wawasan terbaru kami tentang teknologi, desain, dan pertumbuhan bisnis.",
+        "cta": "Baca Artikel Kami",
+        "not-found": "Tidak ada artikel ditemukan"
+      }
+    },
+    "services": {
+      "hero": {
+        "label": "Apa yang Kami Tawarkan",
+        "title": "Memberdayakan Bisnis Anda dengan Solusi Digital Terkini",
+        "description": "Dari situs web khusus hingga aplikasi mobile, kami menyediakan solusi yang disesuaikan untuk mendorong pertumbuhan, efisiensi, dan inovasi. Biarkan kami membantu Anda mengubah ide menjadi kenyataan.",
+        "cta": "Dapatkan Konsultasi Gratis"
+      },
+      "whatWeDo": {
+        "webDevelopment": {
+          "title": "Pengembangan Web",
+          "description": "Kami membangun situs web yang responsif, skalabel, dan ramah pengguna sesuai kebutuhan bisnis Anda. Dari profil perusahaan hingga platform e-commerce, kami memastikan situs Anda cepat, aman, dan dioptimalkan untuk pertumbuhan. Biarkan kami membantu Anda menciptakan kehadiran digital yang memberikan hasil."
+        },
+        "mobileAppDevelopment": {
+          "title": "Pengembangan Aplikasi Mobile",
+          "description": "Dari konsep hingga peluncuran, kami menciptakan aplikasi mobile yang intuitif, menarik, dan dibangun untuk skala. Baik untuk iOS, Android, atau lintas platform, kami memberikan solusi yang menonjol dan membuat pengguna kembali lagi."
+        },
+        "uiUxDesign": {
+          "title": "Desain UI/UX",
+          "description": "Kami merancang antarmuka yang intuitif dan menarik secara visual yang meningkatkan pengalaman pengguna dan mendorong keterlibatan. Fokus kami adalah menciptakan desain yang tidak hanya indah tetapi juga fungsional dan berpusat pada pengguna."
+        },
+        "maintenanceSupport": {
+          "title": "Pemeliharaan & Dukungan",
+          "description": "Kami memastikan sistem Anda berjalan lancar dengan dukungan, pembaruan, dan layanan optimisasi yang andal. Dari perbaikan bug hingga pemantauan keamanan, kami di sini untuk menjaga solusi digital Anda tetap berkinerja terbaik."
+        }
+      },
+      "testimonials": {
+        "title": "Cerita Klien Kami",
+        "description": "Keberhasilan klien kami adalah pencapaian terbesar kami. Berikut adalah apa yang mereka katakan."
+      }
+    },
     "projects": {
       "hero": {
         "label": "Proyek Kami",
@@ -118,12 +130,16 @@
         "description": "Jawaban cepat untuk pertanyaan umum tentang produk & layanan kami.",
         "cta": "Punya pertanyaan yang tidak tercantum di sini?",
         "ctaLink": "/contact"
+      },
+      "content": {
+        "title": "Pertanyaan yang Sering Diajukan",
+        "description": "Jawaban cepat untuk pertanyaan umum tentang produk & layanan kami."
       }
     },
-    "blog": {
+    "article": {
       "hero": {
-        "label": "Blog",
-        "title": "Selamat Datang di Blog Kami",
+        "label": "Artikel",
+        "title": "Selamat Datang di Artikel Kami",
         "description": "Tetap terupdate dengan berita dan artikel terbaru kami"
       }
     },
@@ -141,6 +157,84 @@
         "label": "Hubungi Kami",
         "title": "Hubungi Kami",
         "description": "Kami senang mendengar dari Anda. Hubungi kami untuk pertanyaan atau bantuan."
+      }
+    },
+    "terms": {
+      "hero": {
+        "label": "Ketentuan Layanan",
+        "title": "Ketentuan Layanan Kami",
+        "description": "Harap baca ketentuan layanan kami dengan saksama sebelum menggunakan situs web kami."
+      },
+      "content": {
+        "title": "Ketentuan Layanan",
+        "description": "Ketentuan ini mengatur penggunaan situs web dan layanan kami.",
+        "eligibility": {
+          "title": "Kelayakan",
+          "description": "Untuk menggunakan layanan kami, Anda harus berusia minimal 18 tahun atau memiliki izin dari orang tua atau wali. Dengan menggunakan layanan kami, Anda menyatakan dan menjamin bahwa Anda memenuhi persyaratan ini."
+        },
+        "prohibitedActivities": {
+          "title": "Kegiatan yang Dilarang",
+          "description": "Anda setuju untuk tidak melakukan kegiatan yang melanggar hukum, melanggar hak orang lain, atau mengganggu fungsi layanan kami. Ini termasuk, namun tidak terbatas pada, peretasan, spamming, dan distribusi malware."
+        },
+        "intellectualProperty": {
+          "title": "Kekayaan Intelektual",
+          "description": "Semua konten, merek dagang, dan kekayaan intelektual yang terkait dengan layanan kami dimiliki oleh Mauva atau pemberi lisensinya. Anda tidak boleh menggunakan, mereproduksi, atau mendistribusikan konten ini tanpa izin tertulis sebelumnya."
+        },
+        "limitationOfLiability": {
+          "title": "Batasan Tanggung Jawab",
+          "description": "Sejauh diizinkan oleh hukum, Mauva tidak bertanggung jawab atas kerugian tidak langsung, insidental, atau konsekuensial yang timbul dari penggunaan layanan kami."
+        },
+        "governingLaw": {
+          "title": "Hukum yang Berlaku",
+          "description": "Ketentuan ini diatur oleh hukum Tester. Setiap perselisihan yang timbul dari ketentuan ini akan diselesaikan di pengadilan Tester."
+        },
+        "changesToTerms": {
+          "title": "Perubahan Ketentuan Ini",
+          "description": "Kami berhak untuk memperbarui Ketentuan Layanan ini kapan saja. Setiap perubahan akan diposting di halaman ini dengan tanggal revisi yang diperbarui."
+        },
+        "contactUs": {
+          "title": "Hubungi Kami",
+          "description": "Jika Anda memiliki pertanyaan tentang Ketentuan Layanan ini, silakan hubungi kami."
+        }
+      }
+    },
+    "privacy": {
+      "hero": {
+        "label": "Kebijakan Privasi",
+        "title": "Kebijakan Privasi Kami",
+        "description": "Pelajari bagaimana kami menangani data pribadi Anda dan melindungi privasi Anda."
+      },
+      "content": {
+        "title": "Kebijakan Privasi",
+        "description": "Kebijakan ini menjelaskan bagaimana kami mengumpulkan, menggunakan, dan melindungi informasi Anda.",
+        "informationWeCollect": {
+          "title": "Informasi yang Kami Kumpulkan",
+          "description": "Kami dapat mengumpulkan informasi pribadi seperti nama Anda, alamat email, nomor telepon, dan detail pembayaran saat Anda berinteraksi dengan situs web atau layanan kami. Selain itu, kami dapat mengumpulkan data non-pribadi seperti jenis browser, alamat IP, dan statistik penggunaan untuk meningkatkan layanan kami."
+        },
+        "howWeUseYourInformation": {
+          "title": "Bagaimana Kami Menggunakan Informasi Anda",
+          "description": "Informasi Anda digunakan untuk menyediakan dan meningkatkan layanan kami, memproses transaksi, menanggapi pertanyaan, dan mengirim pembaruan atau materi promosi. Kami juga dapat menggunakan data Anda untuk analitik dan penelitian guna meningkatkan pengalaman pengguna."
+        },
+        "sharingYourInformation": {
+          "title": "Berbagi Informasi Anda",
+          "description": "Kami tidak menjual informasi pribadi Anda. Namun, kami dapat membagikan data Anda dengan penyedia layanan pihak ketiga terpercaya untuk memfasilitasi layanan kami, mematuhi kewajiban hukum, atau melindungi hak kami."
+        },
+        "dataProtection": {
+          "title": "Perlindungan Data",
+          "description": "Kami menerapkan langkah-langkah keamanan yang kuat, termasuk enkripsi dan kontrol akses, untuk melindungi data Anda dari akses, perubahan, atau pengungkapan yang tidak sah. Meskipun upaya kami, tidak ada metode transmisi melalui internet yang 100% aman."
+        },
+        "yourRights": {
+          "title": "Hak Anda",
+          "description": "Anda memiliki hak untuk mengakses, memperbarui, atau menghapus informasi pribadi Anda. Untuk menggunakan hak ini, silakan hubungi kami."
+        },
+        "changesToPolicy": {
+          "title": "Perubahan Kebijakan Ini",
+          "description": "Kami dapat memperbarui Kebijakan Privasi ini dari waktu ke waktu. Setiap perubahan akan diposting di halaman ini dengan tanggal revisi yang diperbarui."
+        },
+        "contactUs": {
+          "title": "Hubungi Kami",
+          "description": "Jika Anda memiliki pertanyaan tentang Kebijakan Privasi ini, silakan hubungi kami."
+        }
       }
     }
   }

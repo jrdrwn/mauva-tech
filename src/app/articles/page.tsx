@@ -1,12 +1,12 @@
-import Articles from '@/components/layout/blog/articles';
+import Articles from '@/components/layout/article/articles';
 import EndCTA from '@/components/layout/shared/end-cta';
 import Footer from '@/components/layout/shared/footer';
 import Header from '@/components/layout/shared/header';
 import Hero from '@/components/layout/shared/hero';
 import { useTranslations } from 'next-intl';
 
-export default function BlogPage() {
-  const t = useTranslations('pages.blog.hero');
+export default function ArticlePage() {
+  const t = useTranslations('pages.article.hero');
 
   return (
     <>

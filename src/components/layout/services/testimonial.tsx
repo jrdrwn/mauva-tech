@@ -66,7 +66,7 @@ const testimonials = [
 ];
 
 function Testimonial() {
-  const t = useTranslations('services.testimonials');
+  const t = useTranslations('pages.services.testimonials');
   return (
     <section className="container mx-auto  py-16" id="testimonial">
       <div className=" flex h-full flex-col items-center justify-center">

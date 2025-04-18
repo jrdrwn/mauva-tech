@@ -11,7 +11,7 @@ import { useTranslations } from 'next-intl';
 import TitleSubSection from '../shared/title-sub-section';
 
 export default function Services() {
-  const t = useTranslations('home.services');
+  const t = useTranslations('pages.home.services');
   const features = [
     {
       title: t('features.webDevelopment.title'),
@@ -36,10 +36,7 @@ export default function Services() {
   ];
   return (
     <section className="container mx-auto flex h-full flex-col items-center justify-center py-20">
-      <TitleSubSection
-        title={t('title')}
-        description={t('description')}
-      />
+      <TitleSubSection title={t('title')} description={t('description')} />
 
       <div className="relative z-10 mx-auto grid  max-w-6xl grid-cols-1 py-10 md:grid-cols-2 lg:grid-cols-4">
         {features.map((feature, index) => (

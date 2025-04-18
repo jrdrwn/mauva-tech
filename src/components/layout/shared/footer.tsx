@@ -1,7 +1,9 @@
 import { Button } from '@/components/ui/button';
 import { Separator } from '@/components/ui/separator';
 import { MountainIcon } from 'lucide-react';
+import { useTranslations } from 'next-intl';
 import Link from 'next/link';
+
 import ChangeLanguage from './change-language';
 
 interface LinkItem {
@@ -21,11 +23,12 @@ function LinkGroup(links: LinkItem[]) {
 }
 
 export default function Footer() {
+  const t = useTranslations('shared.footer');
   const menuLinks: LinkItem[] = [
     { name: 'About', href: '/about' },
     { name: 'Services', href: '/services' },
     { name: 'Projects', href: '/projects' },
-    { name: 'Blogs', href: '/blog' },
+    { name: 'Articles', href: '/articles' },
     { name: 'Pricing', href: '/pricing' },
   ];
   const socialLinks: LinkItem[] = [
@@ -60,8 +63,7 @@ export default function Footer() {
           <div className="col-span-2">
             <MountainIcon size={150} />
             <h3 className="my-4  text-xl font-semibold tracking-tight md:text-2xl">
-              From a small team with big dreams to a trusted partner for
-              businesses worldwide.
+              {t('description')}
             </h3>
             <ChangeLanguage />
           </div>

@@ -1,5 +1,5 @@
 import AboutUs from '@/components/layout/home/about-us';
-import Blogs from '@/components/layout/home/blogs';
+import Articles from '@/components/layout/home/articles';
 import Projects from '@/components/layout/home/projects';
 import Services from '@/components/layout/home/services';
 import SupportSection from '@/components/layout/home/supportSection';
@@ -18,7 +18,7 @@ import { getTranslations } from 'next-intl/server';
 import Link from 'next/link';
 
 export default async function Home() {
-  const t = await getTranslations('home');
+  const t = await getTranslations('pages.home');
   const reviews = {
     count: 200,
     rating: 4.5,
@@ -119,7 +119,7 @@ export default async function Home() {
       <AboutUs />
       <Projects />
       <Testimonial />
-      <Blogs />
+      <Articles />
       <FAQSection />
       <EndCTA />
       <Footer />

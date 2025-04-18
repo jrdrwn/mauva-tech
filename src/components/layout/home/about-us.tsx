@@ -21,20 +21,17 @@ import { useEffect, useId, useState } from 'react';
 import TitleSubSection from '../shared/title-sub-section';
 
 export default function AboutUs() {
-  const t = useTranslations('home.aboutUs');
+  const t = useTranslations('pages.home.aboutUs');
   return (
     <section className="container mx-auto flex h-full flex-col items-center justify-center py-20">
-      <TitleSubSection
-        title={t('title')}
-        description={t('description')}
-      />
+      <TitleSubSection title={t('title')} description={t('description')} />
       <WobbleCardContainer />
     </section>
   );
 }
 
 export function WobbleCardContainer() {
-  const t = useTranslations('home.aboutUs.content');
+  const t = useTranslations('pages.home.aboutUs.content');
   const people = [
     {
       id: 1,
@@ -102,9 +99,7 @@ export function WobbleCardContainer() {
             <CardTitle className="text-xl md:text-2xl">
               {t('team.title')}
             </CardTitle>
-            <CardDescription>
-             {t('team.description')}
-            </CardDescription>
+            <CardDescription>{t('team.description')}</CardDescription>
           </CardHeader>
         </FadeBlur>
         <CardContent className="flex flex-1 flex-col items-center justify-center">

@@ -2,27 +2,24 @@
 
 import { Button } from '@/components/ui/button';
 import { useFetch } from '@/hooks/use-fetch';
+import { useTranslations } from 'next-intl';
 import Link from 'next/link';
 import ScrollContainer from 'react-indiana-drag-scroll';
 
-import { useTranslations } from 'next-intl';
 import {
   ArticleCard,
   ArticleCardProps,
   ArticleCardSkeleton,
-} from '../blog/articles';
+} from '../article/articles';
 import TitleSubSection from '../shared/title-sub-section';
 
-export default function Blogs() {
-  const t = useTranslations('home.articles');
+export default function Articles() {
+  const t = useTranslations('pages.home.articles');
   const { data, loading, error } =
     useFetch<ArticleCardProps[]>('/api/articles');
   return (
     <section className="container mx-auto flex h-full flex-col items-center justify-center py-20">
-      <TitleSubSection
-        title={t('title')}
-        description={t('description')}
-      />
+      <TitleSubSection title={t('title')} description={t('description')} />
       <div className="relative w-full">
         <div className="absolute inset-y-0 left-0 z-10 w-[5%] bg-gradient-to-r from-background to-transparent" />
         <div className="absolute inset-y-0 right-0 z-10 w-[5%] bg-gradient-to-l from-background to-transparent" />
@@ -46,7 +43,7 @@ export default function Blogs() {
           {data?.map((blog) => <ArticleCard key={blog.title} {...blog} />)}
         </ScrollContainer>
       </div>
-      <Link href="/blog" scroll={false} className="mx-auto mt-8">
+      <Link href="/articles" scroll={false} className="mx-auto mt-8">
         <Button>{t('cta')}</Button>
       </Link>
     </section>

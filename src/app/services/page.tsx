@@ -7,7 +7,7 @@ import Hero from '@/components/layout/shared/hero';
 import { getTranslations } from 'next-intl/server';
 
 export default async function Services() {
-  const t = await getTranslations('services');
+  const t = await getTranslations('pages.services');
   return (
     <>
       <Header />

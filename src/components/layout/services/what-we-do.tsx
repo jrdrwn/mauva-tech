@@ -2,7 +2,7 @@ import { StickyScroll } from '@/components/ui/sticky-scroll-reveal';
 import { useTranslations } from 'next-intl';
 
 export default function WhatWeDo() {
-  const t = useTranslations('services');
+  const t = useTranslations('pages.services');
 
   const content = [
     {
