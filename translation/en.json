@@ -119,6 +119,12 @@
         "label": "Pricing",
         "title": "Simple and Transparent",
         "description": "We offer a range of pricing plans to suit your needs. Choose the one that fits you best."
+      },
+      "section": {
+        "maintenance": {
+          "title": "Need Help with Your Project?",
+          "description": "We offer comprehensive maintenance and support plans to keep your systems running smoothly."
+        }
       }
     },
     "faq": {
@@ -148,6 +154,28 @@
         "description": "From a small team with big dreams to a trusted partner for businesses worldwide.",
         "cta": "Meet the Team",
         "ctaLink": "#team"
+      },
+      "visionMission": {
+        "vision": {
+          "title": "Our Vision",
+          "description": "To be a global leader in digital innovation, empowering businesses to thrive in the ever-evolving tech landscape."
+        },
+        "mission": {
+          "title": "Our Mission",
+          "description": "At MauvaTech, we are committed to delivering cutting-edge digital solutions that drive growth and efficiency. We work closely with our clients to understand their unique needs and provide tailored solutions that not only solve current challenges but also prepare them for future opportunities. Our mission is to combine creativity, technology, and expertise to bring our clients' visions to life."
+        }
+      },
+      "ourJourney": {
+        "title": "Our Journey",
+        "description": "We started as a small team with big dreams and have grown into a trusted partner for businesses worldwide."
+      },
+      "team": {
+        "title": "Meet the Team",
+        "description": "The passionate minds behind MauvaTech."
+      },
+      "whatDefinesUs": {
+        "title": "What Defines Us?",
+        "description": "Discover how our passion for technology drives us to create solutions that make a difference."
       }
     },
     "contact": {

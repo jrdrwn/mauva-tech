@@ -10,6 +10,7 @@ import {
   IconTableColumn,
 } from '@tabler/icons-react';
 import { motion } from 'framer-motion';
+import { useTranslations } from 'next-intl';
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
 
@@ -116,13 +117,13 @@ const SkeletonTwo = () => {
 const SkeletonThree = () => {
   return (
     <Image
-    width={640}
-    height={426}
-    className='aspect-video h-36 w-full rounded-xl object-cover object-center'
+      width={640}
+      height={426}
+      className="aspect-video h-36 w-full rounded-xl object-cover object-center"
       src={
         'https://images.unsplash.com/photo-1562408590-e32931084e23?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&dl=umberto-jXd2FSvcRr8-unsplash.jpg&w=1920'
       }
-      alt='An Image'
+      alt="An Image"
     />
   );
 };
@@ -238,28 +239,33 @@ const SkeletonFive = () => {
       className="flex size-full min-h-24 flex-1 flex-col space-y-2 bg-dot-black/[0.2] dark:bg-dot-white/[0.2]"
     >
       <motion.div
-      variants={variants}
-      className="flex flex-row items-start space-x-2 rounded-2xl border border-border bg-card p-2"
+        variants={variants}
+        className="flex flex-row items-start space-x-2 rounded-2xl border border-border bg-card p-2"
       >
-      <div className="w-20">
-        <Image
-        src="https://images.unsplash.com/photo-1599566150163-29194dcaad36?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3387&q=80"
-        alt="avatar"
-        height="100"
-        width="100"
-        className="size-10 rounded-full object-cover object-center"
-        />
-      </div>
-      <p className="text-xs text-neutral-500">
-        There are numerous frameworks like React, Angular, Vue, and Svelte that empower developers to build amazing applications efficiently and effectively.
-      </p>
+        <div className="w-20">
+          <Image
+            src="https://images.unsplash.com/photo-1599566150163-29194dcaad36?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3387&q=80"
+            alt="avatar"
+            height="100"
+            width="100"
+            className="size-10 rounded-full object-cover object-center"
+          />
+        </div>
+        <p className="text-xs text-neutral-500">
+          There are numerous frameworks like React, Angular, Vue, and Svelte
+          that empower developers to build amazing applications efficiently and
+          effectively.
+        </p>
       </motion.div>
       <motion.div
-      variants={variantsSecond}
-      className="ml-auto flex w-3/4 flex-row items-center justify-end space-x-2 rounded-full border border-border bg-card p-2"
+        variants={variantsSecond}
+        className="ml-auto flex w-3/4 flex-row items-center justify-end space-x-2 rounded-full border border-border bg-card p-2"
       >
-      <p className="text-xs text-neutral-500">Consider exploring PHP for backend development—it remains a robust and versatile choice.</p>
-      <div className="size-6 shrink-0 rounded-full bg-gradient-to-r from-pink-500 to-violet-500" />
+        <p className="text-xs text-neutral-500">
+          Consider exploring PHP for backend development—it remains a robust and
+          versatile choice.
+        </p>
+        <div className="size-6 shrink-0 rounded-full bg-gradient-to-r from-pink-500 to-violet-500" />
       </motion.div>
     </motion.div>
   );
@@ -335,12 +341,10 @@ const items = [
 ];
 
 export default function WhatDefinesUs() {
+  const t = useTranslations('pages.about.whatDefinesUs');
   return (
     <section className="container mx-auto flex h-full flex-col items-center justify-center py-16">
-      <TitleSubSection
-        title="What Defines Us?"
-        description="Discover how our passion for technology drives us to create solutions that make a difference."
-      />
+      <TitleSubSection title={t('title')} description={t('description')} />
       <BentoGrid className="mx-auto px-2 md:auto-rows-[20rem]  ">
         {items.map((item, i) => (
           <BentoGridItem

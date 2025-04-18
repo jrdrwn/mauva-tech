@@ -18,6 +18,7 @@ import {
   Smartphone,
   Wrench,
 } from 'lucide-react';
+import { useTranslations } from 'next-intl';
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
@@ -89,6 +90,7 @@ const maintenancePlan = {
 };
 
 export default function PricingSection() {
+  const t = useTranslations('pages.pricing.section');
   return (
     <section className="container mx-auto px-2 py-16 lg:px-0">
       <div className="mx-auto mt-12 grid max-w-screen-lg grid-cols-1 items-center gap-8 lg:grid-cols-3 lg:gap-0">
@@ -158,8 +160,8 @@ export default function PricingSection() {
       <div className="relative py-16 md:py-32">
         <div className="mx-auto max-w-5xl ">
           <TitleSubSection
-            title="Need Help with Your Project?"
-            description="We offer comprehensive maintenance and support plans to keep your systems running smoothly."
+            title={t('maintenance.title')}
+            description={t('maintenance.description')}
           />
           <div className="mt-8 md:mt-20">
             <div className="relative rounded-3xl border bg-card shadow-2xl shadow-zinc-950/5">

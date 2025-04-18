@@ -121,6 +121,12 @@
         "label": "Harga",
         "title": "Sederhana dan Transparan",
         "description": "Kami menawarkan berbagai paket harga yang sesuai dengan kebutuhan Anda. Pilih yang paling cocok untuk Anda."
+      },
+      "section": {
+        "maintenance": {
+          "title": "Butuh Bantuan dengan Proyek Anda?",
+          "description": "Kami menawarkan rencana pemeliharaan dan dukungan yang komprehensif untuk menjaga sistem Anda berjalan dengan lancar."
+        }
       }
     },
     "faq": {
@@ -150,6 +156,28 @@
         "description": "Dari tim kecil dengan mimpi besar hingga mitra terpercaya untuk bisnis di seluruh dunia.",
         "cta": "Temui Tim Kami",
         "ctaLink": "#team"
+      },
+      "visionMission": {
+        "vision": {
+          "title": "Visi Kami",
+          "description": "Menjadi pemimpin global dalam inovasi digital, memberdayakan bisnis untuk berkembang di lanskap teknologi yang terus berkembang."
+        },
+        "mission": {
+          "title": "Misi Kami",
+          "description": "Di MauvaTech, kami berkomitmen untuk memberikan solusi digital mutakhir yang mendorong pertumbuhan dan efisiensi. Kami bekerja sama dengan klien kami untuk memahami kebutuhan unik mereka dan memberikan solusi yang disesuaikan yang tidak hanya menyelesaikan tantangan saat ini tetapi juga mempersiapkan mereka untuk peluang masa depan. Misi kami adalah menggabungkan kreativitas, teknologi, dan keahlian untuk mewujudkan visi klien kami."
+        }
+      },
+      "ourJourney": {
+        "title": "Perjalanan Kami",
+        "description": "Kami memulai sebagai tim kecil dengan mimpi besar dan telah berkembang menjadi mitra terpercaya untuk bisnis di seluruh dunia."
+      },
+      "team": {
+        "title": "Temui Tim Kami",
+        "description": "Pikiran-pikiran penuh semangat di balik MauvaTech."
+      },
+      "whatDefinesUs": {
+        "title": "Apa yang Mendefinisikan Kami?",
+        "description": "Temukan bagaimana hasrat kami terhadap teknologi mendorong kami untuk menciptakan solusi yang memberikan perbedaan."
       }
     },
     "contact": {
