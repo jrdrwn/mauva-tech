@@ -1,0 +1,267 @@
+{
+  "root": {
+    "appname": "Mauva"
+  },
+  "shared": {
+    "end-cta": {
+      "title": "Ready to take your business to the next level?",
+      "description": "Contact us today for a free consultation and let's discuss how we can help you achieve your goals.",
+      "cta": "Get in Touch"
+    },
+    "footer": {
+      "description": "From a small team with big dreams to a trusted partner for businesses worldwide.",
+      "change-language": "Change Language"
+    }
+  },
+  "pages": {
+    "home": {
+      "hero": {
+        "label": "Welcome to Our Agency",
+        "title": "Your <words></words> in Modern Digital Solutions",
+        "description": "We build cutting-edge websites and mobile apps that drive results.",
+        "startSupportCta": "Explore Our Work",
+        "endSupportCta": "from {count}+",
+        "reviews": {
+          "text": "reviews"
+        }
+      },
+      "services": {
+        "title": "Transforming Ideas into Reality",
+        "description": "We combine creativity, technology, and strategy to build solutions that make an impact.",
+        "features": {
+          "webDevelopment": {
+            "title": "Web Development",
+            "description": "We build responsive, scalable, and user-friendly websites tailored to your needs."
+          },
+          "mobileAppDevelopment": {
+            "title": "Mobile App Development",
+            "description": "From concept to launch, we create mobile apps that users love."
+          },
+          "uiUxDesign": {
+            "title": "UI/UX Design",
+            "description": "We design intuitive and visually appealing interfaces for seamless user experiences."
+          },
+          "maintenanceSupport": {
+            "title": "Maintenance & Support",
+            "description": "We ensure your systems run smoothly with reliable support and updates."
+          }
+        }
+      },
+      "projects": {
+        "title": "Our Latest Creations",
+        "description": "Explore some of our recent projects and see how we've helped businesses achieve their goals.",
+        "error": "Error",
+        "noProjects": "No projects found",
+        "viewAllProjects": "View All Projects"
+      },
+      "aboutUs": {
+        "title": "Who We Are",
+        "description": "Discover how our passion for technology drives us to create solutions that make a difference.",
+        "content": {
+          "title": "About Us",
+          "description": "MauvaTech is a leading software house specializing in web and mobile app development. With a team of passionate developers and designers, we help businesses transform their ideas into digital solutions that drive results.",
+          "team": {
+            "title": "Our Team",
+            "description": "Meet the people who make it all happen.",
+            "cta": "Learn More About Us"
+          }
+        }
+      },
+      "articles": {
+        "title": "Insights & Updates",
+        "description": "Stay ahead of the curve with our latest insights on technology, design, and business growth.",
+        "cta": "Read Our Articles",
+        "not-found": "No articles found"
+      },
+      "startSupportCta": "Explore Our Work",
+      "endSupportCta": "from {reviews.count}+ reviews"
+    },
+    "services": {
+      "hero": {
+        "label": "What We Offer",
+        "title": "Empowering Your Business with Cutting-Edge Digital Solutions",
+        "description": "From custom websites to mobile apps, we provide tailored solutions that drive growth, efficiency, and innovation. Let us help you transform your ideas into reality.",
+        "cta": "Get a Free Consultation"
+      },
+      "whatWeDo": {
+        "webDevelopment": {
+          "title": "Web Development",
+          "description": "We build responsive, scalable, and user-friendly websites tailored to your business needs. From company profiles to e-commerce platforms, we ensure your site is fast, secure, and optimized for growth. Let us help you create a digital presence that drives results."
+        },
+        "mobileAppDevelopment": {
+          "title": "Mobile App Development",
+          "description": "From concept to launch, we create mobile apps that are intuitive, engaging, and built to scale. Whether for iOS, Android, or cross-platform, we deliver solutions that stand out and keep users coming back for more."
+        },
+        "uiUxDesign": {
+          "title": "UI/UX Design",
+          "description": "We design intuitive and visually appealing interfaces that enhance user experience and drive engagement. Our focus is on creating designs that are not only beautiful but also functional and user-centric."
+        },
+        "maintenanceSupport": {
+          "title": "Maintenance & Support",
+          "description": "We ensure your systems run smoothly with reliable support, updates, and optimization services. From bug fixes to security monitoring, we’re here to keep your digital solutions performing at their best."
+        }
+      },
+      "testimonials": {
+        "title": "Our Clients' Stories",
+        "description": "Our clients' success is our greatest achievement. Here's what they have to say."
+      }
+    },
+    "projects": {
+      "hero": {
+        "label": "Our Projects",
+        "title": "Explore Our Work",
+        "description": "Explore some of our recent projects and see how we've helped businesses achieve their goals.",
+        "cta": "Get in Touch"
+      }
+    },
+    "pricing": {
+      "hero": {
+        "label": "Pricing",
+        "title": "Simple and Transparent",
+        "description": "We offer a range of pricing plans to suit your needs. Choose the one that fits you best."
+      },
+      "section": {
+        "maintenance": {
+          "title": "Need Help with Your Project?",
+          "description": "We offer comprehensive maintenance and support plans to keep your systems running smoothly."
+        }
+      }
+    },
+    "faq": {
+      "hero": {
+        "label": "Help Center",
+        "title": "Frequently Asked Questions",
+        "description": "Quick answers to common questions about our products & services.",
+        "cta": "Have a question that is not listed here?",
+        "ctaLink": "/contact"
+      },
+      "content": {
+        "title": "Frequently Asked Questions",
+        "description": "Quick answers to common questions about our products & services."
+      }
+    },
+    "article": {
+      "hero": {
+        "label": "Articles",
+        "title": "Welcome to Our Articles",
+        "description": "Stay updated with our latest news and articles"
+      }
+    },
+    "about": {
+      "hero": {
+        "label": "About Us",
+        "title": "Explore Our Journey",
+        "description": "From a small team with big dreams to a trusted partner for businesses worldwide.",
+        "cta": "Meet the Team",
+        "ctaLink": "#team"
+      },
+      "visionMission": {
+        "vision": {
+          "title": "Our Vision",
+          "description": "To be a global leader in digital innovation, empowering businesses to thrive in the ever-evolving tech landscape."
+        },
+        "mission": {
+          "title": "Our Mission",
+          "description": "At MauvaTech, we are committed to delivering cutting-edge digital solutions that drive growth and efficiency. We work closely with our clients to understand their unique needs and provide tailored solutions that not only solve current challenges but also prepare them for future opportunities. Our mission is to combine creativity, technology, and expertise to bring our clients' visions to life."
+        }
+      },
+      "ourJourney": {
+        "title": "Our Journey",
+        "description": "We started as a small team with big dreams and have grown into a trusted partner for businesses worldwide."
+      },
+      "team": {
+        "title": "Meet the Team",
+        "description": "The passionate minds behind MauvaTech."
+      },
+      "whatDefinesUs": {
+        "title": "What Defines Us?",
+        "description": "Discover how our passion for technology drives us to create solutions that make a difference."
+      }
+    },
+    "contact": {
+      "hero": {
+        "label": "Contact Us",
+        "title": "Get in Touch",
+        "description": "We'd love to hear from you. Reach out to us for any inquiries or assistance."
+      }
+    },
+    "terms": {
+      "hero": {
+        "label": "Terms of Service",
+        "title": "Our Terms of Service",
+        "description": "Please read our terms of service carefully before using our website."
+      },
+      "content": {
+        "title": "Terms of Service",
+        "description": "These terms govern your use of our website and services.",
+        "eligibility": {
+          "title": "Eligibility",
+          "description": "To use our services, you must be at least 18 years old or have the consent of a parent or guardian. By using our services, you represent and warrant that you meet these requirements."
+        },
+        "prohibitedActivities": {
+          "title": "Prohibited Activities",
+          "description": "You agree not to engage in activities that violate any laws, infringe on the rights of others, or disrupt the functionality of our services. This includes, but is not limited to, hacking, spamming, and distributing malware."
+        },
+        "intellectualProperty": {
+          "title": "Intellectual Property",
+          "description": "All content, trademarks, and intellectual property associated with our services are owned by Mauva or its licensors. You may not use, reproduce, or distribute this content without prior written consent."
+        },
+        "limitationOfLiability": {
+          "title": "Limitation of Liability",
+          "description": "To the fullest extent permitted by law, Mauva shall not be liable for any indirect, incidental, or consequential damages arising from your use of our services."
+        },
+        "governingLaw": {
+          "title": "Governing Law",
+          "description": "These terms are governed by the laws of Tester. Any disputes arising from these terms shall be resolved in the courts of Tester."
+        },
+        "changesToTerms": {
+          "title": "Changes to These Terms",
+          "description": "We reserve the right to update these Terms of Service at any time. Any changes will be posted on this page with an updated revision date."
+        },
+        "contactUs": {
+          "title": "Contact Us",
+          "description": "If you have any questions about these Terms of Service, please contact us."
+        }
+      }
+    },
+    "privacy": {
+      "hero": {
+        "label": "Privacy Policy",
+        "title": "Our Privacy Policy",
+        "description": "Learn how we handle your personal data and protect your privacy."
+      },
+      "content": {
+        "title": "Privacy Policy",
+        "description": "This policy explains how we collect, use, and protect your information.",
+        "informationWeCollect": {
+          "title": "Information We Collect",
+          "description": "We may collect personal information such as your name, email address, phone number, and payment details when you interact with our website or services. Additionally, we may gather non-personal data like browser type, IP address, and usage statistics to improve our offerings."
+        },
+        "howWeUseYourInformation": {
+          "title": "How We Use Your Information",
+          "description": "Your information is used to provide and improve our services, process transactions, respond to inquiries, and send updates or promotional materials. We may also use your data for analytics and research to enhance user experience."
+        },
+        "sharingYourInformation": {
+          "title": "Sharing Your Information",
+          "description": "We do not sell your personal information. However, we may share your data with trusted third-party service providers to facilitate our services, comply with legal obligations, or protect our rights."
+        },
+        "dataProtection": {
+          "title": "Data Protection",
+          "description": "We implement robust security measures, including encryption and access controls, to protect your data from unauthorized access, alteration, or disclosure. Despite our efforts, no method of transmission over the internet is 100% secure."
+        },
+        "yourRights": {
+          "title": "Your Rights",
+          "description": "You have the right to access, update, or delete your personal information. To exercise these rights, please contact us."
+        },
+        "changesToPolicy": {
+          "title": "Changes to This Policy",
+          "description": "We may update this Privacy Policy from time to time. Any changes will be posted on this page with an updated revision date."
+        },
+        "contactUs": {
+          "title": "Contact Us",
+          "description": "If you have any questions about this Privacy Policy, please contact us."
+        }
+      }
+    }
+  }
+}

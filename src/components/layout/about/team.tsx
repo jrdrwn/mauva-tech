@@ -1,11 +1,13 @@
 import { Button } from '@/components/ui/button';
 import { IconBrandGithub, IconBrandLinkedin } from '@tabler/icons-react';
+import { useTranslations } from 'next-intl';
 import Image from 'next/image';
 import Link from 'next/link';
 
 import TitleSubSection from '../shared/title-sub-section';
 
 export default function Team() {
+  const t = useTranslations('pages.about.team');
   const teamMembers = [
     {
       name: 'John Doe',
@@ -42,10 +44,7 @@ export default function Team() {
       className="container mx-auto flex h-full flex-col items-center justify-center py-16"
       id="team"
     >
-      <TitleSubSection
-        title="Meet the Team"
-        description="The passionate minds behind MauvaTech."
-      />
+      <TitleSubSection title={t('title')} description={t('description')} />
       <div className="grid w-full grid-cols-1 gap-x-8 gap-y-12 px-2 md:grid-cols-2">
         {teamMembers.map((member) => (
           <div

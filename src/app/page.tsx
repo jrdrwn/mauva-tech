@@ -1,5 +1,5 @@
 import AboutUs from '@/components/layout/home/about-us';
-import Blogs from '@/components/layout/home/blogs';
+import Articles from '@/components/layout/home/articles';
 import Projects from '@/components/layout/home/projects';
 import Services from '@/components/layout/home/services';
 import SupportSection from '@/components/layout/home/supportSection';
@@ -14,9 +14,11 @@ import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { FlipWords } from '@/components/ui/flip-words';
 import { ArrowRight, Star } from 'lucide-react';
+import { getTranslations } from 'next-intl/server';
 import Link from 'next/link';
 
-export default function Home() {
+export default async function Home() {
+  const t = await getTranslations('pages.home');
   const reviews = {
     count: 200,
     rating: 4.5,
@@ -52,18 +54,20 @@ export default function Home() {
     <>
       <Header />
       <Hero
-        label="Welcome to Our Agency"
+        label={t('hero.label')}
         title={
           <>
-            Your <FlipWords words={words} /> in Modern Digital Solutions
+            {t.rich('hero.title', {
+              words: () => <FlipWords words={words} />,
+            })}
           </>
         }
-        description="We build cutting-edge websites and mobile apps that drive results."
+        description={t('hero.description')}
         support={<SupportSection />}
         startSupportCta={
           <Link href="/projects">
             <Button variant="default" className="flex items-center gap-2">
-              Explore Our Work
+              {t('hero.startSupportCta')}
               <Badge variant={'secondary'} className="size-6 rounded-full p-0">
                 <ArrowRight className="mx-auto" />
               </Badge>
@@ -95,14 +99,16 @@ export default function Home() {
                   {reviews.rating?.toFixed(1)}
                 </span>
               </div>
-              <p className="text-left font-medium text-muted-foreground">
-                from {reviews.count}+{' '}
+              <p className="text-left text-sm font-medium text-muted-foreground md:text-base">
+                {t('hero.endSupportCta', {
+                  count: reviews.count,
+                })}{' '}
                 <Link
                   href="/#testimonial"
                   className="underline underline-offset-2 "
                 >
                   {' '}
-                  reviews
+                  {t('hero.reviews.text')}
                 </Link>
               </p>
             </div>
@@ -113,7 +119,7 @@ export default function Home() {
       <AboutUs />
       <Projects />
       <Testimonial />
-      <Blogs />
+      <Articles />
       <FAQSection />
       <EndCTA />
       <Footer />

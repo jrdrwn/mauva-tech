@@ -1,11 +1,13 @@
 import { StickyScroll } from '@/components/ui/sticky-scroll-reveal';
+import { useTranslations } from 'next-intl';
 
 export default function WhatWeDo() {
+  const t = useTranslations('pages.services');
+
   const content = [
     {
-      title: 'Web Development',
-      description:
-        'We build responsive, scalable, and user-friendly websites tailored to your business needs. From company profiles to e-commerce platforms, we ensure your site is fast, secure, and optimized for growth. Let us help you create a digital presence that drives results.',
+      title: t('whatWeDo.webDevelopment.title'),
+      description: t('whatWeDo.webDevelopment.description'),
       image: '/website.webp',
       offers: [
         'Custom website',
@@ -17,9 +19,8 @@ export default function WhatWeDo() {
       ],
     },
     {
-      title: 'Mobile App Development',
-      description:
-        'From concept to launch, we create mobile apps that are intuitive, engaging, and built to scale. Whether for iOS, Android, or cross-platform, we deliver solutions that stand out and keep users coming back for more.',
+      title: t('whatWeDo.mobileAppDevelopment.title'),
+      description: t('whatWeDo.mobileAppDevelopment.description'),
       image: '/mobile.webp',
       offers: [
         'iOS & Android',
@@ -31,9 +32,8 @@ export default function WhatWeDo() {
       ],
     },
     {
-      title: 'UI/UX Design',
-      description:
-        'We design intuitive and visually appealing interfaces that enhance user experience and drive engagement. Our focus is on creating designs that are not only beautiful but also functional and user-centric.',
+      title: t('whatWeDo.uiUxDesign.title'),
+      description: t('whatWeDo.uiUxDesign.description'),
       image: '/design.webp',
       offers: [
         'User research',
@@ -45,9 +45,8 @@ export default function WhatWeDo() {
       ],
     },
     {
-      title: 'Maintenance & Support',
-      description:
-        'We ensure your systems run smoothly with reliable support, updates, and optimization services. From bug fixes to security monitoring, we’re here to keep your digital solutions performing at their best.',
+      title: t('whatWeDo.maintenanceSupport.title'),
+      description: t('whatWeDo.maintenanceSupport.description'),
       image: '/support.webp',
       offers: [
         'Regular updates',
@@ -59,6 +58,7 @@ export default function WhatWeDo() {
       ],
     },
   ];
+
   return (
     <section className="container mx-auto flex h-full flex-col items-center justify-center py-16">
       <StickyScroll content={content} />

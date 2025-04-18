@@ -4,16 +4,18 @@ import EndCTA from '@/components/layout/shared/end-cta';
 import Footer from '@/components/layout/shared/footer';
 import Header from '@/components/layout/shared/header';
 import Hero from '@/components/layout/shared/hero';
+import { getTranslations } from 'next-intl/server';
 
-export default function Services() {
+export default async function Services() {
+  const t = await getTranslations('pages.services');
   return (
     <>
       <Header />
       <Hero
-        label="What We Offer"
-        title="Empowering Your Business with Cutting-Edge Digital Solutions"
-        description="From custom websites to mobile apps, we provide tailored solutions that drive growth, efficiency, and innovation. Let us help you transform your ideas into reality."
-        cta="Get a Free Consultation"
+        label={t('hero.label')}
+        title={t('hero.title')}
+        description={t('hero.description')}
+        cta={t('hero.cta')}
         ctaLink="/contact"
       />
       <WhatWeDo />
