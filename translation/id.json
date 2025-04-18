@@ -64,5 +64,84 @@
       "cta": "Baca Artikel Kami",
       "not-found": "Tidak ada artikel ditemukan"
     }
+  },
+  "services": {
+    "hero": {
+      "label": "Apa yang Kami Tawarkan",
+      "title": "Memberdayakan Bisnis Anda dengan Solusi Digital Terkini",
+      "description": "Dari situs web khusus hingga aplikasi mobile, kami menyediakan solusi yang disesuaikan untuk mendorong pertumbuhan, efisiensi, dan inovasi. Biarkan kami membantu Anda mengubah ide menjadi kenyataan.",
+      "cta": "Dapatkan Konsultasi Gratis"
+    },
+    "whatWeDo": {
+      "webDevelopment": {
+        "title": "Pengembangan Web",
+        "description": "Kami membangun situs web yang responsif, skalabel, dan ramah pengguna sesuai kebutuhan bisnis Anda. Dari profil perusahaan hingga platform e-commerce, kami memastikan situs Anda cepat, aman, dan dioptimalkan untuk pertumbuhan. Biarkan kami membantu Anda menciptakan kehadiran digital yang memberikan hasil."
+      },
+      "mobileAppDevelopment": {
+        "title": "Pengembangan Aplikasi Mobile",
+        "description": "Dari konsep hingga peluncuran, kami menciptakan aplikasi mobile yang intuitif, menarik, dan dibangun untuk skala. Baik untuk iOS, Android, atau lintas platform, kami memberikan solusi yang menonjol dan membuat pengguna kembali lagi."
+      },
+      "uiUxDesign": {
+        "title": "Desain UI/UX",
+        "description": "Kami merancang antarmuka yang intuitif dan menarik secara visual yang meningkatkan pengalaman pengguna dan mendorong keterlibatan. Fokus kami adalah menciptakan desain yang tidak hanya indah tetapi juga fungsional dan berpusat pada pengguna."
+      },
+      "maintenanceSupport": {
+        "title": "Pemeliharaan & Dukungan",
+        "description": "Kami memastikan sistem Anda berjalan lancar dengan dukungan, pembaruan, dan layanan optimisasi yang andal. Dari perbaikan bug hingga pemantauan keamanan, kami di sini untuk menjaga solusi digital Anda tetap berkinerja terbaik."
+      }
+    },
+    "testimonials": {
+      "title": "Cerita Klien Kami",
+      "description": "Keberhasilan klien kami adalah pencapaian terbesar kami. Berikut adalah apa yang mereka katakan."
+    }
+  },
+  "pages": {
+    "projects": {
+      "hero": {
+        "label": "Proyek Kami",
+        "title": "Jelajahi Karya Kami",
+        "description": "Jelajahi beberapa proyek terbaru kami dan lihat bagaimana kami membantu bisnis mencapai tujuan mereka.",
+        "cta": "Hubungi Kami"
+      }
+    },
+    "pricing": {
+      "hero": {
+        "label": "Harga",
+        "title": "Sederhana dan Transparan",
+        "description": "Kami menawarkan berbagai paket harga yang sesuai dengan kebutuhan Anda. Pilih yang paling cocok untuk Anda."
+      }
+    },
+    "faq": {
+      "hero": {
+        "label": "Pusat Bantuan",
+        "title": "Pertanyaan yang Sering Diajukan",
+        "description": "Jawaban cepat untuk pertanyaan umum tentang produk & layanan kami.",
+        "cta": "Punya pertanyaan yang tidak tercantum di sini?",
+        "ctaLink": "/contact"
+      }
+    },
+    "blog": {
+      "hero": {
+        "label": "Blog",
+        "title": "Selamat Datang di Blog Kami",
+        "description": "Tetap terupdate dengan berita dan artikel terbaru kami"
+      }
+    },
+    "about": {
+      "hero": {
+        "label": "Tentang Kami",
+        "title": "Jelajahi Perjalanan Kami",
+        "description": "Dari tim kecil dengan mimpi besar hingga mitra terpercaya untuk bisnis di seluruh dunia.",
+        "cta": "Temui Tim Kami",
+        "ctaLink": "#team"
+      }
+    },
+    "contact": {
+      "hero": {
+        "label": "Hubungi Kami",
+        "title": "Hubungi Kami",
+        "description": "Kami senang mendengar dari Anda. Hubungi kami untuk pertanyaan atau bantuan."
+      }
+    }
   }
 }

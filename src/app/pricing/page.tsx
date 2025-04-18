@@ -3,15 +3,18 @@ import EndCTA from '@/components/layout/shared/end-cta';
 import Footer from '@/components/layout/shared/footer';
 import Header from '@/components/layout/shared/header';
 import Hero from '@/components/layout/shared/hero';
+import { useTranslations } from 'next-intl';
 
 export default function Pricing() {
+  const t = useTranslations('pages.pricing.hero');
+
   return (
     <>
       <Header />
       <Hero
-        label="Pricing"
-        title="Simple and Transparent"
-        description="We offer a range of pricing plans to suit your needs. Choose the one that fits you best."
+        label={t('label')}
+        title={t('title')}
+        description={t('description')}
       />
       <PricingSection />
       <EndCTA />

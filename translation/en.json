@@ -63,5 +63,127 @@
     },
     "startSupportCta": "Explore Our Work",
     "endSupportCta": "from {reviews.count}+ reviews"
+  },
+  "services": {
+    "hero": {
+      "label": "What We Offer",
+      "title": "Empowering Your Business with Cutting-Edge Digital Solutions",
+      "description": "From custom websites to mobile apps, we provide tailored solutions that drive growth, efficiency, and innovation. Let us help you transform your ideas into reality.",
+      "cta": "Get a Free Consultation"
+    },
+    "whatWeDo": {
+      "webDevelopment": {
+        "title": "Web Development",
+        "description": "We build responsive, scalable, and user-friendly websites tailored to your business needs. From company profiles to e-commerce platforms, we ensure your site is fast, secure, and optimized for growth. Let us help you create a digital presence that drives results."
+      },
+      "mobileAppDevelopment": {
+        "title": "Mobile App Development",
+        "description": "From concept to launch, we create mobile apps that are intuitive, engaging, and built to scale. Whether for iOS, Android, or cross-platform, we deliver solutions that stand out and keep users coming back for more."
+      },
+      "uiUxDesign": {
+        "title": "UI/UX Design",
+        "description": "We design intuitive and visually appealing interfaces that enhance user experience and drive engagement. Our focus is on creating designs that are not only beautiful but also functional and user-centric."
+      },
+      "maintenanceSupport": {
+        "title": "Maintenance & Support",
+        "description": "We ensure your systems run smoothly with reliable support, updates, and optimization services. From bug fixes to security monitoring, we’re here to keep your digital solutions performing at their best."
+      }
+    },
+    "testimonials": {
+      "title": "Our Clients' Stories",
+      "description": "Our clients' success is our greatest achievement. Here's what they have to say."
+    }
+  },
+  "about": {
+    "hero": {
+      "label": "About Us",
+      "title": "Explore Our Journey",
+      "description": "From a small team with big dreams to a trusted partner for businesses worldwide.",
+      "cta": "Meet the Team",
+      "ctaLink": "#team"
+    }
+  },
+  "blog": {
+    "hero": {
+      "label": "Blog",
+      "title": "Welcome to Our Blog",
+      "description": "Stay updated with our latest news and articles"
+    }
+  },
+  "projects": {
+    "hero": {
+      "label": "Our Projects",
+      "title": "Explore Our Work",
+      "description": "Explore some of our recent projects and see how we've helped businesses achieve their goals.",
+      "cta": "Get in Touch"
+    }
+  },
+  "contact": {
+    "hero": {}
+  },
+  "pricing": {
+    "hero": {
+      "label": "Pricing",
+      "title": "Simple and Transparent",
+      "description": "We offer a range of pricing plans to suit your needs. Choose the one that fits you best."
+    }
+  },
+  "faq": {
+    "hero": {
+      "label": "Help Center",
+      "title": "Frequently Asked Questions",
+      "description": "Quick answers to common questions about our products & services.",
+      "cta": "Have a question that is not listed here?",
+      "ctaLink": "/contact"
+    }
+  },
+  "pages": {
+    "projects": {
+      "hero": {
+        "label": "Our Projects",
+        "title": "Explore Our Work",
+        "description": "Explore some of our recent projects and see how we've helped businesses achieve their goals.",
+        "cta": "Get in Touch"
+      }
+    },
+    "pricing": {
+      "hero": {
+        "label": "Pricing",
+        "title": "Simple and Transparent",
+        "description": "We offer a range of pricing plans to suit your needs. Choose the one that fits you best."
+      }
+    },
+    "faq": {
+      "hero": {
+        "label": "Help Center",
+        "title": "Frequently Asked Questions",
+        "description": "Quick answers to common questions about our products & services.",
+        "cta": "Have a question that is not listed here?",
+        "ctaLink": "/contact"
+      }
+    },
+    "blog": {
+      "hero": {
+        "label": "Blog",
+        "title": "Welcome to Our Blog",
+        "description": "Stay updated with our latest news and articles"
+      }
+    },
+    "about": {
+      "hero": {
+        "label": "About Us",
+        "title": "Explore Our Journey",
+        "description": "From a small team with big dreams to a trusted partner for businesses worldwide.",
+        "cta": "Meet the Team",
+        "ctaLink": "#team"
+      }
+    },
+    "contact": {
+      "hero": {
+        "label": "Contact Us",
+        "title": "Get in Touch",
+        "description": "We'd love to hear from you. Reach out to us for any inquiries or assistance."
+      }
+    }
   }
 }
