@@ -6,42 +6,37 @@ import {
   IconHelp,
   IconTerminal2,
 } from '@tabler/icons-react';
+import { useTranslations } from 'next-intl';
 
 import TitleSubSection from '../shared/title-sub-section';
 
 export default function Services() {
+  const t = useTranslations('pages.home.services');
   const features = [
     {
-      title: 'Web Development',
-      description:
-        'We build responsive, scalable, and user-friendly websites tailored to your needs.',
+      title: t('features.webDevelopment.title'),
+      description: t('features.webDevelopment.description'),
       icon: <IconTerminal2 />,
     },
     {
-      title: 'Mobile App Development',
-      description:
-        'From concept to launch, we create mobile apps that users love.',
+      title: t('features.mobileAppDevelopment.title'),
+      description: t('features.mobileAppDevelopment.description'),
       icon: <IconHeart />, //<IconEaseInOut />,
     },
     {
-      title: 'UI/UX Design',
-      description:
-        'We design intuitive and visually appealing interfaces for seamless user experiences.',
+      title: t('features.uiUxDesign.title'),
+      description: t('features.uiUxDesign.description'),
       icon: <IconAdjustmentsBolt />,
     },
     {
-      title: 'Maintenance & Support',
-      description:
-        'We ensure your systems run smoothly with reliable support and updates.',
+      title: t('features.maintenanceSupport.title'),
+      description: t('features.maintenanceSupport.description'),
       icon: <IconHelp />,
     },
   ];
   return (
     <section className="container mx-auto flex h-full flex-col items-center justify-center py-20">
-      <TitleSubSection
-        title="Transforming Ideas into Reality"
-        description="We combine creativity, technology, and strategy to build solutions that make an impact."
-      />
+      <TitleSubSection title={t('title')} description={t('description')} />
 
       <div className="relative z-10 mx-auto grid  max-w-6xl grid-cols-1 py-10 md:grid-cols-2 lg:grid-cols-4">
         {features.map((feature, index) => (

@@ -117,7 +117,7 @@ export function ArticleCard(props: ArticleCardProps) {
             </CardDescription>
           </CardHeader>
           <CardFooter className="relative flex-1 items-end">
-            <Link href={`/blog/${props.id}`}>
+            <Link href={`/articles/${props.id}`}>
               <Button variant={'outline'} className="group/button">
                 Read More
                 <span>

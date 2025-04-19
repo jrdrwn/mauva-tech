@@ -6,8 +6,10 @@ import {
   AccordionTrigger,
 } from '@/components/ui/accordion';
 import { GridLayout } from '@/components/ui/grid-layout';
+import { useTranslations } from 'next-intl';
 
 export default function FAQSection({ onlyFaq = false }: { onlyFaq?: boolean }) {
+  const t = useTranslations('pages.faq.content');
   const faq = [
     {
       question: 'What makes MauvaTech different from other software houses?',
@@ -52,11 +54,11 @@ export default function FAQSection({ onlyFaq = false }: { onlyFaq?: boolean }) {
                 lineVariant="none"
                 className="mx-auto max-w-max p-2"
               >
-                Frequently Asked Questions
+                {t('title')}
               </GridLayout>
             </h1>
             <p className="mb-6 px-2 text-center text-foreground/70 md:text-lg">
-              Quick answers to common questions about our products and services.
+              {t('description')}
             </p>
           </FadeBlur>
         )}

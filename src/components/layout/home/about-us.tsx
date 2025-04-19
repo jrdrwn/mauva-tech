@@ -13,6 +13,7 @@ import {
 } from '@/components/ui/card';
 import { WobbleCard } from '@/components/ui/wobble-card';
 import { MoveUpRight } from 'lucide-react';
+import { useTranslations } from 'next-intl';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useEffect, useId, useState } from 'react';
@@ -20,18 +21,17 @@ import { useEffect, useId, useState } from 'react';
 import TitleSubSection from '../shared/title-sub-section';
 
 export default function AboutUs() {
+  const t = useTranslations('pages.home.aboutUs');
   return (
     <section className="container mx-auto flex h-full flex-col items-center justify-center py-20">
-      <TitleSubSection
-        title="Who We Are"
-        description="Discover how our passion for technology drives us to create solutions that make a difference."
-      />
+      <TitleSubSection title={t('title')} description={t('description')} />
       <WobbleCardContainer />
     </section>
   );
 }
 
 export function WobbleCardContainer() {
+  const t = useTranslations('pages.home.aboutUs.content');
   const people = [
     {
       id: 1,
@@ -78,13 +78,10 @@ export function WobbleCardContainer() {
         <FadeBlur>
           <div className="max-w-lg">
             <h2 className="text-balance text-left text-lg font-semibold tracking-[-0.015em] text-white md:text-xl lg:text-3xl">
-              About us
+              {t('title')}
             </h2>
             <p className="mt-4 text-left  text-base/6 text-neutral-200">
-              MauvaTech is a leading software house specializing in web and
-              mobile app development. With a team of passionate developers and
-              designers, we help businesses transform their ideas into digital
-              solutions that drive results.
+              {t('description')}
             </p>
           </div>
         </FadeBlur>
@@ -99,10 +96,10 @@ export function WobbleCardContainer() {
       <Card className="relative col-span-1 flex min-h-[300px] flex-col rounded-2xl ">
         <FadeBlur>
           <CardHeader>
-            <CardTitle className="text-xl md:text-2xl">Our Team</CardTitle>
-            <CardDescription>
-              Meet the people who make it all happen.
-            </CardDescription>
+            <CardTitle className="text-xl md:text-2xl">
+              {t('team.title')}
+            </CardTitle>
+            <CardDescription>{t('team.description')}</CardDescription>
           </CardHeader>
         </FadeBlur>
         <CardContent className="flex flex-1 flex-col items-center justify-center">
@@ -114,7 +111,7 @@ export function WobbleCardContainer() {
         <CardFooter className=" items-end ">
           <Link href="/about">
             <Button variant={'ghost'} className="group/button">
-              Learn More About Us
+              {t('team.cta')}
               <span>
                 <MoveUpRight className="w-4 transition-all duration-300 group-hover/button:size-5 group-hover/button:rotate-45" />
               </span>

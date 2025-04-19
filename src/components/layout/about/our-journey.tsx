@@ -1,10 +1,12 @@
 import { Timeline } from '@/components/ui/timeline';
+import { useTranslations } from 'next-intl';
 import Image from 'next/image';
 import { ReactNode } from 'react';
 
 import TitleSubSection from '../shared/title-sub-section';
 
 export default function OurJourney() {
+  const t = useTranslations('pages.about.ourJourney');
   const data: { title: string; content: ReactNode }[] = [
     {
       title: '2020 - The Beginning',
@@ -106,10 +108,7 @@ export default function OurJourney() {
   ];
   return (
     <section className="container mx-auto flex h-full flex-col items-center justify-center pb-72 pt-20">
-      <TitleSubSection
-        title="Our Journey"
-        description="We started as a small team with big dreams and have grown into a trusted partner for businesses worldwide."
-      />
+      <TitleSubSection title={t('title')} description={t('description')} />
       <div className="w-full">
         <Timeline data={data} />
       </div>

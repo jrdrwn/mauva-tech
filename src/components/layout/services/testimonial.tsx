@@ -2,6 +2,7 @@ import FadeBlur from '@/components/animations/fade-blur';
 import { Avatar, AvatarFallback } from '@/components/ui/avatar';
 import { Button } from '@/components/ui/button';
 import Marquee from '@/components/ui/marquee';
+import { useTranslations } from 'next-intl';
 import Link from 'next/link';
 import { ComponentProps } from 'react';
 
@@ -64,26 +65,26 @@ const testimonials = [
   },
 ];
 
-const Testimonial = () => (
-  <section className="container mx-auto  py-16" id="testimonial">
-    <div className=" flex h-full flex-col items-center justify-center">
-      <TitleSubSection
-        title="Our Clients' Stories"
-        description="Our clients' success is our greatest achievement. Here's what they have to say."
-      />
-    </div>
-    <div className="relative">
-      <div className="absolute inset-y-0 left-0 z-10 w-[15%] bg-gradient-to-r from-background to-transparent" />
-      <div className="absolute inset-y-0 right-0 z-10 w-[15%] bg-gradient-to-l from-background to-transparent" />
-      <Marquee pauseOnHover className="[--duration:60s]">
-        <TestimonialList />
-      </Marquee>
-      <Marquee pauseOnHover reverse className="mt-0 [--duration:60s]">
-        <TestimonialList />
-      </Marquee>
-    </div>
-  </section>
-);
+function Testimonial() {
+  const t = useTranslations('pages.services.testimonials');
+  return (
+    <section className="container mx-auto  py-16" id="testimonial">
+      <div className=" flex h-full flex-col items-center justify-center">
+        <TitleSubSection title={t('title')} description={t('description')} />
+      </div>
+      <div className="relative">
+        <div className="absolute inset-y-0 left-0 z-10 w-[15%] bg-gradient-to-r from-background to-transparent" />
+        <div className="absolute inset-y-0 right-0 z-10 w-[15%] bg-gradient-to-l from-background to-transparent" />
+        <Marquee pauseOnHover className="[--duration:60s]">
+          <TestimonialList />
+        </Marquee>
+        <Marquee pauseOnHover reverse className="mt-0 [--duration:60s]">
+          <TestimonialList />
+        </Marquee>
+      </div>
+    </section>
+  );
+}
 
 const TestimonialList = () =>
   testimonials.map((testimonial) => (

@@ -3,17 +3,20 @@ import FAQSection from '@/components/layout/shared/faq';
 import Footer from '@/components/layout/shared/footer';
 import Header from '@/components/layout/shared/header';
 import Hero from '@/components/layout/shared/hero';
+import { useTranslations } from 'next-intl';
 
 export default function FAQ() {
+  const t = useTranslations('pages.faq.hero');
+
   return (
     <>
       <Header />
       <Hero
-        label="Help Center"
-        title="Frequently Asked Questions"
-        description="Quick answers to common questions about our products & services."
-        cta="Have a question that is not listed here?"
-        ctaLink="/contact"
+        label={t('label')}
+        title={t('title')}
+        description={t('description')}
+        cta={t('cta')}
+        ctaLink={t('ctaLink')}
       />
       <FAQSection onlyFaq={true} />
       <EndCTA />

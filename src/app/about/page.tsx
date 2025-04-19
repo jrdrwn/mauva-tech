@@ -6,17 +6,20 @@ import EndCTA from '@/components/layout/shared/end-cta';
 import Footer from '@/components/layout/shared/footer';
 import Header from '@/components/layout/shared/header';
 import Hero from '@/components/layout/shared/hero';
+import { useTranslations } from 'next-intl';
 
 export default function AboutPage() {
+  const t = useTranslations('pages.about.hero');
+
   return (
     <>
       <Header />
       <Hero
-        label="Abous Us"
-        title="Explore Our Journey"
-        description="From a small team with big dreams to a trusted partner for businesses worldwide."
-        cta="Meet the Team"
-        ctaLink="#team"
+        label={t('label')}
+        title={t('title')}
+        description={t('description')}
+        cta={t('cta')}
+        ctaLink={t('ctaLink')}
       />
       <VisionMission />
       <OurJourney />

@@ -3,15 +3,18 @@ import EndCTA from '@/components/layout/shared/end-cta';
 import Footer from '@/components/layout/shared/footer';
 import Header from '@/components/layout/shared/header';
 import Hero from '@/components/layout/shared/hero';
+import { useTranslations } from 'next-intl';
 
 export default function Contact() {
+  const t = useTranslations('pages.contact.hero');
+
   return (
     <>
       <Header />
       <Hero
-        label="Don't be shy!"
-        title="Get in touch with us"
-        description="We are here to help you with any questions you may have. Reach out to us and we will get back to you as soon as possible."
+        label={t('label')}
+        title={t('title')}
+        description={t('description')}
       />
       <ContactDetail />
       <EndCTA />
